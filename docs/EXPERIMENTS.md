@@ -1,6 +1,6 @@
 # Experiment catalog — proposed, not implemented
 
-This is a prioritized *research-to-build menu* distilled from R01/R02/R03. Each entry describes a test, not a claim that the fly brain has mastered it. All experiments require an inspectable mapping from sensory data through neural activity to output actions.
+This is a prioritized *research-to-build menu* distilled from R01/R02/R03/R04. Each entry describes a test, not a claim that the fly brain has mastered it. All experiments require an inspectable mapping from sensory data through neural activity to output actions.
 
 | ID | Experiment | Neural → actuator idea | World/body | Smallest honest success criterion | Scope |
 | --- | --- | --- | --- | --- | --- |
@@ -40,3 +40,22 @@ Separate its *brain*, *body*, *world*, *physiology*, *learning*, *rendering* and
 - Evolution: morphology adapting *around* a frozen neural controller; independent evolutionary search on decoder/body; separate research tracking for synaptic modifications.
 
 For all 100-item lists and specific novelty claims, inspect the unabridged source text, especially [R01](../research/raw-text/R01-connectome-artificial-life-exploration.txt) and [R03](../research/raw-text/R03-the-unlimited-body-perplexity.txt). R03's atlas is incomplete in the uploaded document.
+
+
+## Five concrete R04 protocols — useful first research milestones
+
+R04 goes beyond brainstorming by specifying experimental inputs, output channels, null controllers, measurements, failure cases and completion criteria. These protocols can be implemented **without immediately replacing the current described neural circuit**:
+
+| Order | Source protocol | Related catalog entries | Main scientific claim to test |
+| --- | --- | --- | --- |
+| 1 | [P01 Bilateral Contour Grazer](../research/protocols/P01-bilateral-contour-grazer.md) | E01 / E08 | The neural circuit carries nontrivial left/right information, not merely a hard-coded turning bias |
+| 2 | [P02 Conserved Glitter Metabolism](../research/protocols/P02-conserved-glitter-metabolism.md) | E02 / E03 | The agent sustains a measurable material cycle with neural-influenced action gating |
+| 3 | [P03 Eight-Arm Stirrer](../research/protocols/P03-eight-arm-stirrer.md) | E05 | Neural modulation adds coordination beyond a local mechanical/reflex controller |
+| 4 | [P04 Pigment Notebook](../research/protocols/P04-pigment-notebook.md) | New research protocol | Constructed environmental marks/routes provide real future information after transient memory reset |
+| 5 | [P05 Twin Taste Histories](../research/protocols/P05-twin-taste-histories.md) | E09 / E10 | Different developmental histories produce retained, transferable, tested behavioral differences |
+
+These protocols are **R04 proposals**, not implemented features or proven outcomes.
+
+## R04's completed atlas and extra directions
+
+Consult [R04 continuation guide](R04-CONTINUATION.md) for source-matched proposals #72–#100 and 20 additionally numbered experimental directions. **R03 and R04 constitute one continuous invention atlas**, while R01 contains another independently numbered set.

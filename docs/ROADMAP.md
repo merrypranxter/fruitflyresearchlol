@@ -13,12 +13,14 @@
 - Show left/right stimulus, selected population activity, action selection and world feedback.
 - Add replay/silence/disconnect toggles and synchronized capture.
 - Test the “runs into a boundary and stays there” failure with closed-loop exploration, edge sensing and sensible recovery, *not* hidden choreography.
+- Use [P01 Bilateral Contour Grazer](../research/protocols/P01-bilateral-contour-grazer.md) to check neural left/right information with frozen readout and matched controls before richer autonomous decisions.
 
 ## Stage 2 — first living-material loop
 - Add one world with conservation-aware ingestion/deposition.
 - Give the neural-derived controller limited actions and prices.
 - Ensure the altered pixels/mass/geometry produce subsequent sensory changes.
 - A **HANDS OFF** run must remain engaging without mouse/touch intervention.
+- Implement and test [P02 Conserved Glitter Metabolism](../research/protocols/P02-conserved-glitter-metabolism.md) as one traced material cycle—not a cosmetic particle emitter.
 
 ## Stage 3 — build the plug-in racks
 - Formalized `BrainAdapter`, `SenseAdapter`, `BodyAdapter`, `WorldAdapter`, `Material`, `Recorder`.
@@ -29,16 +31,19 @@
 - Eight simple independently reactive arms with elastic local physics; no need for perfect MuJoCo anatomical reproduction.
 - Add pigment stomach/inventory, structured glitter/crystals, bounded geometry vomiting, material costs.
 - Keep biologically validated triggers distinct from synthetic selectors.
+- Use [P03 Eight-Arm Stirrer](../research/protocols/P03-eight-arm-stirrer.md) as the minimal functional arm-scene experiment; compare local-only reflexes against neural modulation.
 
 ## Stage 5 — persistent math/ecology
 - Couple two or three material systems (pigment + contour + crystal initially).
 - Add history, nutrient replenishment, waste/damage, multi-day accelerated playback and deterministic checkpoints.
 - Introduce second organism only after single-agent loops are stable.
+- Test [P04 Pigment Notebook](../research/protocols/P04-pigment-notebook.md): allow a mark/channel to carry information into the future; erase/swap traces and remove all hidden answer leakage.
 
 ## Stage 6 — learning and diversification
 - Begin with controlled readout learning using a frozen neural graph.
 - Separate immediate reward, long-term homeostatic drives, satiation, habituation, historical novelty and changing preferences.
-- Validate retention, reversal, novel situations and ablations. Treat mushroom-body-like synaptic plasticity as an independent validated research track.
+- Validate retention, reversal, novel situations and ablations.
+- Use [P05 Twin Taste Histories](../research/protocols/P05-twin-taste-histories.md) to distinguish retained learned differences from transient hunger, random drift, or different rendering. Treat mushroom-body-like synaptic plasticity as an independent validated research track.
 
 ## Stage 7 — advanced neural substrates
 - Inspect larger circuits (pursuit, feeding, olfactory, mushroom body, visual processing), then MaleCNS/BANC as computationally warranted.
@@ -60,3 +65,7 @@
 5. At least one meaningful counterfactual/baseline.
 6. Mobile behavior and export claims measured rather than assumed.
 7. No regression of prior working experiments.
+
+## Longer-horizon body/world boundary research (R04)
+
+R04 proposes external sensory organs/constructed signaling channels, evolving body compliance, environmental notebooks, limited local law editing and body-as-control-territory definitions. These belong **after** the first five controlled protocols and require instrumentation and provenance before claiming embodied learning.

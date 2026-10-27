@@ -1,5 +1,5 @@
 {
-  "archive_version": "2026-10-27.1",
+  "archive_version": "2026-10-27.2",
   "repository": "merrypranxter/fruitflyresearchlol",
   "status": "PDF binaries pending GitHub upload; full searchable extracted text committed",
   "sources": [
@@ -32,9 +32,19 @@
       "text_path": "research/raw-text/R03-the-unlimited-body-perplexity.txt",
       "github_pdf_status": "pending",
       "notes": "research atlas cut off around entry 72"
+    },
+    {
+      "id": "R04",
+      "original_filename": "I feel like u cut off and coulda kept going so her.pdf",
+      "pages": 44,
+      "bytes": 1622306,
+      "sha256": "1cd0f666e772400c678fa9c75366de61918cd82d06d7ba641e0b8cb4a8d728ba",
+      "text_path": "research/raw-text/R04-continuation-after-72.txt",
+      "github_pdf_status": "pending",
+      "notes": "Continuation of R03 atlas #72–#100; 20 novel directions; five fully specified experiments. A further installment may follow."
     }
   ],
-  "total_pdf_pages": 104,
+  "total_pdf_pages": 148,
   "extraction_disclaimer": "Text is searchable but extracted from PDF and may lose formatting/equations, images and layout; check original when possible",
   "original_binary_available_in_chat_uploads": true
 }

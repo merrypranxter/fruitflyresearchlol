@@ -10,13 +10,15 @@ We are interested in genuine causal neural contribution to autonomous experiment
 
 ## START HERE
 
-1. [Research index and source status](docs/RESEARCH-INDEX.md) — what the three reports contain and where to find them.
+1. [Research index and source status](docs/RESEARCH-INDEX.md) — what the four reports contain and where to find them.
 2. [Scientific boundaries](docs/SCIENTIFIC-BOUNDARIES.md) — what is demonstrated, engineered, frontier, or speculative.
 3. [System architecture](docs/ARCHITECTURE.md) — how to connect brain, senses, bodies, worlds and feedback.
 4. [Experiment catalog](docs/EXPERIMENTS.md) — priority testable creatures and worlds.
-5. [Development roadmap](docs/ROADMAP.md) — preserve the working model before increasing scope.
-6. [Weird Guy / developer handoff](docs/WEIRD-GUY-HANDOFF.md) — instructions for agents and collaborators.
-7. [Research intake protocol](docs/CONTRIBUTING-RESEARCH.md) — how to add the *next* research installment.
+5. [R04 continuation guide](docs/R04-CONTINUATION.md) — the completed invention atlas, 20 new directions, and five build protocols.
+6. [Five research protocols](research/protocols/P01-bilateral-contour-grazer.md) — small, measurable experiments from R04.
+7. [Development roadmap](docs/ROADMAP.md) — preserve the working model before increasing scope.
+8. [Weird Guy / developer handoff](docs/WEIRD-GUY-HANDOFF.md) — instructions for agents and collaborators.
+9. [Research intake protocol](docs/CONTRIBUTING-RESEARCH.md) — how to add the *next* research installment.
 
 ## ARCHIVE
 
@@ -25,8 +27,9 @@ We are interested in genuine causal neural contribution to autonomous experiment
 | R01 | *Connectome Artificial Life Exploration.pdf* | 26 | [R01 extracted text](research/raw-text/R01-connectome-artificial-life-exploration.txt) |
 | R02 | *The Unlimited Body_ Everything a Simulated Fly Brain Could Possibly Control.pdf* | 30 | [R02 extracted text](research/raw-text/R02-everything-a-simulated-fly-brain-could-control.txt) |
 | R03 | *The Unlimited Body.pdf* | 48 | [R03 extracted text](research/raw-text/R03-the-unlimited-body-perplexity.txt) |
+| R04 | *I feel like u cut off and coulda kept going so her.pdf* | 44 | [R04 extracted text](research/raw-text/R04-continuation-after-72.txt) |
 
-**Total: 104 PDF pages across three uploaded reports.** They overlap and sometimes disagree; treat them as *source reports*, not an independently fact-checked consensus. R03 stops midway through its proposed 100-invention atlas around entry 72. A continuation may arrive later.
+**Total: 148 PDF pages across four uploaded reports.** They overlap and sometimes disagree; treat them as *source reports*, not an independently fact-checked consensus. **R03 stops midway through its proposed invention atlas at #72; R04 continues that same list through #100, then adds 20 proposed directions and five detailed experiments.** Perplexity may provide more installments; catalog those as new R05+ sources.
 
 **Binary-PDF upload status:** Original PDF files are not yet stored in GitHub. The full extracted source texts are maintained under `research/raw-text/`; these preserve searchable wording but may lose layout, tables, and visual information. See [PDF intake note](research/pdfs/README.md) and [source manifest](research/manifest.json). Do not claim the GitHub text copies preserve every chart or figure.
 
@@ -44,6 +47,6 @@ We are interested in genuine causal neural contribution to autonomous experiment
 
 ## PUBLIC REPO WARNING
 
-This repository is public. Do not commit account secrets, tokens, unpublished personal information, copyrighted papers copied wholesale from third parties, or private data. The user-provided research PDFs are archived as user-supplied reports with source provenance; their descriptions of outside research may contain claims requiring independent verification.
+This repository is public. Do not commit account secrets, tokens, unpublished personal information, copyrighted papers copied wholesale from third parties, or private data. The user-provided research **text transcriptions** are archived as user-supplied reports with source provenance; their descriptions of outside research may contain claims requiring independent verification.
 
 *Research gathered October 27, 2026. Archive structure initialized October 27, 2026.*

@@ -1,17 +1,21 @@
 # Research index — 2026-10-27
 
-Three uploaded reports form the initial research collection. **Their claims are not uniformly verified.** The notes below describe *what the reports say*, not independent confirmation of every citation, project, benchmark, numerical claim, or demonstration.
+Four uploaded reports form the initial research collection (148 PDF pages). **Their claims are not uniformly verified.** The notes below describe *what the reports say*, not independent confirmation of every citation, project, benchmark, numerical claim, or demonstration.
 
 | ID | Uploaded PDF | Pages | Main contribution | Limitations |
 | --- | --- | ---: | --- | --- |
 | R01 | Connectome Artificial Life Exploration.pdf | 26 | Broad speculative design atlas: 100 concepts, neural octopus, pixel/glitter metabolism, mathematics as a body, research roadmap | A large invention list mixes feasibility with science claims; many examples are proposals, not established implementations. |
 | R02 | The Unlimited Body_ Everything a Simulated Fly Brain Could Possibly Control.pdf | 30 | Detailed scientific distinction between connectome and neural controller; Digital Sphinx warning; CHROMAVORE specification; aesthetics, experiments and baselines | Its source list mixes peer-reviewed work and community demonstrations. |
-| R03 | The Unlimited Body.pdf | 48 | More conservative source audit; evidence levels; named inputs/outputs; memory/performance guidance; three implementation blueprints; another proposed invention atlas | **Truncated around atlas entry 72.** Reports that it could not inspect the implementation repository; relies on supplied project details. |
+| R03 | The Unlimited Body.pdf | 48 | More conservative source audit; evidence levels; named inputs/outputs; memory/performance guidance; three implementation blueprints; another proposed invention atlas | **This individual PDF stops around atlas entry 72.** It could not inspect the implementation repository; relies on supplied project details. |
+| R04 | I feel like u cut off and coulda kept going so her.pdf | 44 | Continuation of R03 #72–#100; operational body boundary; sensor/action/learning contracts; 20 further directions; detailed five-experiment testing plans | Proposals, not demonstrated connectome behaviors; references remain to be verified. Additional installments may arrive. |
 
 Browse full extracted text:
 - [R01](../research/raw-text/R01-connectome-artificial-life-exploration.txt)
 - [R02](../research/raw-text/R02-everything-a-simulated-fly-brain-could-control.txt)
 - [R03](../research/raw-text/R03-the-unlimited-body-perplexity.txt)
+- [R04](../research/raw-text/R04-continuation-after-72.txt)
+
+**Start with [R04's structured continuation guide](R04-CONTINUATION.md) and its [five protocols](../research/protocols/P01-bilateral-contour-grazer.md).**
 
 Original PDFs: see [source manifest](../research/manifest.json) and [PDF status](../research/pdfs/README.md). Extracted text may scramble equations and tables. Do not cite a malformed equation from the text transcription without checking the PDF.
 
@@ -25,6 +29,8 @@ Original PDFs: see [source manifest](../research/manifest.json) and [PDF status]
 6. **Autonomy needs engineered physiology.** Hunger, stored pigment, damage, satiety, curiosity, exploration, or reproduction must be explicitly modeled rather than attributed to the real fly without evidence.
 7. **Computational scope is a real constraint.** R03 recommends retaining the small established circuit for browser-first development, profiling neural time separately from display frame rate, and adding larger models only after measured benefits.
 8. **Emergent art can be genuine within an engineered world.** Explicit chemistry/material rules + neural actions + persistent consequences make unplanned but reproducible visual outcomes possible.
+9. **Bodies can include built external infrastructure.** R04 proposes treating sensed, controllable remote structures as part of an operational body, while requiring explicit tests of their causal use and attribution.
+10. **Experience-dependent behavior must survive neutral tests.** R04 sharpens the requirements for pigment-based external memory, retained twin histories, and behavior that depends on the biological neural substrate.
 
 ## Named research / tooling leads in the reports
 
@@ -35,7 +41,8 @@ These are *reported leads*, not endorsements: FlyWire/FAFB; MaleCNS; BANC; MANC;
 - R01 is the broadest in imaginative scope and more optimistic on WebGPU/full-connectome mobile scaling.
 - R02 emphasizes why realistic-looking behavior may be driven by an expressive artificial decoder, plus carefully testable functional preferences.
 - R03 is the most cautious on performance, auditability, and limitations of the current 6,203-neuron escape-related model.
-- They contain **multiple distinct “100 ideas” catalogs**. Do not merge them as though there were a single authoritative numbered atlas. R03's list is incomplete in the uploaded PDF.
+- R04 directly continues **R03's own atlas** starting at #72, completes #100, and supplies 20 further untried directions and five fully defined experiments. This is not a separate unrelated 100-idea list.
+- They contain **multiple distinct “100 ideas” catalogs**. Do not merge them as though there were a single authoritative numbered atlas. R03's PDF is incomplete on its own, but **its list is continued to #100 in R04**.
 - Source numerical totals may refer to neurons, anatomical synaptic contacts, or unique neuron-pair edges; never interchange units.
 
-See [scientific boundaries](SCIENTIFIC-BOUNDARIES.md), [experiment catalog](EXPERIMENTS.md) and [open questions](OPEN-QUESTIONS.md).
+See [scientific boundaries](SCIENTIFIC-BOUNDARIES.md), [R04 continuation](R04-CONTINUATION.md), [experiment catalog](EXPERIMENTS.md) and [open questions](OPEN-QUESTIONS.md).

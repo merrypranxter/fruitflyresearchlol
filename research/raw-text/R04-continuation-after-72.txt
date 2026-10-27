@@ -1,0 +1,1897 @@
+# R04 — SEARCHABLE RESEARCH-SOURCE TEXT
+
+Original: I feel like u cut off and coulda kept going so her.pdf (44 pages)
+Context: Perplexity continuation of R03, collected October 27, 2026; complete entries 72–100 of R03's proposed invention atlas, followed by further hypotheses and five concrete experimental protocols.
+SHA-256 of original uploaded PDF: 1cd0f666e772400c678fa9c75366de61918cd82d06d7ba641e0b8cb4a8d728ba
+NOTE: This is **raw research-report text**, NOT an independently verified scientific consensus or working implementation. Automated text extraction may rearrange charts, table cells, math and references; compare against the original PDF for visual/equation accuracy. Another continuation may follow and must be separately archived.
+
+---
+
+<PARSED TEXT FOR PAGE: 1 / 44>
+I feel like u cut off and coulda kept going so here’s ur
+chance
+Yep — it cut off mid–#72, with the most useful ending still missing. Picking up there: the
+remaining inventions, the stranger architectural possibilities, and five experiments concrete
+enough to start building without replacing Neural Art Lab.
+One correction first: Eon’s technical account says its looming circuit activates escape-related
+neurons, but escape behavior had not yet been implemented in the embodied fly. [1]
+Everything proposed below is an experimental design—not a claim that somebody has already
+demonstrated it with a fly connectome. “Feasible” means the components can be engineered; it
+does not promise interesting behavior, successful learning, or an advantage from biological
+wiring.
+
+The invention atlas, continued
+Confidence: F = engineering-feasible; R = research frontier; S = speculative.
+Difficulty: L = low; M = medium; H = high; E = extreme.
+For neural interfaces, “population features” means measurements from populations actually
+present in the loaded circuit. Named pathways must be checked against its manifest; a
+desirable neuron type does not become available merely because an architecture needs it.
+
+Collective organisms
+    # / Working     Concept and                            Scientific and artistic   Confidence       Smallest
+                                       New engineering
+        title      neural interface                                payoff            / difficulty    experiment
+
+                  Two neural
+                                                           Cooperation or
+                  simulations
+                                       Shared              interference becomes                     Two
+                  control opposing
+                                       mechanics,          visible as stretching,                   controllers
+  72. Split-      groups of arms on
+                                       separate sensors,   knots, and negotiated                    operate one
+  Tentacle        one body; each                                                     R / M–H
+                                       bounded action      movement; tests                          elastic ribbon
+  Diplomat        reads its own
+                                       budgets, optional   coordination through                     from opposite
+                  contacts and the
+                                       adaptive readouts   mechanics rather                         ends
+                  shared body’s
+                                                           than messages
+                  motion
+
+                                       An explicit         A colony can disagree                    One network
+                  Different networks
+                                       arbitration         without simply                           selects
+  73. Nervous-    propose,
+                                       protocol; logs      averaging its signals;                   location;
+  System          authorize, or veto                                                 F/R / M
+                                       showing whose       visible hesitation and                   another
+  Parliament      material
+                                       proposal changed    competing                                approves
+                  interventions
+                                       the outcome         constructions                            expenditure
+<PARSED TEXT FOR PAGE: 2 / 44>
+ # / Working     Concept and                              Scientific and artistic   Confidence       Smallest
+                                    New engineering
+     title      neural interface                                  payoff            / difficulty    experiment
+               Neural outputs
+               change swarm-                              The brain controls a                     One neural
+               wide constraints—                          behavioral                               channel
+                                    Local agents,
+               cohesion,                                  constitution rather                      changes
+74. Swarm                           collision rules,
+               separation,                                than a puppet;            F/M            cohesion while
+Constitution                        bounded global
+               attachment                                 particles form                           local agents
+                                    parameters
+               permission—not                             transient organs and                     collect
+               individual                                 dispersing territories                   pigment
+               trajectories
+
+                                                          Local autonomy                           Two
+               Several              Local actuator
+                                                          creates whole-body                       controllers
+               controllers own      ownership,
+75. Tissue                                                coordination                             deform
+               neighboring          mechanical                                      R/H
+Federation                                                problems; seams and                      adjacent
+               patches of one       boundaries,
+                                                          borders become                           halves of a
+               deformable body      resource transfer
+                                                          active anatomy                           membrane
+
+                                                                                                   Two agents
+                                                          Drawing becomes
+               Organisms            Detectable marks,                                              share a field
+76. Pigment                                               communication; trails
+               communicate only     decay, deposition                                              where one can
+Pheromone                                                 may function as           F/R / M
+               through persistent   costs, no hidden                                               leave a
+Commons                                                   routes, warnings, or
+               material deposits    messaging                                                      detectable
+                                                          resource indicators
+                                                                                                   trail
+
+                                                          Tests whether a useful
+               Two networks
+                                                          protocol can develop                     Two agents
+               receive              Trainable
+                                                          without shared initial                   each observe
+77.            incompatible         communication
+                                                          meanings;                                one half of the
+Ecological     sensory encodings    adapters with                                   R/H
+                                                          communication                            information
+Interpreter    and must             strict bandwidth
+                                                          appears as color                         needed to
+               coordinate a         limits
+                                                          pulses or wave                           open a gate
+               shared task
+                                                          packets
+
+                                                                                                   Swap only
+               Transfer neural                            Distinguishes
+                                                                                                   decoders
+               state, decoder, or                         behavioral identity in
+                                    Modular                                                        between two
+78. Brain-     body separately                            neural dynamics,
+                                    checkpoints and                                 F/M            trained
+Swap Meet      between                                    learned readout,
+                                    controlled swaps                                               organisms and
+               established                                body, and world
+                                                                                                   measure what
+               organisms                                  history
+                                                                                                   follows
+
+                                                          Art emerges from
+               Multiple neural      Bidding or            contested access                         Two agents
+               agents compete       allocation            rather than blended                      request the
+79. Actuator
+               for temporary        protocol, resource    outputs; tests            R / M–H        same pigment
+Marketplace
+               ownership of         budgets, lock         whether                                  valve under
+               shared actuators     durations             specialization follows                   equal budgets
+                                                          control costs
+
+                                                          Large-scale
+                                    Restricted local      organization must                        Four local
+               Each controller
+80. Blind                           sensors, shared       arise without a                          agents share
+               sees only a small
+Mosaic                              material transport,   privileged global         F/R / M        one
+               region of a shared
+Collective                          optional short-       view; produces                           transported
+               canvas
+                                    range signals         patterns nobody                          pigment field
+                                                          individually observes
+<PARSED TEXT FOR PAGE: 3 / 44>
+Materials, optics, and transformation
+                       Concept and                                 Scientific and      Confidence       Smallest
+  # / Working title                        New engineering
+                      neural interface                             artistic payoff     / difficulty    experiment
+
+                                                                The organism
+                      Neural activity     A bounded             controls consistency                  One patch
+                      changes how a       viscosity/yield       rather than                           switches
+ 81. Rheology
+                      fictional           model, stress         position; channels     F/R / M        between fluid-
+ Eater
+                      material flows      sensors, action       alternate between                     like and paste-
+                      under stress        costs                 pooling, stretching,                  like behavior
+                                                                and fracture
+
+                                                                The animal
+                                                                manipulates
+                      Outputs move        Lattice dynamics,     imperfections, not                    Move one
+ 82. Defect           or create defects   defect                objects; defects                      lattice defect
+                                                                                       R/H
+ Shepherd             in an ordered       identification,       become mobile                         toward a
+                      lattice             localized forcing     tools for                             resource zone
+                                                                reorganizing color
+                                                                and structure
+
+                                                                Marks arise through                   Two
+                      Neural readouts                           boundaries pulling                    controllable
+                                          A surface model
+ 83. Meniscus         modify local                              matter, not direct                    boundary
+                                          and coupled                                  F/R / H
+ Engraver             surface-tension-                          painting; luminous                    sites
+                                          pigment transport
+                      like parameters                           ridges and cellular                   redistribute
+                                                                outlines emerge                       one pigment
+
+                                                                                                      Two
+                                                                A body can be
+                                          A simulated                                                 orientation
+                                                                nearly invisible
+                      Activity rotates    polarization layer,                                         controls
+ 84. Polarization                                               under one viewing
+                      local optical       illumination                                 F/M            change a
+ Skin                                                           condition and
+                      orientation         model, optical                                              patch’s
+                                                                vividly patterned
+                                          feedback                                                    observed
+                                                                under another
+                                                                                                      intensity
+
+                      The agent
+                                                                Light becomes an                      A deformable
+                      shapes
+                                          Refraction, light-    indirect tool;                        lens
+                      refractive
+ 85. Caustic                              sensitive fictional   structures grow                       determines
+                      surfaces whose                                                   F/R / H
+ Cultivator                               growth, material      where the organism                    where one
+                      illumination
+                                          limits                redirects                             crystal seed
+                      gates a separate
+                                                                illumination                          grows
+                      growth process
+
+                                                                Experience changes
+                      Neural actions                                                                  Repeated
+                                                                future movement
+ 86. Scar-            create damage       Damage, repair,                                             bending
+                                                                physically; scars
+ Mechanics            whose repair        and constitutive-                            R/H            stiffens one
+                                                                become behavioral
+ Animal               changes             state tracking                                              section of an
+                                                                memory and visible
+                      stiffness                                                                       elastic ribbon
+                                                                banding
+
+                                                                The organism
+                      Outputs place                                                                   Add or remove
+                                                                constructs its own
+ 87. Resonant         elements that       A spring/resonator                                          springs to
+                                                                mechanical filter;
+ Microstructure       change a            network and                                  R/H            alter one
+                                                                geometry records
+ Mason                structure’s         response sensors                                            resonant
+                                                                the frequencies it
+                      vibration                                                                       response
+                                                                learned to manage
+<PARSED TEXT FOR PAGE: 4 / 44>
+                       Concept and                                    Scientific and        Confidence          Smallest
+  # / Working title                         New engineering
+                      neural interface                                artistic payoff       / difficulty       experiment
+                                                                   A sculpture
+                      Neural output                                                                          Build one
+                                           Persistent              becomes a reusable
+                      builds                                                                                 barrier that
+ 88. Channel                               obstacles,              instrument; the
+                      constrictions                                                        F/R / M           redirects later
+ Toolmaker                                 transport,              organism changes
+                      that later steer                                                                       pigment
+                                           construction cost       what future actions
+                      flowing matter                                                                         releases
+                                                                   can accomplish
+
+                                                                   Surface
+                      Neural features
+                                           A constrained           neighborhoods                             Fold a strip
+                      choose folds,
+ 89. Folding                               sheet model and         become variable;                          until two
+                      releases, and                                                        R/H
+ Atlas                                     self-contact            folds place distant                       marked
+                      attachment
+                                           handling                colors and sensors                        regions touch
+                      points
+                                                                   into contact
+
+                                                                   Art appears as
+                      The agent                                                                              Preserve one
+                                           Autonomous              tunnels, chambers,
+                      inhibits growth                                                                        empty
+ 90. Negative-                             growth, localized       and protected
+                      to sculpt cavities                                                   F/M               corridor inside
+ Space Grower                              inhibition, resource    voids; doing less
+                      rather than                                                                            a growing
+                                           accounting              can create more
+                      adding material                                                                        field
+                                                                   structure
+
+
+Learning, development, and evolution
+                       Concept and                                  Scientific and       Confidence            Smallest
+  # / Working title                        New engineering
+                      neural interface                              artistic payoff      / difficulty         experiment
+
+                      Archive
+                                                                  Preserves unusual
+                      connectome-          Behavioral                                                      Archive variants
+                                                                  viable styles
+                      plus-decoder         descriptors,                                                    by material
+ 91. Behavioral                                                   instead of
+                      variants by what     archive, mutation                             F/R / M           consumption
+ Cabinet                                                          collapsing
+                      they do, not         or training                                                     and construction
+                                                                  everything onto
+                      only by one          process                                                         geometry
+                                                                  one optimum
+                      score
+
+                                                                  Anatomy becomes                          Choose whether
+                      Neural output
+                                           Staged                 a sequence of                            a growing
+ 92.                  chooses when
+                                           morphogenesis,         commitments;                             filament
+ Developmental        body-building                                                      R/H
+                                           growth budgets,        early decisions                          branches before
+ Editor               rules become
+                                           capability checks      constrain later                          or after
+                      active
+                                                                  possibilities                            elongating
+
+                      Descendants          Reproduction           Separates genetic-
+                      inherit an           schedule,              like inheritance                         New agents
+ 93. Fossil           altered world        persistent             from ecological                          begin in either
+                                                                                         F/R / M
+ Inheritance          rather than          structures,            inheritance;                             ancestral or reset
+                      copied neural        controlled lineage     generations build                        environments
+                      weights              tests                  on physical traces
+<PARSED TEXT FOR PAGE: 5 / 44>
+                          Concept and                                 Scientific and        Confidence         Smallest
+   # / Working title                            New engineering
+                         neural interface                             artistic payoff       / difficulty      experiment
+                                                                    Transfers an
+                         A readout learns
+                                                                    intervention
+                         from examples         Local                                                        Demonstrate ten
+                                                                    vocabulary
+ 94.                     of your actions       demonstration                                                local pigment
+                                                                    without
+ Intervention            while retaining       recorder,                                    F/M             manipulations,
+                                                                    pretending the
+ Apprentice              neural features       imitation loss,                                              then freeze and
+                                                                    biological circuit
+                         as part of its        held-out scenes                                              evaluate
+                                                                    independently
+                         input
+                                                                    invented your taste
+
+                                                                    Preferences
+                         A slow process                             become
+                                                                                                            Let one trade-off
+                         changes how                                developmental
+ 95. Bounded                                   Separate fast                                                adapt between
+                         artificial drives                          variables rather
+ Constitution                                  policy and slow                              R/H             exploration and
+                         compete, within                            than random
+ Mutator                                       drive adaptation                                             material
+                         fixed safety and                           sliders; risks and
+                                                                                                            preservation
+                         viability limits                           trade-offs remain
+                                                                    inspectable
+
+
+Exotic interfaces
+                        Concept and                                    Scientific and        Confidence         Smallest
+  # / Working title                           New engineering
+                       neural interface                                artistic payoff       / difficulty      experiment
+
+                       Population
+                       activity
+                                             Cable mechanics,       Marks reflect the
+ 96. Spring-           modulates                                                                             Two tension
+                                             local stabilizer,      joint computation of
+ Bodied                tension in a                                                          F/R / M         controls move
+                                             contact and ink        neural state and
+ Plotter               simulated cable-                                                                      one elastic pen
+                                             model                  elastic mechanics
+                       driven drawing
+                       tool
+
+                                                                    The body is a                            Three valves
+                       Neural outputs        Virtual valves,
+ 97. Artificial                                                     routing network;                         mix two
+                       open valves in a      transport, reaction
+ Microfluidic                                                       “movement” means         F/M             pigments into
+                       network of            reservoirs, pressure
+ Creature                                                           redirecting matter                       one reaction
+                       channels              feedback
+                                                                    through itself                           chamber
+
+                       The organism
+                                                                    Distance becomes                         Navigate a
+                       moves through         Graph world, local
+ 98.                                                                relational; moving a                     graph where
+                       changing graph        observations,
+ Topological                                                        connection can be        F/R / M         one action
+                       adjacency rather      bounded edge
+ Traveler                                                           more consequential                       reconnects two
+                       than Euclidean        rewrites
+                                                                    than moving a body                       rooms
+                       space
+
+                       Different
+                       organisms             Explicit multirate
+                                                                    Fast agents cultivate                    One fast
+                       operate at            scheduler,
+                                                                    fleeting patterns;                       pigment
+ 99. Temporal          different update      timestamped
+                                                                    slow agents become       R/H             consumer and
+ Colony                rates while           actions,
+                                                                    geological                               one slow
+                       sharing               synchronization
+                                                                    structures                               crystal builder
+                       persistent            rules
+                       matter
+<PARSED TEXT FOR PAGE: 6 / 44>
+                         Concept and                                           Scientific and         Confidence            Smallest
+  # / Working title                                New engineering
+                        neural interface                                       artistic payoff        / difficulty         experiment
+                        Neural outputs        A small validated            The organism                                  Toggle whether
+                        alter bounded         rule vocabulary,             changes what                                  one pigment
+  100. Reality
+                        interaction rules     change costs,                objects do to one          R/S / H–E          feeds or
+  Gardener
+                        between               rollback and                 another, not merely                           inhibits one
+                        materials             stability tests              where they are                                growth process
+
+
+
+Where the design space gets stranger
+The first hundred ideas still mostly describe an organism acting on a world.
+The more radical step is to let its actions change the division between organism and world.
+A useful research precedent is that soft-body dynamics can contribute memory and nonlinear
+computation, not merely execute commands. [2]
+Proposed implication: a body, a material field, or a structure built by the organism could
+become part of its effective controller. That does not make every sculpture intelligent; it gives a
+precise experimental question:
+         Does removing this structure remove a capability, even though the neural simulation
+         and learned decoder remain unchanged?
+
+Break the assumptions
+      Assumption                       Inversion                       Proposed architecture              What must remain explicit
+                                                                  Define body membership
+  One brain has one         One brain has a changing                                                    Influence is horizon- and task-
+                                                                  through controllable, sensed
+  body                      territory of influence                                                      dependent
+                                                                  processes
+
+                                                                  Grow sensors, actuators,
+  Anatomy is                Anatomy is a negotiated                                                     New organs need a
+                                                                  reservoirs, and attachment
+  permanent                 resource allocation                                                         documented interface
+                                                                  points
+
+                                                                  An appendage creates                  These are fictional
+  Limbs exert force         Limbs alter relationships             adjacency, permissions, or            computational actions, not
+                                                                  coupling                              physical forces
+
+  Senses describe the       Senses describe possible              Report local action-effect            The estimator is an artificial
+  world                     interventions                         estimates                             addition
+
+  Actions produce           Actions plant future                  Deferred growth, dormant              Credit assignment becomes
+  immediate effects         conditions                            seeds, scheduled reactions            harder
+
+                            Components have different             Fast neural state, slow tissue,       Numerical update rate is not
+  Time is uniform
+                            clocks                                slower ecology                        subjective time
+
+                            Memory is something the               Trails, gates, scars, resonators,     Test whether the agent actually
+  Memory is internal
+                            organism constructs                   routing channels                      reads and uses it
+
+                            Some goals become learned             Separate initial priors, learned      A meta-objective still
+  Goals are fixed
+                            developmental state                   values, and viability constraints     constrains the change
+<PARSED TEXT FOR PAGE: 7 / 44>
+      Assumption                 Inversion                Proposed architecture          What must remain explicit
+
+  Each agent has its   Agents inhabit overlapping     Shared materials with distinct
+                                                                                       Avoid hidden global knowledge
+  own environment      causal worlds                  sensing and actuation
+
+  A creature has a     Scale becomes a controllable   Switch among local, regional,    Scale changes require state-
+  stable size          capability                     and global interfaces            transfer rules
+
+  The environment      Laws are locally editable      Rule patches or interaction      Stability and resource
+  obeys one law        within a grammar               tokens                           accounting must survive edits
+
+                       Control can be scattered
+  A brain must be                                     Neural selection plus local      Attribute competence to the
+                       across body and
+  central                                             reflexes and material memory     complete hybrid
+                       environment
+
+
+The important control distinction
+A few neural channels can select among rich behaviors without independently commanding
+every actuator.
+But three claims must remain separate:
+ 1. Selection: the neural state chooses a behavior from a library.
+ 2. Modulation: it changes the strength, timing, or location of an autonomous process.
+ 3. Synthesis: it generates the fine structure of the action itself.
+For your work, selection and modulation are not disappointing compromises. They may be the
+most productive interfaces—provided the action library is not secretly doing all the decision-
+making.
+Consider a crystal explosion:
+     Neural decision: release here, now, with this much precursor and this directional bias.
+     Body mechanism: open a valve and transfer stored material.
+     World mechanism: grow branches according to local conditions.
+     Feedback: detect new boundaries, resource depletion, blockage, and illumination.
+     Learning: change future release decisions based on those consequences.
+That is a consequential organism even though no neuron individually specifies each crystal
+facet.
+The weak version would be: neural activity crosses a threshold, and a canned crystal animation
+plays regardless of conditions.
+
+
+Give the system a scientific spine
+Before adding many more capabilities, make every proposed organism answer the same small
+set of questions.
+<PARSED TEXT FOR PAGE: 8 / 44>
+A capability contract
+Each sensor should declare:
+
+  What quantity is measured?
+  Where is it measured?
+  What spatial or temporal window is used?
+  How is it normalized?
+  Which neural cells receive the resulting input?
+  Which parts of this mapping are biological, inferred, or invented?
+
+
+Each action should declare:
+
+  Which neural measurements influence it?
+  What additional controller state influences it?
+  What can the action change?
+  What does it cost?
+  What limits or stabilizers modify it?
+  How does its consequence return through the sensors?
+
+
+Each learning mechanism should declare:
+
+  What parameters change?
+  Which signal causes the update?
+  What information is unavailable to the learner?
+  What is saved?
+  What is reset between trials?
+  What evaluation runs without learning?
+
+
+This is not bureaucratic overhead. It lets an artwork remain mysterious in appearance without
+becoming mysterious in explanation.
+
+A contribution ledger
+For every issued action, record the proposed fields:
+
+  simulation time
+  sensor observations
+  stimulated neural populations
+  measured neural features
+  decoder outputs
+  engineered reflex corrections
+  exploration contribution
+  final bounded action
+  resource cost
+  subsequent measured consequence
+
+
+Avoid trying to assign a single percentage such as “73% fly-controlled” to a nonlinear hybrid.
+Instead ask intervention-specific questions:
+<PARSED TEXT FOR PAGE: 9 / 44>
+     Does removing neural input change action selection?
+     Does replaying another organism’s neural activity change its trajectory?
+     Can the engineered controller solve the task alone?
+     Does the trained decoder use neural features or ignore them?
+     Does biological topology help after alternatives receive equal training?
+Those are answerable.
+
+Two different kinds of proof
+Dependence test: keep the trained decoder fixed, then interrupt or replace its neural inputs.
+This tests whether the existing organism depends on those inputs.
+Utility test: independently train matched decoders on biological, rewired, random, and non-
+neural representations.
+This tests whether biological structure is useful relative to alternatives.
+A system can pass the first and fail the second. Its decoder may genuinely depend on a
+biological network without that network being a particularly good substrate.
+That outcome would still teach you something.
+
+Keep “surprising” measurable
+Proposed measurements should distinguish:
+
+         Quantity                               Useful measurement                        What it does not prove
+
+  Visual diversity       Coverage of predefined or learned image descriptors          Intelligent exploration
+
+  Behavioral diversity   Distinct intervention sequences and outcomes                 Learning
+
+  Controllability        Repeatable differences caused by chosen actions              Biological fidelity
+
+  Adaptation             Held-out improvement or retained policy change               Subjective preference
+
+                                                                                      Autonomous self-
+  Persistence            Survival of structures and learned state
+                                                                                      maintenance
+
+                                                                                      Preserved donor-fly
+  Individuality          Stable between-agent differences under standardized probes
+                                                                                      personality
+
+  Ecological
+                         Resource cycles, specialization, dependencies                Open-ended evolution
+  organization
+
+                         Continued development of new capacities under a defensible
+  Open-endedness                                                                      Merely running forever
+                         criterion
+
+A rich display is a valid artistic success. It just should not silently stand in for every other kind
+of success.
+<PARSED TEXT FOR PAGE: 10 / 44>
+Research bridges worth using
+The strongest additions to your project may come from combining established methods, not
+from increasing the neuron count first.
+
+      Research bridge             What the existing work establishes                  Proposed role in Neural Art Lab
+
+                                                                              Let tentacles, elastic structures, or material
+  Physical reservoir        Soft-body dynamics can supply useful
+                                                                              fields contribute state rather than treating
+  computing                 temporal processing. [2]
+                                                                              them as passive outputs
+
+  Intrinsically motivated   Agents can organize exploration around self-      Learn an intervention repertoire instead of
+  goal exploration          selected goals and competence progress. [3]       maximizing one permanent aesthetic score
+
+                                                                              Treat an autonomous material pattern as a
+                            Cellular-automaton rules can be optimized for
+  Sensorimotor Lenia                                                          body substrate, while separately auditing the
+                            robust moving, self-maintaining patterns. [4]
+                                                                              fly circuit’s contribution
+
+                            Diversity search has been applied to
+  Flow-Lenia                                                                  Use a resource-constrained ecology rather
+                            interacting, mass-conserving pattern worlds.
+  exploration               [5]                                               than an unlimited effects canvas
+
+                            Search can preserve varied high-performing        Maintain a cabinet of unusual organisms
+  MAP-Elites
+                            solutions across behavioral descriptors. [6]      instead of selecting only one winner
+
+  Homeostatic                                                                 Make the value of pigment, repair, or
+                            Internal-state regulation can define state-
+  reinforcement                                                               exploration depend on the organism’s
+                            dependent computational rewards. [7]
+  learning                                                                    condition
+
+                            An information-theoretic objective measures
+                                                                              Explore “appetite for consequential control,”
+  Empowerment               distinguishable influence from actions to later
+                                                                              rather than appetite for maximum sparkle
+                            observations. [8]
+
+These are different mechanisms, not interchangeable names for curiosity.
+
+For example:
+    Novelty can favor unfamiliar outcomes.
+    Learning progress can favor outcomes becoming more controllable.
+    Homeostasis can favor restoring an internal resource.
+    A diversity archive can preserve alternatives that a single reward would discard.
+The proposed organism could use all four, but you should log their contributions separately.
+
+An exploration architecture
+Instead of one scalar called taste, consider four layers:
+
+  INITIAL PRIOR
+  Your starting aesthetic biases:
+  saturation, contour structure, sparkle, branching, etc.
+
+  VIABILITY
+  Material reserves, damage, action costs, repair needs.
+<PARSED TEXT FOR PAGE: 11 / 44>
+  LEARNED COMPETENCE
+  Which interventions currently work,
+  under which conditions,
+  with what predictable consequences?
+
+  DEVELOPMENTAL INTEREST
+  Which achievable outcomes are worth practicing next?
+
+
+A goal might be:
+       Create a branching structure that remains traversable and does not exhaust the crystal
+       reservoir.
+Another:
+       Move pigment into a protected cavity using an obstacle rather than direct deposition.
+Another:
+       Produce an optical effect that remains visible after the organism moves away.
+These goals concern capabilities and consequences, not just appearances.
+A system that eventually chooses branching over sparkle because branching enables storage,
+movement, or new sensing is more interesting than one whose sparkle coefficient slowly
+decreases on a timer.
+
+
+The 20 most interesting untried directions
+“Untried” here is a research shortlist, not a verified priority claim. These are proposed
+combinations whose exact fly-connectome implementations were not established in the
+reviewed evidence. Some have close precedents in artificial life, robotics, or machine learning.
+The question for each is not “can a shader display this?” It is “can this become a consequential
+part of an organism’s sensorimotor organization?”
+
+1. Grow an external nervous system
+Mechanism: the organism lays conductive-looking filaments through its world. When a
+filament connects two sites, it creates an explicitly artificial delayed sensor–actuator pathway.
+The original connectome stays unchanged. The organism builds additional environment-
+mediated feedback around it.
+Why it is different: construction changes the architecture through which future consequences
+reach the controller.
+First test: let it connect a remote pigment sensor to a local indicator. Compare intact, severed,
+and decorative-only filaments.
+<PARSED TEXT FOR PAGE: 12 / 44>
+Boundary: calling the filaments “nerves” is a metaphor unless their signaling dynamics are
+actually modeled.
+
+2. Build its own retina
+Mechanism: the organism moves lenses, occluders, or refractive material in front of a fixed
+sensor array.
+It cannot directly increase sensor resolution. It must improve observations by modifying the
+optics.
+Why it is different: a structure is both artwork and perceptual apparatus.
+First test: two visually ambiguous resource patches become distinguishable only after a lens is
+positioned correctly.
+Boundary: the learner must receive the resulting sensor measurements—not a hidden flag
+saying which patch is nutritious.
+
+3. Outsource a reflex into matter
+Mechanism: an initially active controller repeatedly corrects a body’s response. A slower
+morphology optimizer changes stiffness or geometry until some correction becomes
+mechanically unnecessary.
+Why it is different: competence migrates from active control into body structure.
+First test: a ribbon learns—or is optimized—to recoil from contact with fewer active corrections.
+Measurement: preserve task performance while reducing corrective actuation.
+Boundary: morphology optimization is an artificial learning process; the connectome should
+not receive credit for inventing the optimizer.
+
+4. Define a body by control
+Mechanism: periodically estimate which world variables the organism can reliably influence
+and sense over a chosen horizon.
+Treat that changing set as its operational body.
+Why it is different: a reservoir, distant gate, or cultivated organism can become part of the body
+without being physically attached.
+First test: give an agent control of a remote valve, then disconnect the channel. Measure
+whether its useful control territory expands and contracts.
+Boundary: this is an operational definition, not a discovery of the organism’s subjective self.
+<PARSED TEXT FOR PAGE: 13 / 44>
+5. Plant future laws
+Mechanism: the organism can place expensive “rule seeds.” After a delay or environmental
+trigger, each seed changes one local interaction rule.
+For example, a region that currently consumes pigment later becomes a crystal-growth
+inhibitor.
+Why it is different: an action changes the conditions under which later actions will matter.
+First test: choose between an immediate pigment deposit and a delayed conversion patch.
+Boundary: allow only a small rule grammar; arbitrary code execution is unnecessary and
+makes evaluation much harder.
+
+6. Migrate between dimensions
+Mechanism: preserve a common local sensor/action vocabulary while moving an organism
+among a graph, a two-dimensional field, and a three-dimensional volume.
+“Forward,” “contact,” and “resource nearby” must be redefined through documented adapters.
+Why it is different: adaptation concerns the structure of space, not simply another animal
+mesh.
+First test: transfer a two-dimensional navigation policy to a graph with matched local
+branching choices.
+Boundary: successful transfer may belong to invariant adapters rather than the neural graph;
+compare both.
+
+7. Make the world an address bus
+Mechanism: the organism sends a material packet down a channel. Its destination determines
+which remote actuator receives a later command.
+Why it is different: physical routing selects where action occurs; the controller does not get a
+free global address.
+First test: route one colored packet to either a growth valve or a pigment valve.
+Artistic result: luminous canals become visible control infrastructure.
+Boundary: transport delays and routing errors must affect behavior rather than remain
+decorative.
+<PARSED TEXT FOR PAGE: 14 / 44>
+8. Share a skin, not a goal
+Mechanism: two controllers inhabit one membrane but maintain different internal resources
+and objectives.
+One needs exposure to light. The other needs protected cavities. Both act on the same
+geometry.
+Why it is different: cooperation is not preassigned; anatomy itself is contested.
+First test: two regions of a deformable strip share a limited bending budget.
+Measurement: identify stable compromises, oscillatory conflict, and collapse.
+
+9. Reproduce construction programs
+Mechanism: the organism deposits a compact executable growth grammar, not merely a visual
+copy of its body.
+The offspring’s form depends on local material and encounters.
+Why it is different: reproduction transfers a developmental procedure.
+First test: inherit one branching rule and one resource preference while randomizing the
+environment.
+Boundary: inherited growth code is not inherited memory unless memory state is explicitly
+copied.
+
+10. Recognize its work without labels
+Mechanism: remove all provenance metadata from the controller’s observations. Mix its
+deposits with visually matched foreign deposits.
+Why it is different: “my earlier creation” becomes a perceptual and historical inference rather
+than a privileged tag.
+First test: ask whether it preferentially repairs structures associated with its own past action
+sequences.
+Measurement: compare true history, swapped history, and appearance-matched decoys.
+Boundary: successful discrimination would not establish self-awareness.
+
+11. Budget time as anatomy
+Mechanism: the organism allocates a limited number of update events among tissue processes.
+It might keep a sensor patch fast while allowing a crystal organ to evolve slowly.
+Why it is different: temporal resolution becomes a resource the organism manages.
+First test: divide a fixed update budget between sensing and growth.
+<PARSED TEXT FOR PAGE: 15 / 44>
+Boundary: changing update frequency can introduce numerical artifacts. The world must
+specify whether this represents fictional reaction kinetics, computational scheduling, or both.
+
+12. Eat causal power
+Mechanism: reward reproducible influence over future observations rather than raw visual
+change.
+An action that generates unpredictable static should not automatically be valuable.
+Why it is different: the organism seeks environments where it can make meaningful
+distinctions happen.
+First test: offer a noisy glitter fountain and a quieter controllable wave chamber.
+Boundary: a practical influence score is not automatically a valid estimate of empowerment;
+describe the approximation.
+
+13. Repair the feedback loop
+Mechanism: environmental damage interrupts a useful sensory pathway. The organism can
+rebuild the physical connection.
+Why it is different: repair restores a cognitive capability, not merely appearance or locomotion.
+First test: cut a channel carrying material to a remote sensor and allow the organism to
+reconnect it.
+Measurement: compare useful sensing before damage, after damage, and after repair.
+
+14. Negotiate sensory contracts
+Mechanism: two organisms exchange signals, but each initially interprets them differently.
+Their adapters co-adapt while solving a cooperative problem.
+Why it is different: communication requires developing a shared mapping rather than
+transmitting already meaningful labels.
+First test: one agent knows resource identity; the other controls access. Permit only a few
+discrete signals.
+Boundary: learned signaling is not evidence that the biological networks acquired language.
+
+15. Build tools that alter interactions
+Mechanism: a constructed object changes how other materials interact—for example, a
+membrane lets solvent pass while blocking pigment.
+Why it is different: a tool modifies a relationship, not merely applies force.
+First test: build a filter that makes a previously unusable resource accessible.
+<PARSED TEXT FOR PAGE: 16 / 44>
+Artistic result: delicate meshes and membranes become functional chemistry.
+
+16. Inherit an ancestor’s unfinished problem
+Mechanism: each generation receives persistent structures, depleted resources, and dormant
+seeds, but not the previous policy.
+Why it is different: the inherited developmental challenge changes even when the agent starts
+fresh.
+First test: compare descendants in ancestral gardens against identical descendants in reset
+gardens.
+Measurement: determine whether environmental inheritance improves competence, traps
+behavior, or creates new niches.
+
+17. Grow out of a sense
+Mechanism: an early sensor gradually becomes less informative while a newly developed organ
+offers a different channel.
+Why it is different: adaptation includes developmental sensory succession.
+First test: slowly reduce a direct resource-concentration channel while allowing an optical or
+contact-based alternative.
+Boundary: do not interpret forced sensor loss as spontaneous preference evolution.
+
+18. Pay for control infrastructure
+Mechanism: sensing, communication, memory maintenance, and actuation all consume
+explicit artificial resources.
+Why it is different: the organism must decide how much controller it can afford.
+First test: choose between a cheap local sensor and an expensive remote sensor that accesses
+richer information.
+Measurement: resource-adjusted performance and infrastructure persistence.
+Boundary: simulated resource cost is a model choice, not a measurement of actual computer
+electricity consumption.
+
+19. Branch biographies, not just random seeds
+Mechanism: fork one complete checkpoint into several futures, then later expose all
+descendants to identical probes.
+Why it is different: divergent histories become experimentally attributable.
+First test: one childhood rewards delayed construction; another favors immediate
+consumption.
+<PARSED TEXT FOR PAGE: 17 / 44>
+Measurement: which differences remain after internal reserves, current surroundings, and
+temporary satiation are equalized?
+Boundary: compare retained learning, not merely different current states.
+
+20. Cultivate dynamics it cannot command
+Mechanism: the organism can feed, shelter, or redirect an autonomous pattern but cannot
+directly set its detailed state.
+Why it is different: successful control means maintaining a productive relationship with
+something partly uncontrollable.
+First test: cultivate a moving excitable pattern whose exact trajectory is not directly
+addressable.
+Artistic result: the organism becomes a gardener of alien activity rather than its omnipotent
+animator.
+Boundary: unpredictability alone is not autonomy. The cultivated process needs persistent
+state and its own specified dynamics.
+
+
+The five experiments to build next
+These recommendations use your supplied description of a 6,203-neuron escape-related circuit
+with artificial learning and taste components, not an inspected private codebase. [9]
+Do not begin with a full-brain replacement. First determine whether the current circuit
+contributes useful distinctions, whether actions have persistent consequences, and whether
+experience produces retained behavioral change.
+The five experiments below form a progression:
+
+  Order     Experiment               Main question                      Reuse                  Principal new work
+
+                              Does the circuit provide         Current neural
+          Bilateral                                                                       Sensor calibration, small
+  1                           useful spatial information for   simulation, looming
+          Contour Grazer                                                                  decoder, matched controls
+                              an alien task?                   channels, contour world
+
+          Conserved           Can neural-influenced                                       Inventories,
+                                                               Pigment and sparkle
+  2       Glitter             choices sustain a material                                  ingestion/extrusion mechanics,
+                                                               rendering
+          Metabolism          cycle?                                                      conservation tests
+
+                              Can low-dimensional neural
+                                                               Neural features and        Reduced-order arms, local
+  3       Eight-Arm Stirrer   activity coordinate an
+                                                               material world             reflexes, synergy decoder
+                              unfamiliar body?
+
+                                                                                          Delayed task, memory
+          Pigment             Can the organism construct
+  4                                                            Persistent pigment field   interventions, hidden-state
+          Notebook            and use external memory?
+                                                                                          audit
+<PARSED TEXT FOR PAGE: 18 / 44>
+  Order       Experiment           Main question                  Reuse              Principal new work
+
+                            Can identical starting
+            Twin Taste                                   Existing preference   Controlled histories, frozen
+  5                         organisms develop retained
+            Histories                                    machinery             probes, checkpoint swaps
+                            behavioral differences?
+
+All computational sizes below are starting design choices, not measured performance
+guarantees.
+
+1. Bilateral Contour Grazer
+
+The question
+Can your existing circuit preserve enough information about which side of the organism
+encountered a feature to support useful material behavior?
+This is deliberately narrower than asking whether it understands contours.
+A positive result would justify richer invented senses. A negative result would tell you to fix or
+replace the representation before adding more reward machinery.
+
+The world
+Use a small two-dimensional field containing:
+      One moving organism.
+      Two material patches.
+      A consumable pigment species.
+      Persistent contour boundaries.
+      A bounded movement cost.
+Start with an unambiguous task:
+          Reach and graze one available patch without repeatedly colliding with its boundary.
+Do not initially reward beauty, novelty, symmetry, and survival simultaneously.
+
+Inputs
+Sample local measurements at body-relative left and right probes:
+      Distance to the nearest relevant boundary.
+      Change in that distance.
+      Available pigment concentration.
+      Optional local curvature, introduced only after the basic test works.
+For the first phase, use only one measured quantity.
+A proposed encoder is:
+<PARSED TEXT FOR PAGE: 19 / 44>
+Here       and       are normalized local features, and is an explicitly engineered gain.
+If those currents enter your looming channels, label the interface:
+          Synthetic contour-to-looming-channel substitution.
+Not:
+          The fly’s looming neurons perceive contour beauty.
+
+Neural measurements
+Record:
+       The available left/right downstream populations separately.
+       Escape-related activity, including DNp01 if confirmed present.
+       Several population-rate windows.
+       Brief temporal traces, if included.
+Do not assume DNp01 itself supplies a useful left/right steering signal.
+Before training anything, present mirrored inputs and ask:
+          Can a simple offline decoder distinguish left from right using only the neural
+          measurements?
+Also test weak, medium, and strong inputs. A circuit that distinguishes sides only at one
+carefully selected gain is less robust than one with a useful operating range.
+
+Decoder
+Begin with a small linear or logistic readout.
+Proposed actions:
+       Turn left.
+       Turn right.
+       Advance.
+       Pause or graze.
+Initially train against a simple teacher policy derived from the task geometry. This tests
+whether the neural representation contains usable information without introducing
+reinforcement-learning instability.
+Then, if useful, replace imitation with reward-based readout adaptation.
+Keep the recurrent biological graph fixed throughout this experiment.
+<PARSED TEXT FOR PAGE: 20 / 44>
+Controls
+Run the same task with:
+  1. Biological neural features.
+  2. A separately trained decoder on a matched rewired circuit.
+  3. A decoder on raw left/right sensor values.
+  4. Time-shuffled neural features.
+  5. Mean neural activity.
+  6. A simple scripted policy.
+Equalize the action repertoire and evaluation scenes.
+The raw-sensor baseline is especially important. If it solves the task perfectly with almost no
+computation, the neural circuit may be an interesting substrate without being necessary.
+
+Measurements
+    Left/right classification accuracy on held-out stimuli.
+    Pigment acquired per unit action cost.
+    Collision rate.
+    Delay from stimulus to useful response.
+    Performance under mirrored arenas.
+    Performance after sensor gain changes.
+    Performance after removing temporal traces.
+
+Expected failures
+    Both sensory sides produce nearly identical downstream activity.
+    Saturation erases directional information.
+    One active population dominates the decoder.
+    A constant turning bias exploits the training arena.
+    Decoder memory, rather than neural dynamics, carries the useful history.
+    Engineered movement rules solve the task without meaningful neural input.
+
+First completion criterion
+A frozen readout should outperform its constant-output and time-shuffled conditions on held-
+out mirrored scenes.
+That would establish useful neural information for this interface—not biological contour
+perception, and not yet superiority over conventional controllers.
+<PARSED TEXT FOR PAGE: 21 / 44>
+2. Conserved Glitter Metabolism
+
+The question
+Can an organism do more than trigger effects?
+Specifically:
+       Can its actions move material through a persistent cycle in which consumption, storage,
+       conversion, and release change what it can do next?
+
+The world
+Begin with one pigment species and one glitter product.
+Track material in four locations:
+
+[
+M_{\mathrm{total}}
+M_{\mathrm{world\ pigment}}
++
+M_{\mathrm{internal\ pigment}}
++
+M_{\mathrm{precursor}}
++
+M_{\mathrm{glitter}}.
+]
+For the first prototype, define each conversion in common abstract material units so
+accounting is unambiguous.
+This is an artificial chemistry, not a claim about real pigment reactions.
+
+Internal state
+Use a small state vector:
+
+  stored pigment
+  crystal precursor
+  energy
+  damage
+  ingestion cooldown
+  extrusion cooldown
+
+
+Keep energy accounting separate from material accounting unless you explicitly model a
+conversion between them.
+Do not quietly create pigment whenever energy is low.
+<PARSED TEXT FOR PAGE: 22 / 44>
+Actions
+    Move.
+    Open ingestion gate.
+    Allocate stored pigment to precursor.
+    Extrude precursor as glitter.
+    Wait.
+The neural readout should control gates or allocation rates.
+The body and world should handle:
+    Material transfer.
+    Capacity limits.
+    Conversion rates.
+    Particle formation.
+    Particle collision and settling.
+    Local depletion.
+
+Inputs
+Give the controller only observations available to the organism:
+    Local pigment concentration.
+    Contact with consumable material.
+    Internal storage.
+    Energy.
+    Recent collision or damage.
+    Optional local glitter density.
+Initially, keep the artificial internal-state channels clearly separate from connectome-mediated
+sensory features.
+Then compare:
+    Neural features plus internal state.
+    Internal state plus raw sensors.
+    Internal state alone.
+This exposes whether the biological circuit adds useful environmental information.
+<PARSED TEXT FOR PAGE: 23 / 44>
+Decoder
+Use a small readout with explicit resource constraints.
+For example:
+
+  proposed extrusion
+      ↓
+  precursor availability check
+      ↓
+  bounded material transfer
+      ↓
+  world update
+
+
+The availability check is body physics. It should not decide where or when to extrude.
+
+Reward
+Start with viability and competence:
+    Acquire material.
+    Avoid exhausting energy.
+    Avoid damage.
+    Complete a material-transfer task.
+    Penalize wasteful repeated actions.
+Only then add an aesthetic prior.
+For example, reward glitter placed along a persistent boundary—not total glitter brightness—so
+a saturated screen is not automatically optimal.
+
+Controls
+    An always-eat controller.
+    An always-extrude controller.
+    A simple resource-threshold controller.
+    Neural-output replay from an unrelated episode.
+    A decoder trained on matched non-neural features.
+    A world where glitter is decorative and has no consequences.
+That final comparison asks whether the loop matters beyond appearance.
+<PARSED TEXT FOR PAGE: 24 / 44>
+Measurements
+    Material-conservation error.
+    Time spent viable.
+    Material transported between locations.
+    Conversion efficiency.
+    Repeated resource-cycle completion.
+    Action diversity.
+    Performance under resource relocation.
+    Whether deposited glitter later obstructs, shelters, or redirects the organism.
+
+Expected failures
+    The organism covers its sensors with its own product.
+    It hoards everything and never creates anything.
+    It extrudes until immobile.
+    Reward can be collected without completing the material cycle.
+    The world spontaneously replenishes enough material to make decisions irrelevant.
+    Apparent learning is only a change in random exploration.
+
+First completion criterion
+The organism repeatedly completes:
+       Find → ingest → store → convert → release → encounter consequences.
+All material transfers should balance, and a frozen policy should operate in unfamiliar
+resource layouts.
+That alone would make the glitter a functional part of a life cycle rather than visual confetti.
+
+
+3. Eight-Arm Stirrer
+
+The question
+Can the current neural substrate contribute useful coordination to an eight-arm body when the
+body supplies local mechanics?
+Do not begin with locomotion, dexterous grasping, three-dimensional self-collision, and an
+accurate octopus muscle model.
+Begin with stirring.
+<PARSED TEXT FOR PAGE: 25 / 44>
+The body
+Use a fixed or slowly moving central hub with eight planar elastic arms.
+A starting configuration could use:
+    Eight arms.
+    A small chain of nodes per arm.
+    Stretch and bend limits.
+    Damping.
+    Contact with pigment or movable particles.
+    Optional tip adhesion.
+These are prototype choices, not an anatomical octopus model.
+Each arm receives local sensory information:
+    Contact.
+    Curvature.
+    Strain.
+    Tip position relative to the hub.
+
+Local controllers
+Each arm can implement:
+    Passive return toward rest.
+    Contact-limited contraction.
+    A withdrawal reflex.
+    Optional oscillation.
+    Maximum-force and curvature limits.
+Every such mechanism must be logged as engineered.
+The central neural system does not deserve credit for an arm retracting if a local hard-coded
+reflex caused it.
+
+Central neural interface
+First try a synergy interface:
+    Global extension.
+    Global contraction.
+    Left/right or angular bias.
+    Stirring intensity.
+<PARSED TEXT FOR PAGE: 26 / 44>
+    Release/adhesion modulation.
+A proposed arm command is:
+
+[
+u_i(t)
+b_i(t)
++
+\sum_{j=1}^{k} B_{ij}r_j(t),
+]
+where:
+       are measured neural features.
+       is an engineered or learned mapping.
+       contains explicitly identified local behavior.
+This gives many arms coordinated influence from relatively few channels.
+
+Independent arm control
+If you want genuine independent selection, add an addressing protocol:
+  1. Select an arm.
+  2. Issue a command.
+  3. Hold that arm’s local state.
+  4. Select another arm.
+That adds engineered memory and sequential control.
+It is different from eight arms simultaneously receiving eight independent biological motor
+commands.
+Both are valid architectures. They answer different questions.
+
+The task
+Place two separated pigment reservoirs around the body.
+Ask the organism to:
+    Mix them.
+    Keep them separated.
+    Move one into a protected region.
+    Clear a channel through particles.
+Start with only one of these objectives.
+<PARSED TEXT FOR PAGE: 27 / 44>
+Learning
+Train the small central readout, not the whole graph.
+An initial task might require choosing which arm group to activate based on local material
+asymmetry.
+Only after this works should you introduce adaptive arm selection or morphology changes.
+
+Controls
+    Passive arms.
+    Local reflexes alone.
+    An oscillator alone.
+    Neural modulation.
+    Random modulation matched in amplitude and bandwidth.
+    Matched rewired-circuit features.
+    The same decoder with its neural input replaced by a constant.
+
+Measurements
+    Material moved toward the target.
+    Mixing or separation achieved.
+    Work-like action cost.
+    Arm-use diversity.
+    Contact stability.
+    Sensitivity to removing an arm.
+    Performance when two arm identities are exchanged.
+    Change in performance when local reflexes are disabled.
+
+Expected failures
+    Every arm moves together.
+    The local oscillator does all useful stirring.
+    Neural activity only changes animation intensity.
+    A single arm dominates because of geometry.
+    The learner exploits solver instability.
+    The body requires so much stabilization that the biological input becomes irrelevant.
+<PARSED TEXT FOR PAGE: 28 / 44>
+First completion criterion
+Neural modulation should improve a task-relevant outcome over local control alone, and that
+improvement should survive a changed material layout.
+The artistic reward is immediate: elastic arms can stir contour bands, drag pigment into strata,
+and create persistent channels.
+The scientific reward is sharper: you learn whether your circuit works as a coordinator of alien
+mechanics.
+
+
+4. Pigment Notebook
+
+The question
+Can an organism construct an environmental trace and later use it as memory?
+This is more revealing than simply adding a larger internal memory array.
+
+The world
+Build a small arena with:
+    A cue location.
+    A delay or intervening journey.
+
+    A later choice between two gates.
+    A pigment the organism can deposit and sense.
+The cue tells it which gate will later be useful.
+The cue disappears before the choice.
+
+Two versions
+Version A: communication through time
+The organism leaves a mark near the eventual decision point while the cue is available, then
+later encounters it.
+Version B: constructed routing
+The organism changes a channel or barrier so that, later, local flow provides the correct signal.
+Version B is especially interesting because the memory is not merely a colored token. It is a
+changed causal arrangement.
+<PARSED TEXT FOR PAGE: 29 / 44>
+Neural interface
+Use verified sensory inputs for local mark detection through an explicitly artificial encoder.
+The readout chooses:
+    Whether to mark.
+    Where to mark.
+    Which mark type, if more than one exists.
+    Which gate to approach.
+Begin with a frozen neural graph.
+
+The hidden-memory audit
+This experiment fails scientifically if an unnoticed variable already stores the answer.
+Audit:
+    Decoder recurrent state.
+    Feature smoothing.
+    Previous action.
+    Position history.
+    Random-number state correlations.
+    Episode metadata.
+    Object identifiers.
+    Hidden provenance tags.
+    Training-state updates during evaluation.
+The organism should not receive correctGate through an accidental side channel.
+
+Decisive interventions
+Use a small factorial experiment:
+
+            Neural/controller transient   Environmental trace                     Purpose
+            Preserved                     Preserved             Full system
+
+            Reset                         Preserved             Can the environment carry the information?
+
+            Preserved                     Erased                Can internal state carry it instead?
+
+            Reset                         Erased                Neither proposed memory source remains
+
+Also:
+    Swap the marks between gates.
+    Replace them with appearance-matched decoys.
+<PARSED TEXT FOR PAGE: 30 / 44>
+    Preserve marks visually but disable their sensor effect.
+    Preserve sensor effects while rendering them invisibly to the human viewer.
+Those interventions separate appearance, sensing, and information storage.
+
+Measurements
+    Correct later choices.
+    Performance as delay increases.
+    Dependence on trace location.
+    Dependence on mark identity.
+    Recovery after transient-state reset.
+    Reversal when marks are swapped.
+    Construction cost.
+
+Expected failures
+    It follows a fixed route that happens to be correct.
+    The mark never affects the sensor.
+    The correct answer remains in a hidden variable.
+    It learns “always mark left.”
+    A visual trace is present but unused.
+    The neural circuit contributes nothing beyond a threshold relay.
+
+First completion criterion
+After transient neural/controller state is reset, an intact trace should preserve useful
+performance; erasing or swapping it should predictably change the later choice.
+This would establish external-memory use by the hybrid system.
+It would not establish that the biological graph invented memory or possesses a human-like
+concept of writing.
+
+
+5. Twin Taste Histories
+
+The question
+Can two identical starting organisms develop retained, experience-dependent behavioral
+differences—rather than merely displaying different current hunger levels or random
+coefficients?
+This is the experiment closest to your wish that an organism begin with your tastes and
+eventually become something you did not completely prescribe.
+<PARSED TEXT FOR PAGE: 31 / 44>
+Initial conditions
+Create two copies with identical:
+    Connectome.
+    Neural parameters.
+    Encoder.
+    Decoder initialization.
+    Drive equations.
+    Initial aesthetic prior.
+    Internal reserves.
+    Learning rule.
+Save a complete initial checkpoint.
+Then expose them to different developmental histories.
+
+The worlds
+Offer two intervention families:
+    Structured sparkle/crystal production.
+    Branching or filament construction.
+Both should have:
+    Several possible sites.
+    Comparable action costs.
+    Persistent consequences.
+    Opportunities for improvement.
+    More than one successful strategy.
+Do not make sparkle trivially cheap and branching prohibitively expensive unless cost is the
+variable under study.
+
+Developmental histories
+Example:
+Twin A: early environments make branching useful for accessing resources and shelter.
+Twin B: early environments make carefully placed sparkle structures useful for guiding flow or
+exposing resources.
+The learning rule and viability objective remain the same.
+The environments differ in what works.
+<PARSED TEXT FOR PAGE: 32 / 44>
+Learning architecture
+Keep three quantities separate:
+  1. Current internal state: reserves, damage, satiation.
+  2. Learned action value or competence: what the organism expects particular actions to
+     accomplish.
+  3. Longer-term preference parameters: only if you deliberately include a mechanism that
+     changes them.
+A learned tendency to choose branching can arise from item 2 without item 3 changing at all.
+That is still meaningful adaptation. It just should not be mislabeled as an entirely new intrinsic
+value.
+
+A practical first learner
+Use your neural measurements as part of a small action-value or policy readout.
+Maintain an experience archive containing:
+
+  observed context
+  neural features
+  selected intervention
+  material cost
+  immediate outcome
+  delayed outcome
+  learned value update
+
+
+Begin with a fixed feature vocabulary.
+Learned perceptual embeddings and self-generated goals can come later, once the simpler
+experiment is interpretable.
+
+Neutral probes
+After development:
+    Freeze learning.
+    Equalize reserves.
+    Reset temporary satiation.
+    Use the same arena.
+    Offer matched opportunities.
+    Randomize left/right placement.
+    Change superficial colors while preserving mechanics.
+    Change mechanics while preserving appearance.
+Ask which preferences persist.
+<PARSED TEXT FOR PAGE: 33 / 44>
+This separates:
+    Color association.
+    Motor habit.
+    Resource strategy.
+    Temporary internal state.
+    Retained learned value.
+    Any deliberately adaptive aesthetic parameters.
+
+State swaps
+Now perform the interesting intervention:
+    Swap learned decoders.
+    Swap only preference parameters.
+    Swap only internal reserves.
+    Swap neural transient states.
+    Swap environmental histories while leaving controllers untouched.
+Which swap carries the behavioral difference?
+That is where the organism’s individuality is implemented.
+
+Controls
+    Frozen learner.
+    Shuffled reward.
+    Random exploration with no learning.
+    Identical histories.
+    Different histories with identical total resource exposure.
+    Raw-sensor controller with an equal learning budget.
+    Matched rewired neural substrate.
+Use several independent history pairs; one dramatic pair is an artwork, not yet a robust result.
+
+Measurements
+    Choice proportions under neutral probes.
+    Retention after restart.
+    Transfer to new layouts.
+    Sensitivity to cost changes.
+    Reversal under changed contingencies.
+    Within-agent stability.
+<PARSED TEXT FOR PAGE: 34 / 44>
+    Between-agent divergence.
+    Which saved-state components explain the divergence.
+
+Expected failures
+    “Different tastes” disappear after reserves are equalized.
+    Random drift produces differences unrelated to experience.
+    The learner memorizes location.
+    One intervention has a hidden cost advantage.
+    The aesthetic feature detector rewards a rendering artifact.
+    The connectome is ignored by the learned policy.
+    A claimed new preference is simply the original reward function operating correctly in a
+    new context.
+
+First completion criterion
+The twins should develop reproducible differences that:
+    Depend on their histories.
+    Persist with learning frozen.
+    Survive equalized temporary state.
+    Generalize beyond the training scene.
+    Move with an identifiable learned-state component during swaps.
+That is the point where “it has its own taste” becomes more than a poetic description: not
+proof of subjective desire, but a precise, testable claim about an organism whose experience
+changed what it chooses to make.
+                                                          ⁂
+
+
+  1. https://eon.systems/updates/embodied-brain-emulation
+  2. https://research-information.bris.ac.uk/ws/files/76657528/srep10487.pdf
+  3. https://dl.acm.org/doi/pdf/10.5555/3586589.3586741
+  4. https://pmc.ncbi.nlm.nih.gov/articles/PMC12577699/
+  5. https://arxiv.org/html/2505.15998v4
+  6. https://github.com/jbmouret/map_elites_tutorial
+  7. https://pmc.ncbi.nlm.nih.gov/articles/PMC4270100/
+  8. https://uhra.herts.ac.uk/id/eprint/13814/1/ECAL_Published.pdf
+  9. pasted_text_1793134909.txt
+ 10. https://github.com/n-shevko/cellular_automata/blob/main/README.md
+ 11. https://github.com/brian-team/brian2/pull/1901
+ 12. https://github.com/brian-team/brian2
+<PARSED TEXT FOR PAGE: 35 / 44>
+13. https://github.com/brian-team/brian2/blob/master/README.md
+14. https://github.com/brian-team/brian2/blob/master/docker/Dockerfile
+15. https://github.com/brian-team/brian2/blob/master/codemeta.json
+16. https://github.com/brian-team/brian2/blob/master/brian2/codegen/generators/cpp_generator.py
+17. https://github.com/brian-team/brian2/issues/180
+18. https://github.com/brian-team/brian2/issues/990
+19. https://ar5iv.labs.arxiv.org/html/2005.03742
+20. https://arxiv.org/abs/1812.05433
+21. https://github.com/distillpub/post--growing-ca
+22. https://arxiv.org/pdf/2203.14390.pdf
+23. https://ar5iv.labs.arxiv.org/html/2406.04235
+24. https://arxiv.org/vc/arxiv/papers/1812/1812.05433v1.pdf
+25. https://ar5iv.labs.arxiv.org/html/2506.08569
+26. https://ar5iv.labs.arxiv.org/html/2205.10463
+27. https://arxiv.org/pdf/2605.30708.pdf
+28. https://ar5iv.labs.arxiv.org/html/2304.05639
+29. https://arxiv.org/html/2604.08756
+30. https://ar5iv.labs.arxiv.org/html/1908.06663
+31. https://ar5iv.labs.arxiv.org/html/2407.21086
+32. https://github.com/dwoiwode/awesome-neural-cellular-automata/blob/main/papers.yaml
+33. https://arxiv.org/pdf/2510.03592.pdf
+34. https://arxiv.org/html/2512.10166v1
+35. https://arxiv.org/html/2604.03997v1
+36. https://pmc.ncbi.nlm.nih.gov/articles/PMC11127047/
+37. https://www.nature.com/articles/s42254-022-00445-3
+38. https://par.nsf.gov/servlets/purl/10313823
+39. https://www.nature.com/articles/ncomms4013
+40. https://www.nature.com/articles/s41467-025-56236-8
+41. https://www.nature.com/articles/s41598-017-05612-6
+42. https://www.nature.com/articles/s41567-023-02336-5
+43. https://distill.pub/2020/growing-ca/
+44. https://www.nature.com/articles/s41467-018-05666-8
+45. https://www.nature.com/articles/s41467-026-71853-7
+46. https://www.pnas.org/doi/10.1073/pnas.2122494119
+47. https://ar5iv.labs.arxiv.org/html/0910.0396
+48. https://www.nature.com/articles/s42254-022-00469-9
+49. https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.4.023086
+<PARSED TEXT FOR PAGE: 36 / 44>
+50. https://www.science.org/doi/10.1126/sciadv.abg9060
+51. https://www.pnas.org/doi/10.1073/pnas.2400933121
+52. https://arxiv.org/html/2003.04389
+53. https://arxiv.org/html/2610.23470v1
+54. https://dl.acm.org/doi/10.1145/3712255.3734310
+55. https://arxiv.org/html/2311.05562
+56. https://distill.pub/2020/growing-ca
+57. https://arxiv.org/abs/1504.04909
+58. https://distill.pub/2020/selforg/mnist
+59. https://arxiv.org/html/2105.09992v2
+60. https://arxiv.org/html/2505.06617v2
+61. https://distill.pub/2020/selforg
+62. https://arxiv.org/html/2405.04308v1
+63. https://arxiv.org/html/2107.04964v1
+64. https://pmc.ncbi.nlm.nih.gov/articles/PMC10770251/
+65. https://github.com/thatperplextion/digital-morphogenesis
+66. https://d-nb.info/1301550124/34
+67. https://philsci-archive.pitt.edu/20074/1/Preprint - Externalized memory in slime mould .pdf
+68. https://pmc.ncbi.nlm.nih.gov/articles/PMC3491460/
+69. https://www.wired.com/2012/10/slime-mold-memory/
+70. https://phys.org/news/2012-10-slime-molds-spatial-memory.pdf
+71. https://www.nature.com/articles/nature.2012.11811.pdf
+72. https://www.pnas.org/doi/10.1073/pnas.2105928118
+73. https://www.sciencenews.org/article/pulsing-blob-makes-memories-sans-brain
+74. https://www.pnas.org/doi/abs/10.1073/pnas.2007815118
+75. https://github.com/flowersteam/automated_discovery_of_lenia_patterns
+76. https://distill.pub/rss.xml
+77. https://mayalenetcheverry.com/
+78. https://www.pnas.org/doi/pdf/10.1073/pnas.1215037109
+79. https://pubmed.ncbi.nlm.nih.gov/23045640/
+80. https://researchers.mq.edu.au/en/publications/slime-mold-uses-an-externalized-spatial-memory-to-navigate-in-com/
+81. https://research-information.bris.ac.uk/en/publications/exploiting-short-term-memory-in-soft-body-dynamics-as-a-co
+    mputati/persons/
+82. https://pubmed.ncbi.nlm.nih.gov/25185579/
+83. https://pmc.ncbi.nlm.nih.gov/articles/PMC4444959/
+84. https://www.t.u-tokyo.ac.jp/en/topics/tp2026-09-15-091
+85. https://scholar.google.com/citations?user=4KX2PQMAAAAJ&hl=en
+<PARSED TEXT FOR PAGE: 37 / 44>
+ 86. https://arxiv.org/list/physics/2014-06?skip=400&show=100
+ 87. https://arxiv.org/html/2606.09902
+ 88. https://www.jstage.jst.go.jp/article/jjsai/33/5/33_570/_pdf/-char/ja
+ 89. http://arxiv.org/search/physics?searchtype=author&query=Nakajima,+K
+ 90. https://github.com/anmoa/poet
+ 91. https://github.com/natnew/awesome-recursive-self-improvement
+ 92. https://github.com/redstone-solution-ou/evolutionary-search-wiki/blob/main/wiki/papers/mcc.md
+ 93. https://arxiv.org/abs/1406.4929
+ 94. https://arxiv.org/abs/1406.1767
+ 95. https://github.com/Vgueca/A-POET
+ 96. https://research-information.bris.ac.uk/en/publications/exploiting-short-term-memory-in-soft-body-dynamics-as-a-co
+     mputati/fingerprints/?sortBy=alphabetically
+ 97. https://arxiv.org/html/2402.10236v1
+ 98. https://github.com/LetteraUnica/neural_cellular_automata/blob/main/extra.html
+ 99. https://github.com/flowersteam/sensorimotor-lenia-search
+100. https://explainertools.com/explainers/distill-growing-ca/
+101. https://www.science.org/doi/10.1126/sciadv.adp0834
+102. https://mlanthology.org/distill/2020/mordvintsev2020distill-growing/
+103. https://huggingface.co/buckets/nielsr/arxiv-chandra-ocr-full-markdown-20260406/tree/1504/1504.04909.md
+104. https://github.com/n-shevko/cellular_automata
+105. https://www.neuralca.org/learn/research
+106. https://www.reddit.com/r/MachineLearning/comments/monay0/p_growing_neural_cellular_automata_implementati
+     on/
+107. https://arxiv.org/html/2003.08536v2
+108. https://github.com/GazzolaLab/PyElastica/blob/0688eb4f0d6091288a38367fcea4ac0c57fb0f96/README.md
+109. https://distill.pub/selforg/2021/adversarial/
+110. https://github.com/GazzolaLab/PyElastica/
+111. https://github.com/orgs/uber-research/repositories
+112. https://github.com/riiswa/neural-cellular-automata
+113. https://github.com/M-OF/Neural-Cellula-Automata
+114. https://zenodo.org/records/20799824
+115. https://pepy.tech/projects/pyelastica
+116. https://github.com/uber-research/poet/blob/master/LICENSE
+117. https://github.com/uber-research/poet
+118. https://github.com/uber/uber-poet
+119. https://github.com/GazzolaLab/PyElastica-Interactive
+120. https://www.alphaxiv.org/zh/abs/2205.01681
+<PARSED TEXT FOR PAGE: 38 / 44>
+121. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11446845/figure/Fig1/
+122. https://arxiv.org/html/2606.19476v1
+123. https://arxiv.org/html/2001.01982
+124. https://arxiv.org/html/2203.02298v2
+125. https://arxiv.org/html/2211.10282
+126. https://arxiv.org/html/2102.04399
+127. https://arxiv.org/abs/2211.10515
+128. https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/
+129. https://arxiv.org/html/2605.05856
+130. https://arxiv.org/pdf/2509.25438.pdf
+131. https://distill.pub/2020/selforg/mnist/
+132. https://github.com/RaphaelSR/fly-brain-bench/releases
+133. https://github.com/RaphaelSR/fly-brain-bench/activity
+134. https://github.com/RaphaelSR/fly-brain-bench/blob/main/web/defend/RESULTS.md
+135. https://github.com/RaphaelSR/fly-brain-bench/blob/main/web/play/brain-data/README.md
+136. https://arxiv.org/html/2402.07911v1
+137. https://arxiv.org/html/2012.04375v1
+138. https://arxiv.org/html/2303.12803v2
+139. https://arxiv.org/pdf/1805.11555.pdf
+140. https://arxiv.org/pdf/2210.13156.pdf
+141. https://arxiv.org/pdf/2601.17808.pdf
+142. https://distill.pub/archive-info/
+143. https://arxiv.org/pdf/1902.00703v4.pdf
+144. http://arxiv.org/pdf/2104.08774.pdf
+145. https://arxiv.org/pdf/2305.01264v1.pdf
+146. https://arxiv.org/audio/1504.04909
+147. https://arxiv.org/html/1908.08020
+148. https://arxiv.org/html/2504.15047v2
+149. https://arxiv.org/html/2507.21496v1
+150. https://onlinelibrary.wiley.com/doi/abs/10.1002/aisy.202100166
+151. https://indico.yukawa.kyoto-u.ac.jp/event/33/contributions/153/attachments/72/101/20240702_Kohei_Nakajima.pdf
+152. https://link.springer.com/content/pdf/10.1007/978-4-431-56469-0_18.pdf
+153. https://distill.pub/2020/selforg/
+154. https://research.google/pubs/growing-neural-cellular-automata/
+155. https://www.alphaxiv.org/abs/1702.03713v2
+156. https://arxiv.org/html/1902.00703v4
+157. https://arxiv.org/pdf/2601.17808v1.pdf
+<PARSED TEXT FOR PAGE: 39 / 44>
+158. https://arxiv.org/html/2203.15172v1
+159. https://www.alphaxiv.org/abs/2605.30656
+160. https://www.alphaxiv.org/abs/1310.1863v2
+161. https://www.alphaxiv.org/abs/2511.04177
+162. https://www.alphaxiv.org/abs/2602.24100
+163. https://dl.acm.org/doi/pdf/10.5555/3524938.3525860
+164. https://arxiv.org/html/2603.10198v1
+165. https://www.alphaxiv.org/abs/2307.02728
+166. https://www.alphaxiv.org/abs/2510.13709
+167. https://www.alphaxiv.org/abs/2507.08210
+168. https://www.alphaxiv.org/abs/2605.06346
+169. https://www.alphaxiv.org/abs/2604.23278
+170. https://uhra.herts.ac.uk/id/eprint/282/
+171. https://uhra.herts.ac.uk/view/publication/Procs_of_the_2005_IEEE_Congress_on_Evolutionary_Computation_1_pp=2
+     E128_-.html
+172. https://yschoe.github.io/2007/09/04/Lab-Seminar-Empowerment-A-Universal-Agent-Centric-Measure-of-Control.html
+173. https://scispace.com/authors/daniel-polani-fuit0986tx
+174. https://uhra.herts.ac.uk/id/eprint/282/1/901241.pdf
+175. https://arxiv.org/pdf/1504.04909.pdf
+176. https://researchportal.vub.be/en/publications/stigmergy-as-a-universal-coordination-mechanism-i-definition-and-/
+177. https://www.wikidata.org/wiki/Q55970551
+178. https://link.springer.com/article/10.1007/s11229-025-05074-8?fromPaywallRec=false
+179. https://www.wikidata.org/wiki/Q55970555
+180. https://github.com/henribonamy/AI-Neural-Cellular-Automata
+181. https://link.springer.com/article/10.1140/epjst/e2016-60361-4?fromPaywallRec=true
+182. https://james.howison.name/pubs/bolici-howison-stigmergy-2016.pdf
+183. https://github.com/Aadityaza/3d-Growing-neural-cellular-automata
+184. https://github.com/PWhiddy/Growing-Neural-Cellular-Automata-Pytorch
+185. http://www.arxiv.org/abs/1504.04909
+186. https://arxiv.org/html/2305.01153v1
+187. https://gonzoml.substack.com/p/growing-neural-cellular-automata
+188. https://www.sciencedirect.com/science/article/abs/pii/S1389041715000327
+189. https://escholarship.org/uc/item/7qh79324
+190. https://pmc.ncbi.nlm.nih.gov/articles/PMC6104062/
+191. https://arxiv.org/html/2606.13721v1
+192. https://ora.ox.ac.uk/objects/uuid:91e54a04-c808-434f-9cef-4fe027de4f6b
+193. https://pages.jh.edu/dbeller3/resources/Papers/Mitchell--PRE--2024.pdf
+<PARSED TEXT FOR PAGE: 40 / 44>
+194. https://escholarship.org/content/qt7qh79324/qt7qh79324.pdf
+195. https://par.nsf.gov/biblio/10571354-design-rules-controlling-active-topological-defects
+196. https://www.nature.com/articles/s41563-026-02493-x
+197. https://ar5iv.labs.arxiv.org/html/2303.03832
+198. https://www.nature.com/articles/s41467-023-42753-x
+199. https://www.nature.com/articles/s41467-018-03130-1
+200. https://www.nature.com/articles/nature23455
+201. https://periodicals.karazin.ua/mia/article/view/27646
+202. https://www.alphaxiv.org/ja/abs/2505.22954
+203. https://arxiv.org/list/cs.NE/2019-01
+204. https://arxiv.org/html/2210.11442
+205. http://www.youtube.com/watch?v=1MnkDLHzzvQ
+206. https://arxiv.org/list/cs/2019-01?skip=450&show=50
+207. https://github.com/google-research/self-organising-systems/blob/HEAD/self_organising_systems/biomakerca/display
+     _utils.py
+208. https://ar5iv.labs.arxiv.org/html/2012.04375
+209. https://github.com/google-research/self-organising-systems/blob/HEAD/self_organising_systems/biomakerca/env_lo
+     gic.py
+210. https://github.com/mich1803/The-KISS
+211. https://arxiv.org/abs/1901.01753
+212. https://arxiv.org/html/2302.09334v3
+213. https://github.com/google-research/self-organising-systems
+214. https://arxiv.org/html/2103.01991
+215. https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2020.574372/full
+216. https://www.frontiersin.org/articles/10.3389/fncom.2023.1128694/full
+217. https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2022.881673/full
+218. https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2023.1128694/full
+219. https://arxiv.org/html/2202.03057v2
+220. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2021.684401/full
+221. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2018.00021/full
+222. https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2020.509354/full
+223. https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.539726/full
+224. https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2026.1917153/pdf
+225. https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2026.1917153/full
+226. https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2017.00095/full
+227. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2019.00020/full
+228. https://www.frontiersin.org/articles/10.3389/frai.2020.509354/full
+<PARSED TEXT FOR PAGE: 41 / 44>
+229. https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2018.00090/full
+230. https://arxiv.org/html/1703.09926v1
+231. https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2022.844773/full
+232. https://www.nature.com/subjects/sensorimotor-processing/nature
+233. https://ouci.dntb.gov.ua/en/works/lREpKaa4/
+234. https://huggingface.co/api/resolve-cache/datasets/ThomasHeisig/MHRN-Research-Data/2b5c5441502f529f112f32a6cf
+     224847e86efd1e/research%2Fpublications%2F2026-09-09_connectome-embodiment_supplement%2Freferences.bib?
+     download=true&etag="6c36fb0797e997eac90032051222c0d43c189f0f"
+235. https://www.nature.com/articles/srep10487
+236. https://www.nature.com/articles/s41563-023-01708-9
+237. https://www.nature.com/articles/s41598-023-48135-z
+238. https://www.nature.com/articles/s41928-024-01133-z
+239. https://www.nature.com/articles/s41467-024-44856-5
+240. https://www.jmlr.org/papers/volume23/21-0808/21-0808.pdf
+241. https://ar5iv.labs.arxiv.org/html/2104.08781
+242. https://www.nature.com/articles/s41598-021-98982-x
+243. https://www.nature.com/articles/s41598-025-93189-w
+244. https://www.nature.com/articles/s41598-025-30016-2
+245. https://www.nature.com/articles/s41586-024-07763-9
+246. https://ideas.repec.org/a/nat/nature/v634y2024i8032d10.1038_s41586-024-07763-9.html
+247. https://www.nature.com/articles/s41467-026-70866-6
+248. https://arxiv.org/html/2506.02990v1
+249. https://developmentalsystems.org/sensorimotor-lenia/
+250. https://github.com/agaier/mapElites
+251. https://www.cambridge.org/core/journals/knowledge-engineering-review/article/autonomous-unmanned-aerial-vehi
+     cle-uav-landing-in-windy-conditions-with-mapelites/F01287ACF63A2F25EE14E2FA66ED5DC2
+252. https://ar5iv.labs.arxiv.org/html/2007.05352
+253. https://www.alphaxiv.org/@marko-cvjetko
+254. https://scholar.google.com/citations?user=XLloODwAAAAJ&hl=en
+255. https://elifesciences.org/articles/04811/peer-reviews
+256. https://elifesciences.org/articles/04811/figures
+257. http://lens.elifesciences.org/04811/index.html
+258. https://archive.org/details/biorxiv-10.1101-005140
+259. https://elifesciences.org/profiles/kcnkjwwg
+260. https://www.linkedin.com/posts/ppkaron_we-are-living-in-a-world-that-is-changing-activity-7436660773944184832-6
+     Pw9
+261. https://eon.systems/updates/first-multi-behavior-brain-upload
+262. https://www.linkedin.com/posts/ftrain_no-we-havent-uploaded-a-fly-yet-activity-7441637680133636096-DJFv
+<PARSED TEXT FOR PAGE: 42 / 44>
+263. https://arxiv.org/html/2202.09301v2
+264. https://openreview.net/pdf/fd7e7aca577af1aa664fe7d85847979e35af6eff.pdf
+265. https://github.com/RaphaelSR/fly-brain-bench/blob/main/README.md
+266. https://arxiv.org/html/2502.02962v1
+267. https://uhra.herts.ac.uk/id/eprint/6495/1/Published_Version.pdf
+268. https://github.com/uninhibited-scholar/neural-cellular-automata
+269. https://www.janelia.org/publication/neuprint-an-open-access-tool-for-em-connectomics
+270. https://dl.acm.org/doi/abs/10.5555/3635637.3662888
+271. https://www.janelia.org/project-team/flyem/male-cns-connectome
+272. https://www.janelia.org/project-team/flyem/manc-connectome
+273. https://codex.flywire.ai/api/download
+274. https://ar5iv.labs.arxiv.org/html/2007.05674
+275. https://arxiv.org/html/2107.06997
+276. https://arxiv.org/html/2306.05138v2
+277. https://ar5iv.labs.arxiv.org/html/2101.07868
+278. https://arxiv.org/pdf/2106.08371v1.pdf
+279. https://ar5iv.labs.arxiv.org/html/1806.04718
+280. https://inria.hal.science/hal-00793610/en
+281. https://elifesciences.org/articles/53832
+282. https://inria.hal.science/hal-00793610/document
+283. https://elifesciences.org/articles/04580
+284. https://web.eecs.umich.edu/~stellayu/teach/2023action/slides/2007oudeyerIntrinsicMotivationSlides.pdf
+285. https://www.pyoudeyer.com/oudeyerGottliebLopesPBR16.pdf
+286. https://inria.hal.science/inria-00420125/document
+287. https://inria.hal.science/inria-00348479v1/document
+288. https://elifesciences.org/articles/04577
+289. https://www.pyoudeyer.com/curiosity-and-information-seeking-in-cognitive-development/
+290. http://www.pyoudeyer.com/oudeyer-kaplan-neurorobotics.pdf
+291. https://elifesciences.org/articles/16135/peer-reviews
+292. https://elifesciences.org/articles/16135
+293. https://pubmed.ncbi.nlm.nih.gov/27441388/
+294. https://web-archive.southampton.ac.uk/cogprints.org/5473/index.html
+295. https://github.com/connectome-neuprint/neuprint-python
+296. https://github.com/connectome-neuprint/neuprint-python/blob/master/setup.py
+297. https://github.com/connectome-neuprint/neuprint-python/blob/master/docs/source/quickstart.rst
+298. https://github.com/GazzolaLab/PyElastica/security
+299. https://github.com/NeLy-EPFL/flygym/pulls
+<PARSED TEXT FOR PAGE: 43 / 44>
+300. https://github.com/NeLy-EPFL/flygym/commit/87ee32afc9b7c3426eb84f89e1fdf33f7d29c74f
+301. https://github.com/GazzolaLab/PyElastica/releases?page=2
+302. https://github.com/GazzolaLab/PyElastica/blob/master/README.md
+303. https://github.com/GazzolaLab/PyElastica/blob/master/RELEASE.md
+304. https://github.com/NeLy-EPFL/flygym/blob/main/tutorials/1a_basic_model_composition.ipynb
+305. https://github.com/NeLy-EPFL/flygym/blob/main/LICENSE
+306. https://github.com/NeLy-EPFL/flygym/
+307. https://github.com/GazzolaLab/PyElastica
+308. https://github.com/NeLy-EPFL/flygym/releases
+309. https://github.com/NeLy-EPFL/flygym/blob/main/pyproject.toml
+310. https://arxiv.org/pdf/1406.4929v1.pdf
+311. https://arxiv.org/html/1808.04962v3
+312. https://arxiv.org/pdf/1406.1767.pdf
+313. https://arxiv.org/html/2609.17325
+314. https://arxiv.org/pdf/2507.08210v1.pdf
+315. https://arxiv.org/html/2610.24461
+316. https://ar5iv.labs.arxiv.org/html/1810.05533
+317. https://ar5iv.labs.arxiv.org/html/2210.11442
+318. https://arxiv.org/html/1901.01753v3
+319. https://arxiv.org/html/1912.02624v3
+320. https://arxiv.org/html/2604.21155v2
+321. https://arxiv.org/pdf/2609.02157.pdf
+322. https://arxiv.org/html/2412.13212v1
+323. https://arxiv.org/pdf/2507.21496.pdf
+324. https://arxiv.org/html/1806.06505v1
+325. https://github.com/nftechie/doomfly/tree/main/doom
+326. https://github.com/nftechie/doomfly/blob/main/doom/server.py
+327. https://github.com/nftechie/doomfly/blob/main/docs/public-release.md
+328. https://github.com/nftechie/doomfly/blob/main/docs/doom-live-training.md
+329. https://github.com/nftechie/doomfly/blob/main/docs/doom-learning-review.md
+330. https://github.com/RaphaelSR/fly-brain-bench
+331. https://github.com/nftechie/doomfly
+332. https://github.com/nftechie/doomfly/blob/main/README.md
+333. https://github.com/brian-team/brian2/blob/master/LICENSE
+334. https://github.com/brian-team/brian2/pulls
+335. https://github.com/brian-team/brian2/blob/88a2f6a4/brian2/codegen/generators/cpp_generator.py
+336. https://github.com/brian-team/brian2/issues/1030
+<PARSED TEXT FOR PAGE: 44 / 44>
+337. https://github.com/brian-team/brian2/issues/443
+338. https://github.com/brian-team/brian2/issues/1432
+339. https://github.com/brian-team/brian2/issues/1387
