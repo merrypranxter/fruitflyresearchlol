@@ -1,0 +1,40 @@
+{
+  "archive_version": "2026-10-27.1",
+  "repository": "merrypranxter/fruitflyresearchlol",
+  "status": "PDF binaries pending GitHub upload; full searchable extracted text committed",
+  "sources": [
+    {
+      "id": "R01",
+      "original_filename": "Connectome Artificial Life Exploration.pdf",
+      "pages": 26,
+      "bytes": 542615,
+      "sha256": "cc831f976695c6f91f00da0848486547f18b02d8ea88cfc36102042ba0d0eb79",
+      "text_path": "research/raw-text/R01-connectome-artificial-life-exploration.txt",
+      "github_pdf_status": "pending",
+      "notes": "report has a 100-concept invention atlas"
+    },
+    {
+      "id": "R02",
+      "original_filename": "The Unlimited Body_ Everything a Simulated Fly Brain Could Possibly Control.pdf",
+      "pages": 30,
+      "bytes": 210158,
+      "sha256": "cba24ff653691f1779f7a06cfed077ebc2782f8bba4c5a8f0705ba71e6d1c8cc",
+      "text_path": "research/raw-text/R02-everything-a-simulated-fly-brain-could-control.txt",
+      "github_pdf_status": "pending",
+      "notes": "includes CHROMAVORE and biological causality cautions"
+    },
+    {
+      "id": "R03",
+      "original_filename": "The Unlimited Body.pdf",
+      "pages": 48,
+      "bytes": 2237511,
+      "sha256": "8dd52e24cbe0d839a7e8e19ca68801e8824c2a071dc7bfd85f7db15903de87a6",
+      "text_path": "research/raw-text/R03-the-unlimited-body-perplexity.txt",
+      "github_pdf_status": "pending",
+      "notes": "research atlas cut off around entry 72"
+    }
+  ],
+  "total_pdf_pages": 104,
+  "extraction_disclaimer": "Text is searchable but extracted from PDF and may lose formatting/equations, images and layout; check original when possible",
+  "original_binary_available_in_chat_uploads": true
+}

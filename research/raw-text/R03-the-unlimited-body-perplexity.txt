@@ -1,0 +1,2719 @@
+# R03 — SEARCHABLE TEXT TRANSCRIPTION
+
+Original: The Unlimited Body.pdf (48 pages)
+Source: user-provided Perplexity research report, research cutoff October 27, 2026.
+NOTE: Source cuts off partway through a proposed 100-experiment atlas (around entry 72); do not fabricate missing entries. Automated PDF text extraction loses some table layout/equations/figures; verify against PDF. These are proposal/source claims, not independently fact-checked.
+
+---
+
+<PARSED TEXT FOR PAGE: 1 / 48>
+The Unlimited Body
+Executive scientific reality check
+A connectome-derived nervous system can be connected to almost any programmable
+environment—not just an insect body. What has not been demonstrated is that biological
+wiring alone supplies the perception, motor competence, learning rules, or motivations
+needed to inhabit every such environment. Existing systems already combine measured fly
+connectivity with engineered sensory encoders, neural simulations, action decoders, and
+virtual worlds; those interfaces contribute substantially to the resulting behavior. [1]
+The promising design space is therefore not “a complete fly mind operating an arbitrary
+puppet.” It is an experimentally inspectable hybrid organism: biological network structure,
+modeled neural dynamics, invented anatomy, autonomous material physics, and explicitly
+identified artificial learning. Eon’s technical account, community game controllers, and
+browser experiments all illustrate different versions of this separation. [2] [3] [1]
+This report distinguishes four evidence levels:
+
+           Label                                                        Meaning
+                           A published result or publicly documented implementation supports the specific claim. A
+  Demonstrated — D
+                           repository report is not equivalent to independent replication.
+
+  Engineering-feasible —   The proposed combination can be assembled from existing computational methods; its interesting
+  F                        behavior remains untested.
+
+                           A coherent experiment with substantial uncertainty about learning, coordination, stability, or
+  Research frontier — R
+                           biological validity.
+
+  Speculative — S          A meaningful hypothesis or architecture without a validated implementation.
+
+  Major additions
+                           Not supported by the stated biological model without adding important missing machinery.
+  required — X
+
+All architectures, prototype budgets, invention-atlas entries, and proposed experiments below
+are original design proposals unless explicitly identified as demonstrated. They are not claims
+that a fly naturally perceives mathematical beauty, wants glitter, understands games, or
+experiences the simulated world.
+<PARSED TEXT FOR PAGE: 2 / 48>
+Scope and access
+The research cutoff is October 27, 2026. Public project documentation is mutable; reported
+results below describe the configurations identified by their authors, not every subsequent
+version.
+The public GitHub endpoint for merrypranxter/neural_art_lab returned 404 during this
+review. That does not establish whether the repository is private, renamed, or unavailable;
+consequently, the roadmap uses your supplied architecture rather than pretending to inspect
+its code. Your description identifies a 6,203-neuron escape-related circuit, LIF dynamics,
+looming channels, measured downstream activity, a hybrid controller, and artificial taste-
+learning components. [4]
+No repository changes or deployments were performed.
+
+
+What the simulated brain contains
+
+Seven different things
+These categories should remain separate in both implementation and presentation:
+
+         System                   What it actually supplies                        What it does not establish
+                        Neuron identities, directed anatomical
+                                                                       Executable dynamics, physiological synaptic
+  Static connectome     connectivity, contact counts, and associated
+                                                                       strengths, behavior, or learning
+                        annotations
+
+  Dynamical neural      State variables and equations that propagate
+                                                                       That the equations reproduce the original animal
+  simulation            activity through a graph
+
+  Connectome-           A mapping from modeled neural activity to      Natural motor semantics or an independently
+  informed controller   external actions                               competent agent
+
+  Embodied              Actions change an environment that
+                                                                       Learning, biological fidelity, or consciousness
+  sensorimotor loop     generates subsequent inputs
+
+                        Some parameters change according to a          Useful learning; changing weights can simply
+  Plastic model
+                        specified rule                                 destabilize the system
+
+                        Experience produces a measurable, retained     That learning occurs inside biological synapses
+  Learning agent
+                        change in behavior or performance              rather than an artificial adapter
+
+                                                                       Recovery of a particular individual’s memories,
+  Whole-brain           An ambition or fidelity claim requiring
+                                                                       subjective experience, or complete behavioral
+  emulation claim       explicit tests
+                                                                       repertoire
+
+The distinction is practical: Eon describes a closed-loop embodiment with important
+engineered interfaces, while Fly Lab learns a musical readout without changing measured fly
+wiring, and DOOMFLY documents plasticity candidates that failed their learning-validation
+gates. [5] [1] [2]
+<PARSED TEXT FOR PAGE: 3 / 48>
+The anatomical resources
+         Resource          Anatomical scope             Verified scale or version information           What it contributes
+                        Adult female brain,
+      FlyWire / FAFB                                The 2024 publication reports 139,255              A brainwide anatomical
+                        including optic lobes;
+      adult female                                  neurons and approximately 50 million              substrate for circuit
+                        not an intact brain–VNC
+      brain                                         chemical synapses. [6] [7]                        extraction and modeling
+                        reconstruction
+
+                                                    Official history: v0.9 on October 3, 2025; v1.0
+                                                                                                      Same-specimen brain–
+                                                    on June 8, 2026; paper publication September
+                                                                                                      cord pathways, including
+                        Adult male brain and        3, 2026. The publication announcement
+      MaleCNS                                                                                         much richer access to
+                        ventral nerve cord          describes over 166,000 neurons and 125
+                                                                                                      downstream motor
+                                                    million synaptic connections. [8] Official
+                                                                                                      circuitry
+                                                    project
+
+                                                    The project identifies a June 2026 Nature
+                                                                                                      Distributed brain–body
+                        Adult female brain and      publication. Codex currently exposes a BANC
+                                                                                                      control architecture and
+      BANC              ventral nerve cord in one   v888 entry with 158,262 neurons, but that
+                                                                                                      local sensory–effector
+                        EM dataset                  interface count must not be treated as a
+                                                                                                      loops
+                                                    universally applicable paper total. [9] [10]
+
+                                                                                                      Cord-level anatomy
+                                                    A separate VNC resource, not a synonym for
+      MANC              Male ventral nerve cord                                                       useful for motor-system
+                                                    MaleCNS; Codex lists it separately. [10]
+                                                                                                      studies
+
+                                                                                                      Identifying candidate
+                                                                                                      sensory, interneuron,
+      Annotations       Metadata associated         Release-specific names and mappings must
+                                                                                                      descending, motor, and
+      and cell typing   with reconstructions        accompany the graph. [10] [11]
+                                                                                                      learning-related
+                                                                                                      populations
+
+Do not compare counts without comparing definitions. Anatomical contacts, presynaptic sites,
+postsynaptic partners, unique directed neuron-pair edges, retained neurons, and proofread
+neurons are different quantities; community packages also apply filtering and aggregation. [10]
+[1]
+
+For example, DOOMFLY reports 166,700 retained neurons and 25,582,938 directed connections,
+whereas the MaleCNS publication announcement reports about 125 million synaptic
+connections. Those figures describe different counting units, not necessarily contradictory
+reconstructions. [8] [2]
+
+BANC’s important conceptual result
+BANC is especially relevant to your octopus question because its analysis emphasizes
+distributed control: local sensory–effector loops are linked through ascending and descending
+pathways, while learning and navigation systems supervise those circuits. That is a stronger
+architectural analogy for alien bodies than “one central brain directly commands every
+muscle.” [12] [13]
+It does not establish that a fly’s cord can operate an octopus arm without adaptation. It suggests
+a useful engineering division: central selection and coordination, local sensorimotor
+competence, and feedback between them.
+<PARSED TEXT FOR PAGE: 4 / 48>
+What anatomy leaves unknown
+An anatomical graph does not directly specify the living system’s membrane potentials,
+channel states, receptor-dependent synaptic effects, hormonal condition, neuromodulatory
+concentrations, or moment-to-moment plasticity. Synapse count is informative, but it is not the
+same measurement as physiological synaptic strength. [1]
+A useful missing-information ledger is:
+
+                    Missing layer                                             Why it matters
+     Ion channels and compartmental dynamics   Determine excitability, integration, adaptation, and dendritic computation
+
+     Receptor identity and kinetics            A transmitter label alone does not fully specify the postsynaptic response
+
+     Short-term synaptic dynamics              Repeated activity can facilitate or depress transmission
+
+     Neuromodulation and peptides              Change gain, state, behavioral priorities, and plasticity
+
+     Long-term plasticity rules                Necessary for particular forms of learned adaptation
+
+     Developmental and individual history      A wiring snapshot is not a recovered lifetime
+
+     Sensory transduction                      Pixels are not automatically photoreceptor currents
+
+     Peripheral mechanics and physiology       Muscles, receptors, viscera, and body dynamics participate in control
+
+     Ongoing internal state                    Hunger, arousal, reproductive state, and recent experience alter responses
+
+These are central limitations acknowledged in Eon’s technical account, not minor
+implementation details.
+
+Does it act spontaneously?
+In the original Shiu model, baseline firing is zero: input is delivered to selected neurons, and
+downstream activity is then measured. Its successful sensorimotor predictions therefore do not
+imply an autonomously wandering, unstimulated animal. Shiu et al., 2024
+A different implementation can add background drive, stochastic activity, autonomous body
+oscillators, or engineered exploration. Fly64 explicitly adds steady background input and
+repeatable noise, so not every movement is caused by the screen. Fly64 implementation
+The right question is not merely “does it move by itself?” It is:
+        Which state variables generate the movement, and which of those variables are causally
+        influenced by measured biological connectivity?
+
+
+What has actually been demonstrated
+<PARSED TEXT FOR PAGE: 5 / 48>
+Scientific foundations
+        Project               Neural or body model          Demonstrated contribution       Important boundary
+                                                           Predictions about feeding
+                        FlyWire-derived LIF model;                                       Disembodied circuit
+  Shiu and                                                 and antennal-grooming
+                        original study modeled 127,400                                   modeling; not a generally
+  collaborators, 2024                                      circuitry, including
+                        neurons                                                          learning animal. Paper
+                                                           experimental tests
+
+                                                           Task optimization yielded     A specified visual
+  Lappalainen and
+                        Connectome-constrained model       neural-response predictions   computation, not a
+  collaborators /
+                        of 64 visual cell types            agreeing with measurements    complete fly controller.
+  Flyvis, 2024                                                                           [14] [15]
+                                                           across 26 studies
+
+                                                                                         A body-and-control
+                                                           Embodied vision, olfaction,
+  NeuroMechFly v2,      Neuromechanical fly, sensory                                     framework does not itself
+                                                           locomotor feedback, and
+  2024                  interfaces, physical environment                                 imply whole-connectome
+                                                           navigation experiments
+                                                                                         control. [16]
+
+                                                                                         Sparse descending
+                        Shiu-style brain model, Flyvis-    A documented sensory–
+  Eon embodied fly,                                                                      readouts and existing
+                        related visual modeling,           neural–action–sensory loop
+  March 2026                                                                             trained body controllers
+                        NeuroMechFly/MuJoCo body           spanning several behaviors
+                                                                                         contribute heavily. [17] [1]
+
+                                                           Evidence for distributed,     Anatomy and network
+                        Anatomical brain–cord
+  BANC, 2026                                               behavior-linked control       analysis, not an executable
+                        reconstruction
+                                                           organization                  octopus controller. [12] [13]
+
+The Flyvis result is a particularly important counterpoint to both extremes: connectivity is not
+sufficient to specify every unknown dynamical parameter, but anatomy plus a relevant task can
+constrain useful mechanistic predictions. [14]
+Conversely, theoretical work on connectome-constrained recurrent networks shows that the
+same connectivity can permit substantially different dynamics; recordings from a subset of
+neurons can reduce that ambiguity. [18] [19]
+
+Eon: embodiment, not magic
+Eon’s March technical description identifies steering readouts such as DNa01/DNa02, a forward-
+velocity interface associated with oDN1, antennal-grooming outputs, and proboscis motor
+activity; selected outputs influence lower-level body controllers rather than directly
+reconstructing the full motor hierarchy. Technical description
+That account also states that walking relies on existing imitation-trained controllers, many
+brain–body mappings were chosen by hand, and the implemented visual activity did not yet
+substantially influence demonstrated behavioral outputs. These qualifications substantially
+narrow the interpretation of the promotional “uploaded fly” language. Technical description
+Useful achievement: integration of measured neural architecture into a closed loop.
+Not established: recovery of an individual fly, general independent learning, full brain-to-
+muscle emulation, or subjective experience.
+<PARSED TEXT FOR PAGE: 6 / 48>
+External-system audit
+The following is a substantive survey, not a claim to have found every public experiment.
+Repository results are author-reported unless independently published, and the reviewed
+materials were not rerun here.
+
+                             Substrate and                                        Learning, controls, and evidential
+    Project and source                             Input → output interface
+                               dynamics                                                        status
+
+                         166,700 retained         Doom frames drive             Experimental plasticity on 4,184
+  DOOMFLY — nftechie,    MaleCNS neurons;         modeled retinal               KC→MBON11 connections; current
+  September 2026         25,582,938 directed      populations; fixed neural     candidate failed visual, conditioning,
+  Repository             edges; dynamical         readouts produce turning,     and survival gates. Runnable source;
+                         simulation               movement, and firing          MIT original code. [2]
+
+                                                                                No learning. Reports degree/sign-
+                         3,963-neuron FlyWire
+  Fly Marksman /                                  Engineered target bearing     preserving scrambling, lesions, oracle
+                         pursuit subgraph;
+  fruitfly-lab —                                  drives LC10a; steering/fire   and random controls. Game-object
+                         354,879 weighted
+  webergithub / OPC                               readout includes DNa02        bearing—not raw visual
+                         directed connections;
+  Studio Repository                               and AOTU019                   understanding—is supplied.
+                         LIF
+                                                                                Repository methods
+
+                                                                                External readout learning; historical
+                         Whole-brain and          Named stimulation →
+                                                                                escape benchmarks include matched
+  Fly Brain Bench —      filtered packages;       measured populations →
+                                                                                shuffled graphs. Newer game modes
+  RaphaelSR Repository   separate 6,203-cell      engineered body/action
+                                                                                do not automatically inherit those
+                         escape circuit; LIF      interfaces
+                                                                                controls. Repository
+
+                                                                                Recorded local demonstration;
+                                                                                runnable mod and companion source
+                                                  Minecraft interactions →
+  NeuroCraft Fly —       Reports 166,700                                        were not available in the reviewed
+                                                  modeled network →
+  Evan Sinclair Smith,   MaleCNS neurons and                                    public repository. Historical trained-
+                                                  selected readouts →
+  2026 Project           25,582,938 edges                                       navigation result was substantially
+                                                  scripted body programs
+                                                                                worse than a direct controller. Project
+                                                                                documentation
+
+                                                                                No reward or training. Background
+                                                  First-person spherical
+                         MaleCNS-derived                                        drive, smoothing, jump cooldowns,
+  Fly64 — ornata                                  image sampling → modeled
+                         threshold/reset                                        and mappings are engineered. Author
+  Repository                                      eye inputs; selected groups
+                         network, 50 updates/s                                  explicitly warns that code was not
+                                                  → stick and jump
+                                                                                reviewed for serious use. [1] Methods
+
+                         Reports 166,700          LC4/LPLC2/LC10a and a         Readout learning plus hard flight-
+  fly-flappy —
+                         neurons and              velocity channel encode       safety constraints. Not evidence of
+  ns2250225,
+                         25,088,107 retained      game state; DNp01 or          biological Flappy Bird learning;
+  September 2026
+                         edges; 50 Hz sparse      logistic readout selects      repository lacked a separate project
+  Repository
+                         browser updates          flaps                         license file. [3]
+
+                                                  Requested angle → trained     Reports 100/100 held-out steering
+                         165,122 MaleCNS
+  Flyhard — Mark                                  connectome-based model        targets after training, one training
+                         neurons; 25,563,197
+  Unthank, September                              → simulated foreleg →         seed; visual driving and combined
+                         neuron-pair
+  2026 Repository                                 passive steering wheel →      wheel/pedal autonomy remained
+                         connections
+                                                  CARLA                         untested. [20]
+
+                         A simulated motor-                                     Seventy artificial musical weights
+  Fly Lab — Apolotary,                            Neural state → ten
+                         circuit subset; six                                    learn; measured wiring stays fixed. No
+  September 2026                                  authored musical gestures
+                         outputs feed a musical                                 audio-listening loop or biological
+  Repository                                      → Ableton/MIDI
+                         policy                                                 music-learning claim. [5] [21] [22]
+<PARSED TEXT FOR PAGE: 7 / 48>
+                              Substrate and                                                Learning, controls, and evidential
+     Project and source                                 Input → output interface
+                                dynamics                                                                status
+                          Synthetic 48-neuron                                            Actual biological and rewired
+                                                       Synthetic fixture drives the
+                          embodied fixture,                                              microcircuits produced the same
+  NeuroTerrarium —                                     avatar; real microcircuit is
+                          separately a real 51-                                          default-pulse response. No
+  5p00kyy Repository                                   an inspectable instrument,
+                          body MaleCNS                                                   demonstrated topology advantage.
+                                                       not its controller
+                          microcircuit                                                   Project evidence
+
+                                                                                         Documents PPO readout training,
+                                                       Environment → circuit →           ablations, open-loop comparisons,
+  fly-craftax —           MaleCNS-based
+                                                       linear descending-neuron          and a replay viewer; reviewed
+  liuzihe02 Repository    simulation
+                                                       readout                           README does not establish broad
+                                                                                         open-ended competence. Repository
+
+
+Additional documented leads
+These deserve inspection but should not receive the same evidential weight as a fully audited
+implementation:
+
+            Lead                           What is documented                              What remains unresolved here
+                           A framework comparing a connectome-
+  FlyDoom —                constrained recurrent controller with rewired and          Exact configurations and results were not
+  eganeganegan             conventional-network controls. Project Curated             independently verified
+                           description
+
+                           A separate Fabric project using filtered MaleCNS           Exact retained graph, behavioral
+  Fly Brain Minecraft —
+                           networks; not the same project as NeuroCraft Fly.          contribution, and tests need a source-
+  blendi-remade
+                           Curated source                                             code audit
+
+                           Haiku/glyph-tracing experiments and a reduced              Whether text competence comes from
+  Faiku — xyzzyapps        fallback model are described. Project Curated              neural dynamics, authored constraints, or
+                           source                                                     other components
+
+  Fruit Fly Fashion —      MaleCNS spike vectors are described as controlling         This is not, by itself, feedback-driven
+  jtc268                   print placement, rotation, and scale. [23] Project         artistic preference or autonomous design
+
+                           Video-stream experiments where modeled activity
+                                                                                      Dopamine telemetry does not establish
+  Wirehead / FlyScroll     affects presentation or skipping are catalogued.
+                                                                                      enjoyment
+                           Curated source
+
+                                                                                      No sufficiently audited implementation,
+                           A primary social-media claim is embedded in Eon’s
+  Beat Saber                                                                          neural interface, or learning controls were
+                           September roundup. [1]
+                                                                                      established in this review
+
+                                                                                      Displaying a video through neural
+                           A fly-brain display experiment is linked in the same
+  Bad Apple                                                                           coordinates is not evidence of active
+                           roundup. [1]
+                                                                                      perception or control
+
+  Humanoids, octopus                                                                  No validated fly-connectome
+                           Relevant engineering architectures can be
+  bodies, exotic soft                                                                 implementation was established in the
+                           proposed
+  robots                                                                              reviewed evidence
+
+The existence of a demonstration is a weaker claim than its scientific interpretation. “The
+neural simulator was connected to a game” may be true even when “the fly understood the
+game” is unsupported.
+<PARSED TEXT FOR PAGE: 8 / 48>
+Failures worth preserving
+Three failures directly inform Neural Art Lab:
+  1. A learning rule cannot rescue nondiscriminative sensory representations. Fly Brain Bench
+     reports that its tested olfactory model activated highly overlapping Kenyon-cell
+     populations across different odors, preventing a defensible conditioning interpretation.
+     Repository diagnostics
+  2. Changed weights are not evidence of improved behavior. DOOMFLY explicitly preserves
+     plasticity candidates that failed conditioning and survival tests. [24] [2]
+  3. A biological graph can tie or lose to controls. NeuroTerrarium reports no advantage in its
+     default real-microcircuit pulse assay, and its synthetic recurrent fixture did not outperform
+     the relevant alternatives. Repository evidence
+These are useful experimental outcomes, not embarrassments to hide.
+
+Other species
+Complete connectomic resources also exist for much smaller nervous systems, including
+worms, but the BANC paper’s comparison does not by itself establish the fidelity of any
+particular worm-to-robot demonstration. [12]
+This review did not establish a sufficiently audited cross-species robot-control inventory to
+attach confident neuron counts, learning claims, and null-model results to those
+demonstrations. They remain a gap rather than evidence that should be filled with familiar
+internet anecdotes.
+
+
+Does it need its original body?
+No anatomical law requires an external controller’s actuators to resemble the organism from
+which its graph was measured. But replacing the body changes the control problem.
+For a proposed hybrid organism, define:
+
+
+
+
+Here:
+        : engineered sensory encoder.
+        : simulated neural state.
+        : action decoder, possibly with its own memory .
+        : body and world dynamics.
+<PARSED TEXT FOR PAGE: 9 / 48>
+      : neural-model parameters.
+       : decoder parameters.
+This is a proposed system definition, not a claim that arbitrary encoders preserve biological
+meaning.
+
+What can transfer?
+The strongest candidates are useful transformations, not complete instincts:
+     Left–right differentiation.
+     Stimulus-triggered state transitions.
+     Competition between channels.
+     Temporal filtering.
+     Thresholding and amplification.
+     Context-dependent gating.
+     Recurrent state that can help distinguish histories.
+Some such transformations already support feeding, grooming, pursuit, escape-related, and
+visual-motion models, although each result is specific to its model and assay. Shiu paper [14] [1]
+A flight-escape pathway might become an effective material-release trigger. It does not thereby
+acquire an evolved understanding of fractal extrusion.
+
+The dimensionality limit
+Suppose the decoder receives independent neural control channels and instantaneously
+commands actuators through a linear mapping:
+
+
+
+Then the instantaneous actuator patterns lie in a subspace of dimension at most .
+Two channels can influence a thousand actuators, but they cannot independently specify a
+thousand arbitrary actuator values at one instant.
+There are several legitimate ways around the apparent limitation:
+
+          Method                        What it adds                                Attribution consequence
+
+  Motor synergies       A library of coordinated actuator patterns    Neural activity selects or blends patterns
+
+  Local reflexes        Contact- and strain-dependent correction      Local controllers supply fine competence
+
+                                                                      Neural output modulates rhythm rather than
+  CPGs or oscillators   Ongoing rhythmic structure
+                                                                      generating every phase
+
+                        Converts desired endpoint motion into joint
+  Inverse kinematics                                                  The solver supplies geometric coordination
+                        commands
+<PARSED TEXT FOR PAGE: 10 / 48>
+           Method                          What it adds                                    Attribution consequence
+
+                          Expands neural state into task-specific
+  Learned decoder                                                            Training supplies part of the policy
+                          actions
+
+                                                                             More control over time, but added state and
+  Sequential addressing   Select arm, then issue a command
+                                                                             protocol
+
+  Morphological           Passive elasticity and environmental forces
+                                                                             The body itself solves part of the problem
+  computation             shape motion
+
+These are proposed interface strategies. Their usefulness for a particular fly model must be
+tested.
+
+Body-by-body assessment
+              Body            First plausible interface                   Main obstacle                         Assessment
+
+                          Reach direction, contraction,         Independent arm coordination             F for puppeting; R for
+  Eight-arm octopus
+                          grip, arm-selection signals           and sensory credit assignment            adaptive dexterity
+
+                          Pulse frequency, asymmetry,
+  Jellyfish                                                     Fluid–structure coupling                 F/R
+                          orientation
+
+                          Traveling-wave amplitude,             Ground contact and turning
+  Snake                                                                                                  F
+                          phase, curvature                      control
+
+  Fish                    Tail-beat and steering synergies      Hydrodynamics and stability              F/R
+
+                          High-level heading/altitude           Stabilization can dominate the           F with autopilot; R for
+  Bird or drone
+                          commands to a stabilizer              behavior                                 direct control
+
+                                                                                                         F with local gait
+  Quadruped               Gait, speed, turn, posture            Transfer of state/action semantics
+                                                                                                         controller
+
+                          Skill-selection layer above a         Very large hidden contribution           F as a hybrid; X for direct
+  Humanoid
+                          balance controller                    from trained skills                      innate competence
+
+                          Regional pressure, adhesion,          Maintaining controllability as
+  Amorphous blob                                                                                         R
+                          contraction                           shape changes
+
+  Growing/shrinking       Capability-based action               Decoder and sensors must adapt
+                                                                                                         R
+  creature                interface                             to anatomy changes
+
+  Hundred-appendage                                                                                      F for coordinated fields;
+                          Groups, waves, local reflexes         Independent channel bandwidth
+  creature                                                                                               R for dexterity
+
+                          Attraction fields, cohesion, flow,    Defining persistent body identity
+  Particle body                                                                                          F
+                          assembly rules                        and feedback
+
+                          Shared commands plus body-            Sensory interference and action
+  Disconnected bodies                                                                                    F/R
+                          specific local state                  attribution
+
+                          Broadcast signals plus local          Coordination and ecological
+  Colony                                                                                                 F/R
+                          agents                                stability
+
+A recognizable behavioral style is plausible if stable parameters and accumulated history
+consistently bias interactions. It would initially be an individuality of the complete hybrid, not
+evidence that a particular donor fly’s personality survived transplantation.
+<PARSED TEXT FOR PAGE: 11 / 48>
+When the body is mathematics
+A body need not be a mesh. It can be the part of the environment over which the controller has
+bounded, persistent influence.
+The following proposed definition is useful:
+        An operational body is a controllable process with state, constraints, action costs, and
+        feedback—not necessarily a contiguous object.
+That permits:
+    A boundary separating two materials.
+    A set of field singularities.
+    A dynamically maintained graph.
+    A scheduling process that allocates simulation time.
+    A distributed pigment gradient.
+    A collection of persistent edits.
+    A local rule that changes interactions between other objects.
+
+Control versus visualization
+           Level                                  Example                                      What it establishes
+
+  Activity display         Spikes brighten particles                                Neural activity is visible
+
+                                                                                    Neural activity changes an external
+  Open-loop actuation      Spikes inject pigment, but pigment never affects input
+                                                                                    process
+
+                           Injected pigment changes the next sensory                Neural action has consequences that
+  Closed-loop control
+                           measurement                                              return
+
+                           The agent reliably maintains a boundary or acquires      The loop accomplishes a measurable
+  Task-effective control
+                           material                                                 objective
+
+                                                                                    A specified learning mechanism
+  Adaptive control         Experience improves or changes the policy
+                                                                                    contributes
+
+  Open-ended               New competencies or niches accumulate without a
+                                                                                    A much stronger research claim
+  development              fixed repertoire
+
+A random controller can also create elaborate closed-loop visuals. The important questions are
+causal influence, useful discrimination, retention, and comparative performance, not visual
+complexity alone.
+<PARSED TEXT FOR PAGE: 12 / 48>
+A proposed causality test
+Record one state, then branch the simulation under:
+ 1. Actual neural output.
+ 2. Zero output.
+ 3. Time-shuffled output.
+ 4. Output from another organism.
+ 5. A matched scripted controller.
+ 6. A degree/sign/weight-matched rewired network.
+ 7. A conventional recurrent network with a comparable trainable budget.
+Measure the divergence of task-relevant outcomes, not just image differences.
+An image can change dramatically because one threshold crossed. That demonstrates
+sensitivity, not necessarily competent control.
+
+
+Artificial senses
+A sensor can report a mathematical property that has no natural sensory organ. The difficult
+part is choosing an encoding that the neural model can distinguish and an adaptation
+mechanism that can exploit it.
+The proposal should always name both halves:
+          “Computed curvature is encoded as input to population X.”
+Not:
+          “Population X naturally perceives curvature.”
+
+Sensory-interface hierarchy
+           Interface                           Example                                 Biological interpretation
+                              Rendered motion → modeled visual            Most defensible when geometry and physiology are
+  Naturalistic transduction
+                              pathway                                     validated
+
+  Identified-pathway          Synthetic expansion cue → LPLC2-related     Uses a known pathway while bypassing upstream
+  stimulation                 input                                       perception
+
+                              Curvature gradient → odor-like input
+  Cross-modal substitution                                                A deliberately invented sense
+                              vector
+
+                              Trainable network → selected sensory
+  Learned encoder                                                         Artificial representation learning
+                              populations
+
+                                                                          Experimental intervention, not natural sensory
+  Direct internal injection   Novelty score → arbitrary recurrent cells
+                                                                          biology
+<PARSED TEXT FOR PAGE: 13 / 48>
+The distinction matters because some browser models report poor propagation from
+photoreceptors while looming works through direct downstream stimulation. That is a model
+limitation and bypass, not evidence that the entire visual system is functioning. Fly Brain Bench
+diagnostics
+
+Candidate invented senses
+All entries below are proposed encoders.
+
+       Quantity                Measurement                        Possible encoding          Smallest informative test
+                                                                                           Can neural features
+                                                           Several bounded channels, not
+  Saturation/chroma   Local color-space statistics                                         distinguish equally bright
+                                                           one “beauty” scalar
+                                                                                           color patches?
+
+                                                                                           Does output distinguish
+                      Signed contour curvature and
+  Curvature                                                Left/right spatial pools        concave and convex
+                      its gradient
+                                                                                           encounters?
+
+                      Difference under reflection or       Separate symmetry-error         Match contrast and area to
+  Symmetry
+                      rotation                             channels                        avoid confounds
+
+                      Component/hole counts or                                             Distinguish a ring from a disk
+                                                           Discrete event channels plus
+  Topology            persistent-homology                                                  without relying on
+                                                           continuous confidence
+                      summaries                                                            brightness
+
+                                                                                           Separate real temporal
+                      Transient highlights and
+  Sparkle                                                  Event-based pulses              scintillation from static white
+
+                      angular variation
+                                                                                           dots
+
+  Chemical                                                                                 Gradient-following with
+                      Scalar fields at virtual receptors   Odor-like population vector
+  concentration                                                                            reversed gradients
+
+  Electromagnetic     Simulated field vector and local     Body-relative directional       Rotate sensor frame
+  field               derivatives                          channels                        independently of field
+
+                      Band energies, envelopes,                                            Detect rhythm under timbre
+  Sound                                                    Synthetic auditory channels
+                      periodicities                                                        changes
+
+                      Distance from stored feature                                         Familiarization followed by a
+  Novelty                                                  A bounded novelty channel
+                      history                                                              novel/familiar choice
+
+  Elapsed encounter                                                                        Test memory against
+                      Time since last visit                Decaying traces
+  time                                                                                     shuffled timestamps
+
+                                                                                           Remove tags and test
+  Own earlier         Tagged or inferred                   Provenance/recognition
+                                                                                           whether physical features
+  creations           environmental traces                 channels
+                                                                                           suffice
+
+                                                                                           Compare meaningful
+                      Visible motion or explicit
+  Other organisms                                          Separate communication inputs   packets with shuffled
+                      broadcast packets
+                                                                                           messages
+
+                      Recent difference between                                            Change material response
+  Causal efficacy     intended and observed action         Prediction-error channel        without changing
+                      effects                                                              appearance
+<PARSED TEXT FOR PAGE: 14 / 48>
+What the current circuit can support
+Your existing looming channels can immediately support synthetic spatial alarm signals,
+bilateral competition, and intervention-triggered material behaviors. That does not require
+claiming that the escape circuit naturally recognizes color harmony or novelty. [4]
+For richer senses, first ask whether the current circuit produces separable downstream
+responses. If two input patterns collapse to the same neural state, a sophisticated decoder
+cannot recover the lost distinction without receiving an additional bypass signal.
+
+
+Learning and evolving desire
+
+Four different learning locations
+      Learning location        What changes                                   Honest description
+  Sensory adapter         Encoder parameters          The organism learns how to represent the world
+
+  Action readout          Decoder weights             A fixed biological network supports an adaptive controller
+
+  Recurrent artificial
+                          External memory or policy   A hybrid agent learns around the connectome
+  module
+
+                          Selected modeled            A plastic connectome-derived model learns under an explicitly
+  Connectome synapses
+                          efficacies                  chosen rule
+
+Fly Lab and fly-flappy demonstrate the importance of this distinction: their learnable readouts
+are not evidence that measured biological wiring acquired music or game preferences. [3] [5]
+
+The appetite problem
+An artificial organism can have internal variables such as:
+     Energy reserve.
+     Pigment inventory.
+     Structural integrity.
+     Overstimulation.
+     Time since exploration.
+     Familiarity with a feature family.
+     Uncertainty about an action’s effects.
+     Social dependence.
+     Material toxicity.
+     Unfinished construction commitments.
+These are proposed computational drives. Calling them “hunger,” “boredom,” or “curiosity” is
+useful shorthand only if their implementation remains visible.
+<PARSED TEXT FOR PAGE: 15 / 48>
+Starting with your tastes
+A proposed initial reward could combine measurable image and material features:
+
+
+
+Here                  are defined feature scores, while                    represent action cost and damage.
+That creates an agent initially rewarded for your visual vocabulary. It does not create an agent
+that discovered those values independently.
+To permit development beyond that vocabulary, add mechanisms with different consequences:
+
+        Mechanism                          Proposed effect                                        Main failure
+  Feature-specific           Repeated sparkle exposure temporarily
+                                                                              Mere oscillation between authored categories
+  satiation                  reduces its reward
+
+  Novelty memory             Familiar outcomes become less rewarding          Seeking noise or accidental novelty
+
+                             Reward improvement in predicting or              Abandoning difficult but valuable domains too
+  Learning progress
+                             controlling a process                            early
+
+  Homeostatic
+                             Material needs compete with aesthetic goals      One drive dominates permanently
+  competition
+
+                             Favor new outcomes the agent can
+  Controllable novelty                                                        Overfitting a narrow trick
+                             reproducibly influence
+
+  Preference-model           Update feature values from interaction           Hidden designer objectives still determine the
+  adaptation                 history                                          update
+
+                                                                              Diversity of parameter sets without meaningful
+  Quality-diversity search   Preserve multiple viable behavioral styles
+                                                                              behavioral diversity
+
+
+Sparkles becoming branching
+A technically coherent proposed pathway is:
+  1. The organism initially receives high reward for structured sparkle.
+  2. Repeated sparkle production increases feature-specific satiation.
+  3. Branching structures become useful because they gather material or create new
+     controllable surfaces.
+  4. Successful branching reduces prediction error and improves resource access.
+  5. A learned value model assigns greater future value to actions leading to branching.
+  6. That preference persists when short-term satiation is removed.
+  7. It transfers to unfamiliar branching examples.
+This would support an experience-dependent functional preference. It would not establish
+pleasure, aesthetic experience, or a subjective desire for branches.
+<PARSED TEXT FOR PAGE: 16 / 48>
+What would count as adaptation?
+A proposed minimum test battery:
+     Acquisition: behavior changes with relevant experience.
+     Retention: the change survives a pause or restart.
+     Specificity: unrelated stimuli do not change identically.
+     Reversal: changed contingencies can change the policy.
+     Transfer: learning generalizes beyond exact training scenes.
+     Reset: restoring the old learned state restores earlier behavior.
+     Controls: frozen, shuffled-reward, and matched random-policy conditions differ
+     appropriately.
+Two identical deterministic copies will not diverge under identical inputs and state updates.
+Different environments, stochastic histories, or learning perturbations can produce different
+histories; persistent divergence must then be measured rather than inferred from different-
+looking pictures.
+
+Mushroom-body caution
+A mushroom-body-inspired plasticity rule is attractive, but the presence of Kenyon cells,
+MBONs, and dopamine annotations is not sufficient to guarantee a functioning conditioning
+model. Both DOOMFLY and Fly Brain Bench provide examples where missing or unsuitable
+dynamics obstruct the intended learning interpretation. Diagnostics [2] [24]
+For Neural Art Lab, readout learning is the lower-risk first experiment. A biologically
+motivated mushroom-body module should be introduced as a separate research track with its
+own sensory-sparsity and conditioning benchmarks.
+
+
+Multiple brains and bodies
+The following are proposed architectures, not demonstrated fly-connectome competencies.
+
+        Arrangement                           Mechanism                                 Main research question
+                              Shared high-level commands; separate local   Can one neural state distinguish conflicting
+  One brain, several bodies
+                              body states                                  consequences?
+
+                                                                           Does coordination emerge or merely average
+  Several brains, one body    Arbitration, voting, or actuator ownership
+                                                                           outputs?
+
+                              Separate controllers share mechanical        Can interaction produce negotiation or
+  Opposing tentacle groups
+                              consequences                                 destabilization?
+
+                              Broadcast fields plus autonomous local       What coordination comes from the brain versus
+  One brain, swarm
+                              agents                                       swarm rules?
+
+                                                                           Can environmental traces become
+  Several brains, canvas      Shared persistent materials
+                                                                           communication?
+<PARSED TEXT FOR PAGE: 17 / 48>
+        Arrangement                             Mechanism                                          Main research question
+
+                                Explicit sensory, memory, or decoder                   Does the biological graph add value beyond the
+  Fly network plus ANN
+                                adapter                                                ANN?
+
+                                Typed artificial interface between
+  Cross-species networks                                                               Which semantics survive the interface?
+                                incompatible models
+
+  Independently learning        Shared resources and differentiated                    Does specialization persist without assigned
+  colony                        affordances                                            roles?
+
+
+Emergent specialization
+To test “one becomes a pigment manipulator and another a structural sculptor,” do not assign
+those roles in the action set.
+Instead, give both agents the same affordances, charge switching costs, provide spatially
+heterogeneous resources, and permit persistent experience. Measure whether specialization
+appears across multiple runs and whether it disappears when the relevant ecological
+asymmetry is removed.
+A colony may create more varied art simply because it has more actuators and more random
+sources. Compare against a single controller with the same total action budget before
+attributing the difference to collective intelligence.
+
+
+How much biology remains?
+                 Modification                          What is preserved                             What becomes engineered
+  Use measured graph and contact            Anatomical topology and selected
+                                                                                              Dynamics and interfaces
+  counts                                    weights
+
+  Extract a subcircuit                      A documented portion of topology                  Boundary conditions and omitted inputs
+
+  Stimulate/silence cells                   Cell identities and intervention targets          Artificial stimulation protocol
+
+  Rescale weights                           Graph topology                                    Effective physiology
+
+  Rewire connections                        Some statistics or motifs                         Exact biological wiring
+
+  Add synthetic sensory cells               Existing core graph                               New input architecture
+
+  Add external memory                       Core neural substrate                             Memory implementation
+
+  Train a decoder                           Fixed core network                                Learned action semantics
+
+                                                                                              Concentrations, receptor effects, state
+  Add neuromodulation                       Selected anatomical relationships
+                                                                                              rules
+
+  Add plasticity                            Candidate anatomical learning sites               Update equations and parameter choices
+
+  Evolve graph copies                       An ancestral biological template                  The evolved controller
+
+  Join species                              Individual source graphs                          Cross-system interface and interpretation
+<PARSED TEXT FOR PAGE: 18 / 48>
+The goal is not to ban modifications. It is to maintain a provenance ledger showing what was
+measured, inferred, chosen, trained, or evolved.
+
+Two different null-model questions
+Causal dependence: Does this trained organism’s behavior depend on its current biological
+network?
+Test acute silencing, disconnection, scrambling, or replay substitution while holding the
+decoder fixed.
+Architectural usefulness: Is the biological network a better substrate than alternatives?
+Retrain matched decoders separately on biological, shuffled, random, and conventional
+recurrent substrates using equal training and parameter budgets.
+These are not interchangeable. A decoder failing after its inputs are scrambled proves
+dependence on its learned feature distribution; it does not by itself prove that biological
+topology is superior.
+
+
+Mathematical universes
+The table below describes proposed environments, actions, and feedback—not existing fly-
+brain demonstrations.
+
+         World                What actually evolves           What the organism can do        What returns as sensation
+
+                                                                                             Return times, region
+                         Trajectories of nonlinear          Apply bounded impulses;
+  Strange attractors                                                                         occupancy, local divergence
+                         differential equations             move coupling parameters
+                                                                                             estimates
+
+                                                            Deposit reactants, alter local   Concentrations, front speed,
+  Reaction–diffusion     Reacting and diffusing species
+                                                            rates, add barriers              spot/stripe structure
+
+                                                                                             Pattern persistence,
+                                                            Write cells, move boundaries,
+  Cellular automata      Discrete local state transitions                                    propagation, collision
+                                                            switch bounded rule regions
+                                                                                             outcomes
+
+  Continuous             Continuous-valued spatial states   Seed states or modulate local    Growth, motion, stability,
+  automata               under local updates                parameters                       neighborhood statistics
+
+                                                            Move interfaces, change          Domain size, interface
+  Cahn–Hilliard fields   Conserved phase composition
+                                                            mobility or external potential   density, resource distribution
+
+                                                            Bias phases or nucleate          Boundary motion and local
+  Allen–Cahn fields      Nonconserved order parameters
+                                                            domains                          phase identity
+
+                         Velocity, pressure, transported    Add forces, vortices, sources    Flow direction, shear,
+  Fluid-like flow
+                         substances                         and obstacles                    pigment transport
+
+  Electromagnetic        Chosen field equations and         Move charges, currents, or       Body-relative field vectors
+  models                 material response                  magnetic inclusions              and gradients
+
+                                                            Add sources, change phase,       Intensity, phase difference,
+  Wave interference      Propagating wave amplitudes
+                                                            place reflectors                 nodal structure
+<PARSED TEXT FOR PAGE: 19 / 48>
+       World                What actually evolves           What the organism can do         What returns as sensation
+
+                                                          Strike, damp, couple, or retune   Frequency spectra and local
+Modal vibration        Excited resonant modes
+                                                          resonators                        displacement
+
+                       Interface growth under specified   Seed, feed, inhibit, stress, or   Facet orientation, tip speed,
+Crystal growth
+                       kinetic rules                      rotate anisotropy                 branching
+
+Diffusion-limited      Random walkers attach to a         Place seeds and modify            Shielding, branch
+aggregation            growing cluster                    transport or sticking             accessibility, capture rate
+
+Quasicrystalline       Incommensurate spatial modes       Shift phases, move defects,       Local order, defects,
+fields                 or cut-and-project structures      alter bounded couplings           diffraction-like summaries
+
+                       Legal tile placements and          Place, remove, or rearrange       Constraint violations and
+Aperiodic tilings
+                       matching constraints               tiles                             remaining possibilities
+
+Substitution           Repeated symbolic/geometric        Choose permitted                  Hierarchical depth and motif
+systems                replacement                        substitutions and pruning         distributions
+
+                       Curves and crossing                Pull, route, reconnect under      Tension, crossings, linking
+Knots and braids
+                       relationships                      explicit rules                    measures
+
+Topological            Connectivity of meshes or cell     Split, merge, add handles, seal   Component counts and
+transformations        complexes                          holes                             traversability
+
+                       Repeated maps or recursive         Alter seeds, parameters,          Escape rates, occupancy,
+Fractal iteration
+                       grammars                           stopping conditions               boundary complexity
+
+                       Nodes/edges under local                                              Connectivity, motifs,
+Graph rewriting                                           Apply rules at selected sites
+                       production rules                                                     reachability
+
+                       Coupled growth, mechanics, and     Deposit morphogens; alter         Shape, stress, tissue-state
+Morphogenesis
+                       signaling                          growth and adhesion               fields
+
+                       Threshold-triggered traveling      Trigger waves; alter refractory   Wave arrival, collision,
+Excitable media
+                       activity                           regions                           recovery
+
+                                                          Feed, shelter, consume,           Population state and
+Agent ecology          Individual agents and resources
+                                                          disperse, signal                  resource gradients
+
+                       Local interactions among           Bias leaders, fields, or          Cohesion, polarization,
+Swarm dynamics
+                       moving agents                      interaction gains                 fragmentation
+
+                       Explicit reaction graph and        Catalyze, transport, consume,     Product availability and
+Artificial chemistry
+                       concentrations                     compartmentalize                  reaction flux
+
+                       Deformable geometry and
+Soft bodies                                               Contract, inflate, adhere, bend   Strain, force, touch, shape
+                       contact
+
+Elastic membranes      Surface deformation and tension    Pin, pull, perforate, reinforce   Curvature, stress, vibration
+
+Voronoi/power          Regions induced by sites and       Move sites, alter weights,        Cell area, adjacency,
+diagrams               weights                            create seeds                      boundary pressure
+
+Generative                                                Select productions and attach     Grammar state, affordances,
+                       Rule-constrained structures
+grammars                                                  structures                        complexity
+
+Neural cellular                                           Seed, damage, feed, or            Regrowth and local state
+                       Learned local update dynamics
+automata                                                  modulate state channels           summaries
+<PARSED TEXT FOR PAGE: 20 / 48>
+         World               What actually evolves               What the organism can do    What returns as sensation
+
+  Coupled
+                        Several of the above exchange        Modify coupling and material
+  multimaterial                                                                             Cross-system consequences
+                        state                                placement
+  worlds
+
+
+Important mathematical distinctions
+A proposed simulation should not casually treat all attractive patterns as equivalent “physics.”
+    A conserved composition field and a nonconserved growth field need different accounting.
+    An aperiodic tiling is not automatically a quasicrystal.
+    A fractal renderer is not automatically an interactive dynamical environment.
+    A fluid-inspired shader is not automatically a validated fluid solver.
+    A topology-changing mesh is mathematically legitimate without representing physically
+    possible matter.
+
+Coupling creates the useful surprise
+A proposed coupled garden might use:
+
+
+
+The organism need not know the final picture in advance. But the interaction rules should be
+explicit enough that an unexpected outcome can be explained and reproduced.
+Emergence is most useful when it means “unplanned consequences of specified interactions,”
+not “unlogged randomness.”
+
+
+Input–process–output matrix
+Every row below is a proposed combination unless marked D.
+
+                             Neural
+       Input                                            Output                  Feedback            Status and obstacle
+                        process/interface
+
+                     Identified looming                                                       D, in specific documented
+  Expanding visual                                                         Changed threat
+                     pathway → descending        Escape-like action                           systems; body mapping
+  cue                                                                      geometry
+                     readout                                                                  remains engineered. [1]
+
+                                                                                              D, with engineered
+                     LC10a-related pursuit                                 Updated target     bearing input and
+  Target bearing                                 Steering
+                     subgraph                                              bearing            calibrated output.
+                                                                                              fruitfly-lab
+
+                                                                                              D for connection; learned
+                     MaleCNS dynamics →
+  Game frames                                    Doom actions              Next frame         survival not established.
+                     fixed button mapping                                                     [2]
+<PARSED TEXT FOR PAGE: 21 / 48>
+                           Neural
+      Input                                         Output                Feedback            Status and obstacle
+                      process/interface
+                                                                                          D for readout adaptation,
+Neural motor       Fixed circuit → musical                           Human preference
+                                              MIDI gestures                               not biological musical
+activity           policy                                            clicks to policy
+                                                                                          learning. [5]
+
+Contour            Synthetic bilateral                                                    F; calibrate sign, gain, and
+                                              Ribbon contraction     New curvature
+curvature          encoder                                                                saturation
+
+                                                                                          F; current escape circuit
+Pigment            Invented sensory                                  Internal inventory
+                                              Consumption gate                            lacks validated appetite
+concentration      channels                                          and depleted field
+                                                                                          semantics
+
+                                              Particle release                            F; prevent sensor–
+Sparkle events     Event encoder                                     Highlight density
+                                              timing                                      actuator self-excitation
+
+                                                                                          F/R; central/local
+Material stress    Synthetic body sensors     Soft-arm reflex gain   Strain and contact
+                                                                                          attribution
+
+Topological        Computed descriptor →                             Updated              F for interface; R for
+                                              Seal or perforate
+holes              artificial input                                  connectivity         learned use
+
+                   External memory →          Exploratory action                          F/R; avoid rewarding
+Action novelty                                                       Outcome history
+                   bounded channel            selection                                   noise
+
+                   Artificial policy around   Resource-seeking       Reward and future    F; prove neural features
+Learned value
+                   fixed graph                action                 states               are useful
+
+Dopamine-like      Explicit plasticity        KC→MBON efficacy       Conditioning         R; sensory coding and
+state              module                     changes                response             physiology must first work
+
+                                                                     Persistent           F/R; distinguish
+Own old
+                   Image/history encoder      Repair or reuse        environmental        recognition from hidden
+structures
+                                                                     memory               tags
+
+Another brain’s    Communication              Shared-body                                 R; arbitrary neural signals
+                                                                     Partner response
+activity           adapter                    coordination                                lack shared semantics
+
+Simulated field                               Move
+                   Body-relative encoder                             Recomputed fields    F
+gradients                                     sources/currents
+
+                                              Growth inhibition      New
+Crystal geometry   Feature encoder                                                        F
+                                              and seeding            facets/branches
+
+Harmonic                                                                                  F/R; not natural fly music
+                   Spectral encoder           Resonator coupling     Audio spectrum
+relations                                                                                 perception
+
+                                              Regeneration           New tissue and
+Body damage        Integrity channels                                                     F/R
+                                              allocation             energy cost
+
+Environmental-                                                       Changed action       R/S; stability and credit
+                   Rule-monitor encoder       Bounded rule edits
+rule state                                                           consequences         assignment
+
+                                                                                          X without an engineered
+                   Unspecified “beauty        Autonomous
+Arbitrary beauty                                                     Undefined            representation and
+                   neuron”                    aesthetic judgment
+                                                                                          learning objective
+<PARSED TEXT FOR PAGE: 22 / 48>
+Computational feasibility
+
+Measure work, not neuron count
+Neural cost depends on more than the number of cells:
+
+
+
+A sparse, mostly silent 140,000-cell model can behave very differently computationally from a
+highly active 6,000-cell model.
+Fly Brain Bench explicitly reports activity-dependent throughput, and its headline rendering
+frame rate is not its neural simulation speed. Its documented JavaScript neural throughput was
+below real time in the reported full-brain benchmark configurations. Repository benchmarks
+
+Memory arithmetic
+These are derived storage estimates, not measured application benchmarks:
+    A sparse edge using a 32-bit target index and a 32-bit weight costs approximately 8 bytes
+    before offsets, delays, and overhead.
+    About 25.6 million such edges require approximately 205 MB for those two arrays alone.
+    Per-edge plasticity state, eligibility traces, duplicated CPU/GPU buffers, and optimizer state
+    can multiply that requirement.
+    A dense 166,700-by-166,700 matrix would be an entirely different and generally
+    inappropriate representation.
+Actual working memory must be profiled on the chosen backend.
+
+Implementation tiers
+The allocations below are recommended starting targets, not claims about guaranteed
+hardware limits.
+
+        Tier        Recommended first workload               Suitable approach                      Main risk
+                                                      Worker-based typed arrays;
+                   One existing 6,203-cell circuit;                                      Thermal throttling, memory
+  Current iPhone                                      optional WASM; WebGL material
+                   one modest 2D world; a few                                            pressure, background
+  browser                                             fields; feature-detected compute
+                   local sensors                                                         suspension, GPU readback
+                                                      options
+
+                   Current circuit plus richer        Workers, WASM, WebGPU when         Sparse-event scatter,
+  Desktop
+                   fields, two-agent trials, or a     available, batched sensory         synchronization, competing
+  browser
+                   carefully profiled larger graph    reductions                         neural/render workloads
+
+                   Reference simulations, circuit     Brian2 compiled mode, native
+  Local native                                                                           Large active sets and many
+                   extraction, controlled             sparse kernels, deterministic
+  CPU                                                                                    fine time steps
+                   experiments                        batch tests
+
+                   Larger networks, parameter         CUDA/other native GPU kernels      Irregular sparse traffic, event
+  Local GPU
+                   sweeps, richer field coupling      or suitable framework backend      queues, reproducibility
+<PARSED TEXT FOR PAGE: 23 / 48>
+           Tier      Recommended first workload                    Suitable approach                           Main risk
+
+                                                           Python control stack plus
+  MuJoCo             Articulated body and contact                                                  Body-controller training can
+                                                           MuJoCo; neural process
+  workstation        experiments                                                                   dominate the project
+                                                           separated cleanly
+
+  Soft-body          Eight deformable arms or              Dedicated deformable-body               Stability, collision handling,
+  workstation        coupled membranes                     solver or reduced-order rods            and substepping
+
+  Local server +     Heavy neural simulation with          Authoritative simulation server;        Latency and loss of
+  browser client     browser interaction                   compact state streaming                 deterministic interaction
+
+                                                                                                   Communication overhead
+  Distributed        Independent agents or                 Parallel experiments before
+                                                                                                   across a single coupled
+  system             independent trial batches             partitioning one graph
+                                                                                                   network
+
+A browser full-graph example exists, but its existence does not establish faithful millisecond-
+scale spike simulation, acceptable phone performance, or equivalence to a scientific reference
+implementation. fly-flappy, for instance, documents 50 Hz network updates and artificial
+control constraints. [3]
+
+Backend choices
+      Approach                          Best role                                                 Caution
+
+  JavaScript typed   Preserve your current working system and run         Avoid allocations and per-neuron objects in the inner
+  arrays             small/medium sparse circuits                         loop
+
+                     Move a proven neural kernel into compiled            Compilation does not eliminate algorithmic or memory
+  WebAssembly
+                     browser code                                         bottlenecks
+
+                     Field simulation, reductions, and carefully          Sparse event delivery is harder than regular image-grid
+  WebGPU
+                     designed neural workloads                            updates
+
+                     Reference-model experiments and biological           The original repository recommends compiled C++
+  Brian2
+                     validation                                           generation for performance. Shiu repository
+
+  MuJoCo             Articulated mechanics and contact                    It does not supply a biological controller
+
+  Reduced-order
+                     Early octopus arms                                   Less anatomical realism, much lower complexity
+  rods
+
+  Native sparse                                                           Must verify numerical agreement with reference
+                     Larger production neural workloads
+  simulator                                                               fixtures
+
+                     CPU neural events, GPU materials, compact
+  Hybrid CPU/GPU                                                          Readback can erase the benefit of GPU rendering
+                     exchange
+
+
+Separate the clocks
+A proposed scheduler should distinguish:
+    Neural integration time.
+    Sensor sampling time.
+    Decoder/action time.
+    Physics time.
+<PARSED TEXT FOR PAGE: 24 / 48>
+    Material-field time.
+    Rendering time.
+    Wall-clock presentation speed.
+For example, a display can interpolate at 60 frames/s while decisions occur less frequently and
+neural integration uses smaller internal steps. Those are design choices, not equivalent
+measures of biological real time.
+Eon’s technical description reports brain/body synchronization in 15 ms blocks and explicitly
+notes that this may be too slow for some behaviors. Technical description
+
+High-resolution export
+Yes: the simulation need not run at final image resolution.
+Proposed export architecture:
+ 1. Simulate material dynamics on a lower-resolution grid.
+ 2. Store vector contours, particle seeds, geometry, and material state.
+ 3. Save deterministic checkpoints and action logs.
+ 4. Rerender offline at the desired resolution.
+ 5. Advance simulation by fixed steps per exported frame.
+ 6. Encode image sequences locally into GIF or MP4 using an appropriate local encoder.
+Do not upscale a low-resolution state and claim newly resolved physical detail. High-resolution
+shading, contour reconstruction, antialiasing, and geometric rendering can improve
+appearance without changing the underlying simulation.
+
+
+Three complete experimental architectures
+
+Experiment A: Neural Octopus
+Research question: Can a fly-derived circuit contribute useful selection and coordination
+signals to an eight-arm body whose fine movement is supplied by local mechanics and
+controllers?
+
+Data flow
+
+  World / targets / obstacles
+            |
+            v
+  Body-relative sensory sampler
+    - bilateral threat
+    - contact
+    - strain
+    - target direction
+            |
+<PARSED TEXT FOR PAGE: 25 / 48>
+            v
+  Documented sensory encoder
+            |
+            v
+  Fly-derived neural simulation
+            |
+            v
+  Measured population features
+            |
+            v
+  Small central decoder
+    - turn / reach bias
+    - extension
+    - contraction
+    - grip
+    - arm selection
+            |
+            v
+  Eight local arm controllers
+            |
+            v
+  Rod or soft-body physics
+            |
+            +------ feedback to sensory sampler
+
+
+Neural requirements
+For the first prototype, use only populations actually present and verified in your circuit
+manifest.
+    Bilateral looming input can provide a defensible escape-related central signal.
+    Recorded downstream features can modulate contraction, arm withdrawal, and body
+    turning.
+    Target pursuit should be added through a separately documented pathway or an explicitly
+    artificial readout—not assumed to exist in the escape subset.
+    Eight-arm independent selection requires additional channels, sequential addressing, or
+    an artificial selector.
+
+Arm mechanics
+
+Proposed first body: eight planar chains with a small number of bendable segments per arm.
+Each arm has:
+    Passive elasticity.
+    Damping.
+    Maximum curvature.
+    Extension/contraction state.
+    Contact sensing.
+<PARSED TEXT FOR PAGE: 26 / 48>
+    Optional adhesion.
+    A local target-following or recoil reflex.
+    A bounded energy cost.
+The central decoder controls a handful of synergy coefficients, not every joint:
+
+
+
+The coefficients and local controller are engineered. The neural contribution is whether and
+how the shared signals vary with sensory history.
+
+Learning options
+           Stage             Trainable component                                 Claim permitted
+  Fixed decoder           Nothing                        Neural dynamics modulate an alien body
+
+  Calibrated decoder      Gains and thresholds           An engineered mapping exploits neural responses
+
+  Learned readout         Small policy                   A fixed connectome supports adaptive body control
+
+                                                         A plastic connectome-derived system adapts under the specified
+  Plastic neural module   Selected internal parameters
+                                                         rule
+
+  Co-adaptive             Decoder and body
+                                                         A hybrid controller/body system evolves
+  morphology              parameters
+
+
+Modules
+Suggested new modules, not claims about existing filenames:
+    ArmBody
+    LocalArmController
+    ContactAndStrainSensors
+    NeuralFeatureAdapter
+    SynergyDecoder
+    ArmEnergyLedger
+    InterventionRecorder
+    MatchedControllerSuite
+
+
+Failure modes
+    All arms synchronize because they share too few signals.
+    Local controllers complete the task without the brain.
+    Withdrawal dominates every interaction.
+    Contact feedback saturates the circuit.
+    Elastic instability resembles “interesting behavior.”
+<PARSED TEXT FOR PAGE: 27 / 48>
+    The trained decoder ignores neural features.
+    The system learns an arena-specific timing trick.
+
+Validation
+Measure:
+    Target contacts per action budget.
+    Arm-use diversity.
+    Energy per successful manipulation.
+    Recovery from arm removal.
+    Performance under swapped sensory sides.
+    Biological-versus-rewired substrate utility after matched retraining.
+    Performance when central neural output is replaced by its mean.
+Short-term: bilateral recoil and material stirring.
+Long-term: adaptive arm assignment, object manipulation, and anatomy changes.
+
+
+Experiment B: Glitter-Eating Alien
+Research question: Can a neural-influenced organism maintain an artificial metabolism while
+developing experience-dependent material preferences?
+
+Data flow
+
+  Pigment / geometry / crystals in world
+                    |
+                    v
+  Local visual and contact features
+                    |
+                    v
+  Sensory encoder ---> neural circuit
+                            |
+                            v
+                    action decoder
+                            |
+            +---------------+----------------+
+            |               |                |
+            v               v                v
+        movement        ingestion        extrusion
+            |               |                |
+            +-------- metabolism ------------+
+                            |
+                            v
+               body state / internal drives
+                            |
+                            +---- feedback
+<PARSED TEXT FOR PAGE: 28 / 48>
+Artificial metabolism
+Define explicit material inventories:
+
+[
+M_{\mathrm{world}}
++
+M_{\mathrm{body}}
++
+M_{\mathrm{waste}}
++
+M_{\mathrm{reservoir}}
+M_{\mathrm{total}}
+]
+when using a closed-material experiment.
+Suggested inventories:
+    Three or more pigment species.
+    Structural polymer.
+    Crystal precursor.
+    Solvent.
+    Stored energy.
+    Waste.
+    Damage.
+“Eating pixels” should mean transferring a quantity from a sampled material cell into the
+organism’s inventory—not deleting arbitrary screen colors.
+“Digesting colors” means an explicitly defined transformation. For example, an ingestion
+reaction can consume two pigment species and energy to produce a crystal precursor and
+waste.
+
+Action ownership
+             Function                    Neural decision                        Autonomous body/world behavior
+
+    Eat                     Open/close ingestion gate; select location   Transfer nearby available material
+
+    Digest                  Allocate processing among a few pathways     Apply reaction rates and capacity limits
+
+    Excrete glitter         Initiate or modulate extrusion               Generate particles from available precursor
+
+    Explode into geometry   Trigger a costly release mode                Execute a bounded growth/branching process
+<PARSED TEXT FOR PAGE: 29 / 48>
+          Function                     Neural decision               Autonomous body/world behavior
+
+    Grow tentacles        Allocate structural material        Local growth, collision, and repair
+
+    Reproduce patterns    Choose seed timing/location         Copy/mutate a compact pattern genome
+
+    Regenerate            Allocate repair budget              Local reconstruction rule
+
+    Change material       Select permitted phase transition   Mass/energy accounting and transition dynamics
+
+The neural system should not determine every glitter particle’s trajectory. It should determine
+when, where, how much, and under which internal conditions a material process begins.
+
+Preference development
+Proposed reward components:
+    Maintain viability.
+    Avoid exhausting all precursor.
+    Discover controllable transformations.
+    Favor initial neon/contour/crystal features.
+    Reduce reward from repeatedly producing the same feature.
+    Preserve a small exploration budget.
+    Penalize action sequences that generate only sensor-saturating flashes.
+
+Failure modes
+    The agent discovers that covering its own sensor with sparkle maximizes reward.
+    It consumes all material and becomes inert.
+    Preference changes are only random parameter drift.
+    The decoder bypasses the neural circuit.
+    “Reproduction” is just an unconditional particle emitter.
+    Visual complexity increases because the solver is unstable.
+
+Validation
+Use material-conservation tests, held-out resource layouts, preference reversal, checkpoint
+restoration, reward shuffling, and an equal-budget scripted metabolism controller.
+Short-term: one pigment resource, one storage variable, one extrusion product.
+Long-term: competing digestion pathways, local tissue growth, and persistent learned material
+values.
+<PARSED TEXT FOR PAGE: 30 / 48>
+Experiment C: Mathematical God Garden
+Research question: Can a neural-influenced agent learn consequential interventions in a
+persistent world containing interacting mathematical materials?
+
+Data flow
+
+  Persistent coupled world
+    pigment <-> flow <-> growth <-> waves
+        ^          ^         ^        ^
+        |          |         |        |
+        +------- bounded interventions
+                           ^
+                           |
+                   action decoder
+                           ^
+                           |
+                   neural simulation
+                           ^
+                           |
+                  multisensory encoder
+                           ^
+                           |
+            local observations + body state
+                           ^
+                           |
+              history / novelty / learned value
+
+
+Proposed world layers
+  1. Pigment transport: mobile colored substances.
+  2. Contour field: persistent strata reconstructed from deposited material or level sets.
+  3. Crystal growth: material-limited seeding and branching.
+  4. Wave field: interference and excitable events.
+  5. Flow: transports pigment and redistributes growth resources.
+  6. Structure: barriers, membranes, and attachment points.
+  7. History: deposits, damage, and dormant seeds remain.
+
+Bounded intervention vocabulary
+Start with a small action space:
+    Move.
+    Deposit pigment.
+    Consume material.
+    Add a local force.
+    Seed growth.
+<PARSED TEXT FOR PAGE: 31 / 48>
+    Inhibit growth.
+    Attach a filament.
+    Trigger a wave.
+    Repair a boundary.
+    Wait.
+The organism should choose site, strength, and duration, with explicit costs and cooldowns.
+
+Initial tastes without permanent obedience
+Separate:
+    Initial aesthetic prior: your preferred visual features.
+    Viability objective: persistent resource constraints.
+    Learned value: predicted future consequences.
+    Familiarity: reduces repetitive reward.
+    Exploration: bounded investigation of uncertain effects.
+Store these separately so that a claimed taste change can be traced to actual experience rather
+than an invisible update to a single “personality” number.
+
+What makes combinations unplanned?
+A crystal can redirect flow; redirected flow changes pigment deposition; pigment inhibits one
+growth process while feeding another; new contours alter the sensory field; the agent then
+chooses a different intervention.
+No single action needs an authored final image. The surprise comes from interaction among
+specified processes.
+
+Failure modes
+    One coupling destabilizes every field.
+    The agent repeatedly triggers the most visually salient effect.
+    The garden becomes permanently saturated.
+    Long-delayed consequences defeat learning.
+    Rendering features leak privileged world state into the policy.
+    A planner does all meaningful site selection while neural output only changes intensity.
+
+Validation
+Compare:
+    Coupled versus uncoupled materials.
+    Persistent versus periodically reset history.
+<PARSED TEXT FOR PAGE: 32 / 48>
+     Neural versus scripted intervention selection.
+     Learned versus frozen preference systems.
+     Biological versus matched alternative neural substrates.
+     One agent versus two agents with equal total actuation.
+Short-term: pigment + contour + one crystal process.
+Long-term: ecological resource cycles, external memory, and bounded rule editing.
+
+
+Neural Art Lab roadmap
+The aim is to preserve the working lab and add experimental seams, not replace it.
+
+Reuse, expand, or replace
+        Component from your
+                                                 Recommendation                                         Reason
+            description
+  6,203-cell connectome-derived          Reuse and freeze a reference
+                                                                              Stable experimental substrate
+  circuit                                version
+
+  LIF simulation                         Reuse, then verify                   Preserve behavior while adding numerical fixtures
+
+  Left/right looming channels            Reuse                                Immediate bilateral experimental interface
+
+  Motor/downstream                                                            Record individual populations, not only a combined
+                                         Expand
+  measurements                                                                “neural energy” value
+
+                                                                              Separate neural, engineered, and stochastic action
+  Hybrid autonomous controller           Make contribution explicit
+                                                                              sources
+
+                                                                              Already matches the intended mathematical
+  Contour/pigment/crystal world          Reuse
+                                                                              environment
+
+                                         Separate into named state            Distinguish initial priors, learned value, satiation,
+  Artificial tastes
+                                         variables                            and random exploration
+
+                                         Instrument before                    Retention and controls matter more than a richer
+  Rudimentary learning
+                                         expanding                            update rule
+
+                                                                              High-resolution output without high-resolution
+  Rendering/export                       Decouple from simulation
+                                                                              physics
+
+  Persistence                            Version and checkpoint               Reproducible individual histories
+
+These recommendations use the supplied project description, not inspected repository code. [4]
+
+Staged development
+        Stage                         Deliverable                    Scientific value            Cost                 Platform
+
+                         Versioned circuit, parameters, seeds,    Prevents regression
+  0 — Preserve                                                                                Low                Mobile/desktop
+                         checkpoints, reference runs              and narrative drift
+<PARSED TEXT FOR PAGE: 33 / 48>
+      Stage                    Deliverable                   Scientific value          Cost          Platform
+
+                   Neural/engineered/random action
+  1 — Expose                                              Establishes genuine
+                   ledger; disconnection and replay                                  Low       Mobile/desktop
+  causality                                               influence
+                   controls
+
+  2 — One          Consumption or deposition changes      Clear closed-loop          Low–
+                                                                                               Mobile
+  material loop    subsequent input                       experiment                 medium
+
+                                                          Tests adaptive utility
+  3 — Readout      Frozen neural graph, small learned                                          Mobile training
+                                                          without biological-        Medium
+  adaptation       decoder, held-out evaluation                                                batches/desktop
+                                                          learning claims
+
+  4 — Eight-arm    Reduced-order planar arms with         Tests anatomical
+                                                                                     Medium    Desktop first
+  body             local reflexes                         freedom
+
+  5 — Persistent   Two or three coupled materials and     Tests consequential        Medium–   Desktop; reduced
+  garden           durable history                        emergence                  high      mobile
+
+                                                          Tests experience-
+  6 — Twin         Copies develop under controlled
+                                                          dependent                  Medium    Desktop batch runs
+  histories        environmental differences
+                                                          individuality
+
+  7 — Multi-       Shared materials and
+                                                          Tests collective effects   High      Desktop
+  agent ecology    communication controls
+
+  8 — Broader      Add independently validated pursuit,   Expands neural
+                                                                                     High      Desktop research
+  circuits         taste, or learning modules             repertoire
+
+                                                          Tests whether scale
+  9 — Full CNS     MaleCNS/BANC versus current                                                 Native/GPU/server as
+                                                          adds useful                High
+  comparison       subcircuit on the same task                                                 needed
+                                                          competence
+
+
+What needs a different circuit?
+The present escape-related circuit can test:
+    Bilateral stimulus discrimination.
+    Timing and thresholding.
+    Neural modulation of material interventions.
+    Fixed-reservoir/readout learning.
+    Alien-body coordination with engineered local controllers.
+    Environmental memory.
+    Multi-agent coupling.
+It should not automatically be credited with:
+    Naturalistic color perception.
+    Olfactory identity coding.
+    Feeding motivation.
+    Mushroom-body associative learning.
+    General navigation.
+<PARSED TEXT FOR PAGE: 34 / 48>
+     Independent control of many limbs.
+Those require either an explicitly artificial extension or a broader, separately validated neural
+substrate.
+
+Ranking priorities
+The following is a qualitative planning judgment, not an empirical scorecard.
+
+                                                  Artistic           Emergence
+     Experiment           Scientific validity                                              Cost             Neural attribution
+                                                 potential            potential
+
+  Bilateral neural
+                       High if controlled       High                Moderate            Low          Clear
+  material steering
+
+                                                                                                     Clear if
+  Conserved glitter    High for hybrid-agent
+                                                Very high           High                Medium       ingestion/extrusion gates
+  metabolism           claims
+                                                                                                     are audited
+
+  Eight-arm synergy    High for interface                                               Medium–      Shared with local
+                                                Very high           High
+  body                 research                                                         high         controllers
+
+                       High with
+  Preference-                                                                                        Depends on learning
+                       retention/reversal       High                High                Medium
+  divergence twins                                                                                   location
+                       tests
+
+  Two-agent            High with trace                                                  Medium–      Must separate ecology
+                                                Very high           Very high
+  stigmergic garden    controls                                                         high         from neural utility
+
+  Immediate full-
+  brain                Low as a first step      Uncertain           Uncertain           High         Often harder to explain
+  replacement
+
+
+
+The 100-invention atlas
+Every entry is a proposed experiment, not a claim of prior demonstration.
+Abbreviations: F engineering-feasible, R research frontier, S speculative; difficulty L low, M
+medium, H high, E extreme.
+“Neural interface” means a proposed readout from verified available populations unless a
+specific pathway is named. “Interesting/artistic result” identifies the intended surprise, not a
+predicted outcome.
+
+Impossible bodies
+   # / Name and                                    Engineered              Interesting/artistic   Status /              First
+                          Neural interface
+      concept                                       additions                     result          difficulty         experiment
+  1. Eightfold
+  Borrowed                                      Elastic chains,            Coordinated knots,                       Two groups
+                      Bilateral activity
+  Body — eight                                  local contact              stirring, and                            of four planar
+                      controls arm-group                                                          F/R · M
+  arms share one                                reflexes, synergy          asymmetric arm                           arms around
+                      extension and recoil
+  central                                       decoder                    habits                                   one obstacle
+  controller
+<PARSED TEXT FOR PAGE: 35 / 48>
+ # / Name and                                  Engineered       Interesting/artistic   Status /         First
+                      Neural interface
+    concept                                     additions              result          difficulty    experiment
+2. Boundary
+                                            Level-set
+Animal — the                                                                                        Maintain a
+                  Population differences    boundary,           A creature visible
+body is the                                                                                         colored
+                  move boundary-control     pressure and        only as a moving       F·M
+interface                                                                                           island against
+                  points                    curvature           material border
+between two                                                                                         diffusion
+                                            feedback
+fluids
+
+3. Distributed
+                                                                                                    Two pigment
+Skin — one                                  Addressing
+                  Shared neural state                           Patches cooperate                   patches
+organism                                    mechanism,
+                  selects patch-specific                        without a              R·M          compete for
+occupies                                    separate local
+                  actions                                       continuous body                     one action
+disconnected                                sensors
+                                                                                                    budget
+patches
+
+4. Particle                                 Particle
+                                                                                                    Disperse
+Exodus —                                    constraints,        Escape becomes
+                  Burst readout switches                                                            around a
+body disperses                              assembly            controlled             F·M
+                  cohesion mode                                                                     barrier and
+and                                         memory, energy      disintegration
+                                                                                                    reassemble
+reconstructs                                cost
+
+5. Aperture
+                                                                                                    Three gates
+Creature —                                  Membranes,          Behavior emerges as
+                  Neural channels open                                                              regulate two
+anatomy                                     transport,          changing               F·L
+                  or close gates                                                                    pigment
+consists of                                 pressure sensing    permeability
+                                                                                                    chambers
+openings
+
+6. Graph-
+                                                                                                    Grow a
+Bodied                                                          A moving organism
+                  Activity selects edge     Graph dynamics                                          network
+Animal —                                                        without geometric      F/R · M
+                  growth and pruning        and resource flow                                       toward two
+limbs are                                                       locomotion
+                                                                                                    resources
+network edges
+
+7. Scale-
+Shedding                                    Multiscale state
+                  Readout chooses                               Tiny local actions                  Alternate
+Organism —                                  transfer and
+                  expansion/contraction                         become large           R·H          between two
+body repeatedly                             resource
+                  events                                        inherited structures                grid scales
+changes spatial                             accounting
+scale
+
+8. Peristaltic
+                  Neural state modulates                        Complex navigation                  Move through
+Line — a one-                               Elastic curve and
+                  traveling contraction                         from almost no         F·L          a narrow
+dimensional                                 contact model
+                  waves                                         anatomy                             channel
+animal
+
+9. Braided
+Ownership —                                 Identity ledger     Body identity                       Exchange one
+                  Activity controls
+two bodies                                  and reconnection    becomes a changing     R·H          shared
+                  attachment permissions
+temporarily                                 rules               relationship                        filament
+exchange parts
+
+10.                                                                                                 One fast and
+Clockwork                                   Multirate solver    Fast tendrils                       one slow
+                  Readout allocates local
+Flesh — body                                and                 cultivate slow         R·H          appendage
+                  update frequency
+parts run at                                synchronization     crystalline organs                  with shared
+different rates                                                                                     resources
+<PARSED TEXT FOR PAGE: 36 / 48>
+Alien senses
+                                Neural           Engineered        Interesting/artistic    Status /         First
+  # / Name and concept
+                               interface          additions               result           difficulty    experiment
+
+                                                                                                        Choose
+ 11. Curvature
+                             Signed-          Contour analysis                                          between
+ Grazer — senses                                                  Tracks pinches, cusps,
+                             curvature        and bilateral                                F·L          matched
+ bending rather than                                              and ribbon necks
+                             channels         encoder                                                   concave and
+ objects
+                                                                                                        convex paths
+
+                             Computed
+ 12. Hole Listener —                                                                                    Distinguish
+                             hole changes     Topology            Seeks rings or repairs
+ detects topological                                                                       F/R · M      disks and
+                             drive event      estimator           perforated worlds
+ holes                                                                                                  annuli
+                             inputs
+
+ 13. Familiarity             Decaying                             Repeated routes
+                                                                                                        Two-site revisit
+ Compass — senses            encounter        Spatial memory      become repulsive or      F·L
+                                                                                                        task
+ time since visitation       traces                               attractive
+
+ 14. Sparkle                 Response         Active
+                                                                  Learns surfaces                       Identify two
+ Echolocation —              timing enters    illumination and
+                                                                  through shimmering       R·M          reflectors by
+ probes surfaces with        synthetic        highlight
+                                                                  responses                             flash response
+ light flashes               channels         detector
+
+                             Defect
+ 15. Phason Nose —           descriptors      Quasiperiodic                                             Approach one
+                                                                  Navigates invisible
+ senses mismatch in          become a         field and local-                             R·H          controlled
+                                                                  order defects
+ quasiperiodic order         population       order metric                                              phase defect
+                             vector
+
+                                                                                                        Two visually
+                                                                  Avoids decorative
+ 16. Causal Touch —                                                                                     identical
+                             Prediction-      Local action-       regions where
+ senses whether actions                                                                    R·M          materials with
+                             error signal     effect model        intervention is
+ matter                                                                                                 different
+                                                                  ineffective
+                                                                                                        responses
+
+                             Spectral
+                                                                                                        Choose
+ 17. Spectral Hunger         bands                                Eats broad noise but
+                                              Image/audio                                               between
+ — senses frequency          mapped to                            preserves ordered        F/R · M
+                                              spectral analyzer                                         equal-energy
+ composition                 artificial                           bands—or vice versa
+                                                                                                        spectra
+                             inputs
+
+ 18. Ownership                                                                                          Mix its
+                             Only visible     Remove hidden       Tests recognition
+ Blindness — cannot                                                                                     deposits with
+                             features enter   provenance          without magical self-    F·L
+ directly identify its own                                                                              matched
+                             the network      labels              tags
+ work                                                                                                   foreign ones
+
+ 19. Future-Scar             External                                                                   Delayed
+                                              Learned short-      Avoids beautiful
+ Sensor — senses             predictor                                                                  cracking after
+                                              horizon world       actions with costly      R·H
+ predicted delayed           supplies risk                                                              pigment
+                                              model               later consequences
+ damage                      channels                                                                   deposition
+
+ 20. Communication           Message                                                                    Two agents
+                                              Spatial             Social signals behave
+ Weather — other             channels                                                                   emit and
+                                              communication       like drifting scent or   F/R · M
+ agents’ messages            stimulate                                                                  follow one
+                                              medium              light
+ become a field              inputs                                                                     signal
+<PARSED TEXT FOR PAGE: 37 / 48>
+Art-producing anatomy
+   # / Name and           Neural          Engineered          Interesting/artistic    Status /          First
+      concept            interface         additions                 result           difficulty     experiment
+
+ 21. Pixel
+                                                                                                   Consume one
+ Ruminant —                             Conserved
+                      Readout gates                        Grazed negative space                   color and
+ consumes                               pigment field                                 F·L
+                      ingestion                            records behavior                        deposit it
+ pigment into                           and inventory
+                                                                                                   elsewhere
+ internal stores
+
+ 22. Glitter
+                      Activity          Precursor          Sparkle patterns reveal                 One precursor,
+ Kidney —
+                      controls          chemistry and      internal processing        F·M          one excretion
+ crystallizes
+                      release timing    particle growth    history                                 valve
+ metabolic waste
+
+                      Readout
+                                                                                                   Repeated
+ 23. Fordite          chooses                              Body history becomes
+                                        Persistent layer                                           deposition over
+ Liver — deposits     deposition rate                      polished cross-sectional   F·M
+                                        geometry                                                   a deforming
+ stratified layers    and hue                              bands
+                                                                                                   surface
+                      allocation
+
+                                                                                                   Two recursive
+ 24. Fractal          Burst readout     Bounded            Vomited structures
+                                                                                                   rules with equal
+ Emesis — expels      selects seed      grammar,           become future              F·L
+                                                                                                   material
+ recursive growth     and budget        material cost      obstacles/resources
+                                                                                                   budgets
+
+ 25. Ribbon           Opposed
+                                        Ribbon                                                     Extrude
+ Sphincter —          neural
+                                        mechanics and      Nested pinched strata                   through a
+ pinches              channels                                                        F·M
+                                        thickness          and tension-driven folds                variable-width
+ continuous           control
+                                        conservation                                               opening
+ colored extrusion    aperture
+
+                      Slow neural
+ 26. Iridescent       signal            Thin-film          Color changes follow                    One
+ Gill — changes       modulates         rendering and      body condition rather      F·M          deformable
+ optical spacing      layer             structural state   than palette cycling                    reflective patch
+                      separation
+
+                      Readout
+ 27. Crystal                            Resource-limited                                           Grow toward
+                      allocates
+ Antler — grows                         growth and         Anatomy becomes a                       light while
+                      growth                                                          F/R · M
+ branching sensing                      contact            record of encounters                    avoiding
+                      direction and
+ organs                                 feedback                                                   contact
+                      inhibition
+
+ 28. Caustic          Activity
+                                        Refraction                                                 One lens with
+ Stomach —            changes                              Internal state draws
+                                        renderer and                                  F·H          two shape
+ reshapes a           surface control                      moving caustics
+                                        light sensor                                               controls
+ refractive organ     points
+
+ 29. Knot
+                      Readout
+ Spinner —                                                 Persistent woven
+                      selects anchor,   Rope solver and                                            Connect three
+ extrudes                                                  structures alter           F/R · H
+
+                      pull, and         attachment rules                                           anchor points
+ tensioned                                                 movement
+                      release
+ filaments
+
+ 30. Phase-Skin
+                      Neural gate       Material ledger    Shed skin becomes
+ Molter — skin                                                                                     One reversible
+                      selects phase     and phase          pigment, then new          R·H
+ changes                                                                                           phase patch
+                      transitions       model              structure
+ solid/liquid state
+<PARSED TEXT FOR PAGE: 38 / 48>
+Mathematical habitats
+    # / Name and                                 Engineered        Interesting/artistic    Status /        First
+                          Neural interface
+       concept                                    additions               result          difficulty    experiment
+
+                                               Coupled
+ 31. Attractor                                                    Learns recurring                     Keep one
+                                               nonlinear
+ Shepherd —             Bounded output                            regions without                      trajectory
+                                               ODEs and                                   F/R · M
+ nudges chaotic         impulses                                  controlling every                    near a target
+                                               occupancy
+ trajectories                                                     trajectory                           region
+                                               sensors
+
+ 32. Wave
+                                               Excitable grid                                          Guide one
+ Herdsman —             Activity triggers or                      Moving corridors of
+                                               and refractory                             F·L          wave around
+ routes excitable       blocks wave sites                         neon activity
+                                               sensors                                                 a barrier
+ fronts
+
+ 33. Turing
+                                                                  Spots become                         Maintain one
+ Gardener —             Readout deposits       Reaction–
+                                                                  structures the agent    F·L          spot under
+ cultivates reaction    activator/inhibitor    diffusion solver
+                                                                  can revisit                          disturbance
+ patterns
+
+                                                                                                       Two rule
+ 34. Automaton          Readout selects                           Organism controls
+                                               CA and rule-                                            regions with
+ Surgeon — edits        bounded rule                              laws locally, not       R·M
+                                               edit cost                                               one movable
+ local cellular rules   patches                                   individual cells
+                                                                                                       boundary
+
+ 35. Phase-
+ Separation             Outputs bias           Conserved          Growing islands,                     Preserve two
+ Rancher —              transport or           composition        channels, and           F/R · M      domains from
+ manages material       interface motion       solver             coarsening mosaics                   merging
+ domains
+
+ 36. Graph
+                        Neural state           Graph              Structures gain new                  Three rewrite
+ Alchemist —
+                        chooses site and       grammar and        affordances through     F/R · M      rules and one
+ applies rewriting
+                        production             validity checks    rewrites                             resource
+ rules
+
+ 37. Aperiodic
+                                                                  Order without
+ Mason — builds         Readout chooses        Tile constraint                                         Grow a small
+                                                                  repetition becomes      R·M
+ under matching         legal placements       engine                                                  legal patch
+                                                                  an action problem
+ constraints
+
+ 38. Voronoi
+                        Channels control       Power diagram      Color territories                    Maintain three
+ Shepherd —
+                        site motion and        and area           compete and             F·L          unequal
+ moves territorial
+                        weights                sensors            reorganize                           regions
+ seeds
+
+ 39. Grammar
+                        Readout selects                           Structures grow into                 Two growth
+ Grafter — attaches                            Generative
+                        production and                            tools or sensing        R·M          programs on
+ developmental                                 grammar
+                        attachment site                           organs                               one trunk
+ programs
+
+ 40. Regeneration
+                                               Trained local      Controller and                       Repair one
+ Symbiont — lives       Neural output seeds
+                                               tissue             regenerating            R·H          damaged
+ inside an adaptive     or damages state
+                                               dynamics           substrate co-develop                 bridge
+ tissue field
+<PARSED TEXT FOR PAGE: 39 / 48>
+Synthetic ecologies
+  # / Name and                                  Engineered        Interesting/artistic    Status /        First
+                        Neural interface
+     concept                                     additions               result          difficulty    experiment
+
+ 41. Pigment
+ Pastoralist —                                Resource-           Color herds create                  Herd ten
+                    Readout deposits food
+ cultivates                                   consuming           trails and grazing     F·M          simple agents
+                    or barriers
+ mobile color                                 agents              fronts                              through a gate
+ organisms
+
+ 42. Crystal
+                                              Seed viability      Structures                          Two crystal
+ Pollinator —       Neural state gates
+                                              and resource        reproduce through      F·M          colonies and
+ transports         pickup/release
+                                              fields              visitation                          one carrier
+ growth seeds
+
+ 43. Parasitic
+ Palette —                                    Parasite
+                                                                  Visual style becomes                One reversible
+ another            Neural response affects   dynamics and
+                                                                  an ecological          R·M          sensory-gain
+ organism           exposure                  bounded
+                                                                  infection                           parasite
+ changes its                                  modulation
+ sensory bias
+
+ 44. Shelter
+                                              Shelter benefit
+ Weaver —                                                         Architecture                        Build shade
+                    Readout places            and
+ builds habitats                                                  changes local          F/R · M      over one
+                    filaments                 construction
+ for smaller                                                      population behavior                 resource
+                                              cost
+ agents
+
+ 45. Dormant
+                                              Delay and                                               Seeds activate
+ Spore Bank —       Output plants latent                          Old decisions return
+                                              environmental                              F·L          only after a
+ creations          seeds                                         as new organisms
+                                              activation rules                                        wave passes
+ awaken later
+
+ 46.
+ Succession
+                                                                                                      Two species
+ Painter — one                                Successional
+                    Neural allocation                             Layered ecological                  with
+ material                                     resource                                   F/R · M
+                    among species                                 color transitions                   sequential
+ prepares                                     dependencies
+                                                                                                      requirements
+ another’s
+ habitat
+
+ 47. Hoarding
+                                                                                                      Cache pigment
+ Reef — stores                                Inventory and       Sculpture doubles
+                    Readout chooses                                                                   before a
+ scarce                                       retrievable         as reserve and         F·M
+                    consume/store/release                                                             resource
+ materials in                                 deposits            memory
+                                                                                                      drought
+ structure
+
+ 48. Niche
+                    Shared action set,        Heterogeneous       Distinct material                   Two agents
+ Splitter —
+                    separate learned          resources and       styles without         R·H          and two
+ identical copies
+                    readouts                  switching costs     assigned professions                resource types
+ specialize
+
+ 49. Public-
+ Good Glow —                                                      Cooperation                         Two agents
+ organisms          Outputs allocate energy   Shared benefits     becomes visible as                  can illuminate
+                                                                                         R·M
+ maintain a         to illumination           and private costs   luminous                            each other’s
+ shared light                                                     infrastructure                      food
+ field
+<PARSED TEXT FOR PAGE: 40 / 48>
+  # / Name and                                      Engineered         Interesting/artistic    Status /        First
+                           Neural interface
+     concept                                         additions                result          difficulty    experiment
+ 50. Sentinel
+                                                                      A garden becomes a                   Three planted
+ Bloom —               Activity plants sensors    Remote sensing
+                                                                      distributed nervous     R·M          disturbance
+ structures warn       and interprets alerts      and decay
+                                                                      extension                            detectors
+ of disturbance
+
+
+Sound and music
+   # / Name and                                    Engineered         Interesting/artistic    Status /         First
+                            Neural interface
+      concept                                       additions                result           difficulty    experiment
+
+ 51. Harmonic                                                                                              Three
+                          Neural gates                               Sound changes the
+ Grazer —                                        Audio field and                                           resonators
+                          choose resonant                            organism’s available     F/R · M
+ consumes spectral                               energy ledger                                             feed one
+                          bands                                      material
+ energy                                                                                                    energy store
+
+ 52. Delay-Line                                                                                            Two delay
+                                                                     Past actions return as
+ Burrower —               Outputs alter taps     Stable delay                                              paths with
+                                                                     spatially navigable      F·M
+ moves through            and feedback           network                                                   bounded
+                                                                     echoes
+ acoustic memory                                                                                           feedback
+
+ 53. Modal Bone
+                          Readout                Modal or                                                  One beam with
+ Garden — grows                                                      Shape, sound, and
+                          adds/removes           reduced                                      R·H          movable
+ resonant                                                            control co-evolve
+                          structural elements    resonator model                                           masses
+ structures
+
+ 54. FM
+ Metabolism —                                                                                              Two digestion
+                          Activity allocates     Bounded FM          Internal resource
+ digestion                                                                                                 modes, two
+                          carrier/modulator      synthesis and       state has a              F·L
+ transforms                                                                                                spectral
+                          ratios                 state feedback      characteristic timbre
+ modulation                                                                                                outcomes
+ relationships
+
+ 55. Rhythm
+ Scar Tissue —                                                                                             Navigate a
+                          Neural timing          Event lattice and   Rhythm becomes
+ repeated actions                                                                             F/R · M      repeating gate
+                          readout                refractory rules    inhabitable history
+ create persistent                                                                                         rhythm
+ timing obstacles
+
+ 56. Stereo                                                                                                Two agents
+                          Output controls
+ Territory —                                     Acoustic map        Territory exists as an                contest one
+                          source                                                              F·M
+ spatial sound                                   and competition     audible field                         resonant
+                          position/intensity
+ marks ownership                                                                                           region
+
+ 57. Spectral                                                        Audible                               Transfer one
+ Molting — body           Readout controls       Spectral            metamorphosis                         band from
+                                                                                              F·L
+ sheds frequency          filter transitions     inventory           mirrors material                      body to
+ bands                                                               change                                environment
+
+ 58. Resonance                                                                                             Move a
+                          Neural action          Resonators and      Tools extend
+ Toolmaker —                                                                                               sounding
+                          chooses strike and     response            perception without       R·H
+ builds objects used                                                                                       probe between
+                          placement              classifier          new built-in sensors
+ to probe space                                                                                            two cavities
+<PARSED TEXT FOR PAGE: 41 / 48>
+    # / Name and                                  Engineered         Interesting/artistic    Status /           First
+                           Neural interface
+       concept                                     additions                result           difficulty      experiment
+ 59. Synesthetic                                                                                           One standing
+                                                Coupled
+ Loom — audio             Readout excites                          Musical actions                         wave
+                                                sound/flow                                   F/R · M
+ waves alter              sources                                  weave visible strata                    transports one
+                                                approximation
+ pigment transport                                                                                         pigment
+
+ 60. Call-and-
+                                                                   Protocols may
+ Response                                       Shared acoustic                                            Two agents
+                          Separate message                         emerge from
+ Colony — agents                                channel and                                  R·H           coordinate one
+                          readouts                                 coordination
+ communicate                                    learning                                                   gate
+                                                                   pressure
+ through sound
+
+
+Behavioral experiments
+                                                 Engineered        Interesting/artistic      Status /
+ # / Name and concept        Neural interface                                                             First experiment
+                                                  additions               result            difficulty
+ 61. Reversal                                                     Tests adaptation
+                            Fixed circuit                                                                 Swap rewards
+ Orchard — attractive                           Reversal          rather than
+                            plus learned                                                    F·L           for rings and
+ structures change                              schedule          permanent authored
+                            policy                                                                        branches
+ value                                                            taste
+
+ 62. Active-View            Neural state        Movable
+                                                                  Inspection becomes a                    Peek around
+ Creature — must act        selects sensor      sensor and                                  F/R · M
+                                                                  behavior                                one barrier
+ to reveal information      direction           occlusion
+
+ 63. Borrowed                                                                                             Compare
+                            Same neural         Matched task      Finds which body
+ Reflex Clinic —                                                                                          ribbon, blob,
+                            signals across      and cost          mechanics exploit the     F·M
+ compares many alien                                                                                      and particle
+                            body adapters       budget            circuit
+ bodies                                                                                                   bodies
+
+ 64. Delayed-                                   Delayed           Distinguishes
+                                                                                                          Reward arrives
+ Consequence                Eligibility-trace   growth and        patience from
+                                                                                            R·M           after several
+ Garden — actions           readout             event             immediate-effect
+                                                                                                          neutral steps
+ bloom much later                               attribution       chasing
+
+ 65. Body-Swap
+                            Shared neural                         Reveals what is                         Transfer a two-
+ Curriculum —                                   Transfer
+                            core, adaptive                        reusable versus body-     R·H           arm policy to
+ changes anatomy                                protocol
+                            decoder                               specific                                four arms
+ after learning
+
+ 66. Invisible
+                            Synthetic                             Tests actual sensor                     Hide resource
+ Resource Test —                                Matched visual
+                            concentration                         use rather than           F·L           beneath
+ useful material is not                         distractors
+                            sense                                 spectacle seeking                       uniform color
+ visually salient
+
+ 67. Asynchronous                                                 Reveals temporal
+                            Same circuit        Controlled                                                Sweep one
+ Life — changes                                                   robustness and            F·L
+                            and policy          latency                                                   feedback delay
+ sensor/action delay                                              failure boundaries
+
+ 68. Branching                                                                                            Two
+                            Identical initial                     Makes individuality
+ Biography — copies                             Forkable world                                            environments
+                            neural and                            experimentally            F·M
+ diverge from one                               histories                                                 after one shared
+                            learned state                         inspectable
+ checkpoint                                                                                               childhood
+<PARSED TEXT FOR PAGE: 42 / 48>
+                                                   Engineered            Interesting/artistic    Status /
+  # / Name and concept      Neural interface                                                                 First experiment
+                                                    additions                   result          difficulty
+  69. Modality              Remapped                                                                         Exchange
+  Exchange — swaps          encoder,             Recalibration          Tests arbitrary-sense                curvature and
+                                                                                                R·M
+  what sensory              optional             protocol               adaptation                           contrast
+  channels mean             learning                                                                         channels
+
+                            External value
+  70. Counterfactual                             Small                  Tests whether                        Compare one-
+                            model, neural
+  Tutor — learns from                            branched               planning uses or        R·H          step alternatives
+                            features
+  simulated alternatives                         rollouts               bypasses neural state                only
+                            retained
+
+
+Collective organisms
+                                 Neural         Engineered             Interesting/artistic     Status /          First
+   # / Name and concept
+                                interface        additions                    result            difficulty     experiment
+
+  71. Two-Brain
+                               Separate                              Cooperation versus                      Both must
+  Gatekeeper — two                             AND/OR
+                               neural                                deadlock becomes           F·L          permit a costly
+  networks must authorize                      arbitration
+                               votes                                 visible                                 extrusion
+  one action
+
+  72. Split-Tentacle                                                 Negotiation through
+                               Separate        Shared body
+  Diplomat — each brain                                              mechanical                 R·
+                               readouts        mechanics
+  controls opposing arms                                             consequences
+
+                                                                 ⁂
+
+  1. https://eon.systems/updates/more-flies-are-getting-uploaded
+  2. https://github.com/nftechie/DOOMFLY
+  3. https://github.com/ns2250225/fly-flappy/blob/main/README.md
+  4. pasted_text_1793134909.txt
+  5. https://github.com/Apolotary/fly-lab/blob/main/README.md
+  6. https://escholarship.org/uc/item/8rh1t839
+  7. https://collaborate.princeton.edu/en/publications/neuronal-wiring-diagram-of-an-adult-brain/
+  8. https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/?ref=explainx
+  9. https://github.com/jasper-tms/the-BANC-fly-connectome/wiki/
+ 10. https://codex.flywire.ai/app/cell_details?dataset=banc&data_version=626&root_id=720575941593736555
+ 11. https://www.virtualflybrain.org/docs/data/connectivity/
+ 12. https://wilson.hms.harvard.edu/publication/distributed-control-circuits-across-brain-and-cord-connectome-0
+ 13. https://ideas.repec.org/a/nat/nature/v656y2026i8129d10.1038_s41586-026-10735-w.html
+ 14. https://institute-tue.ellis.eu/ei/publications/lappalainennature24
+ 15. https://github.com/TuragaLab/flyvis
+ 16. https://www.sciencedaily.com/releases/2024/11/241112123423.htm
+ 17. https://eon.systems/updates/weve-uploaded-a-fruit-fly
+ 18. https://pmc.ncbi.nlm.nih.gov/articles/PMC12648571/
+<PARSED TEXT FOR PAGE: 43 / 48>
+19. https://pubmed.ncbi.nlm.nih.gov/41145885/
+20. https://github.com/MarkUnthank/flyhard
+21. https://github.com/Apolotary/fly-lab/blob/main/docs/DARK_LAB.md
+22. https://github.com/Apolotary/fly-lab/blob/main/THIRD_PARTY_NOTICES.md
+23. https://github.com/jtc268/fruit-fly-fashion/blob/main/PROTOCOL.md
+24. https://github.com/nftechie/doomfly/blob/main/docs/doom-learning-review.md
+25. https://github.com/TiFoil/Philshiu-Drosophila_brain_model
+26. https://github.com/philshiu/Drosophila_brain_model/blob/main/model.py
+27. https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+28. https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7/model.py
+29. https://github.com/philshiu/Drosophila_brain_model/issues
+30. https://github.com/philshiu/Drosophila_brain_model/releases
+31. https://male-cns.janelia.org/release/
+32. https://male-cns.janelia.org/
+33. https://github.com/philshiu/Drosophila_brain_model
+34. https://eon.systems/updates/embodied-brain-emulation
+35. https://neuromechfly.org/citation/
+36. https://pubmed.ncbi.nlm.nih.gov/39533006/
+37. https://phys.org/news/2024-11-virtual-fruity-fly-simulate-sensory.html
+38. http://neuromechfly.org/_sources/index.rst.txt
+39. https://media.nature.com/original/magazine-assets/d41586-024-02935-z/d41586-024-02935-z.pdf
+40. https://pmc.ncbi.nlm.nih.gov/articles/PMC11446845/
+41. https://is.mpg.de/publications/lappalainennature24-ba73813e-bafb-4a93-9a42-ddb0fbca5522
+42. https://www.neurotrailblazers.org/content-library/journal-papers/network-analysis/
+43. https://www.gesundheitsindustrie-bw.de/en/article/press-release/researchers-combine-power-artificial-intelligence-a
+    nd-wiring-diagram-brain-predict-brain-cell-activity
+44. https://pubmed.ncbi.nlm.nih.gov/39261740/
+45. https://www.nature.com/articles/s41586-024-07763-9
+46. https://ideas.repec.org/a/nat/nature/v634y2024i8036d10.1038_s41586-024-07939-3.html
+47. https://neuromechfly.org/2.1.1/citation/
+48. https://collaborate.princeton.edu/en/publications/a-drosophila-computational-brain-model-reveals-sensorimotor-pro
+    ce/
+49. https://origozero.ai/assets/ac1669c9-9165-4f0e-abb8-8dd9446d9968
+50. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11446845/
+51. https://orcid.org/0000-0002-8794-5474
+52. https://phys.org/news/2026-06-publish-connectome-fruit-fly-brain.pdf
+53. https://github.com/blendi-remade/fly-brain-minecraft
+<PARSED TEXT FOR PAGE: 44 / 48>
+54. https://github.com/htem/bancpipeline
+55. https://github.com/htem/bancpipeline/blob/main/README.md
+56. https://github.com/chaobrain/drosophila_whole_brain_snn_simulation/blob/main/README.md
+57. https://github.com/htem/bancpipeline/blob/main/CITATION.cff
+58. https://github.com/chaobrain/drosophila_whole_brain_snn_simulation
+59. https://pubmed.ncbi.nlm.nih.gov/?linkname=pubmed_pubmed_citedin&from_uid=31709462
+60. https://pubmed.ncbi.nlm.nih.gov/39358519/
+61. https://www.nature.com/articles/s41467-020-19936-x
+62. https://www.nature.com/articles/npp2009115
+63. https://www.nature.com/articles/s41467-020-20371-1
+64. https://www.nature.com/articles/s41467-023-41261-2
+65. https://www.nature.com/articles/s41586-026-10501-y
+66. https://www.nature.com/articles/s41586-026-10526-3
+67. https://www.nature.com/subjects/reflexes/nature
+68. https://www.nature.com/subjects/reflexes/emi
+69. https://www.nature.com/articles/s41467-025-59302-3
+70. https://www.nature.com/articles/s41467-019-10695-y
+71. https://www.nature.com/subjects/neural-circuit/nature
+72. https://www.nature.com/articles/s41467-017-00191-6
+73. https://phys.org/news/2026-09-connectome-pursuing-fly-brain-rewired.html
+74. https://www.repository.cam.ac.uk/items/c06eb649-eb93-4c33-99ae-675e8c6a01d6
+75. https://pubmed.ncbi.nlm.nih.gov/40766407/?fc=None&ff=20250911142027&v=2.18.0.post9+e462414
+76. https://pubmed.ncbi.nlm.nih.gov/40766407/?fc=None&ff=20250903141926&v=2.18.0.post9+e462414
+77. https://datasetcatalog.nlm.nih.gov/searchResults?filters=agent:Kemnitz%2C%20Nico&sort=rel&page=1&size=10
+78. https://wilson.hms.harvard.edu/
+79. https://neuro.hms.harvard.edu/node/27144
+80. https://connectomics.hms.harvard.edu/publications/distributed-control-circuits-across-brain-and-cord-connectome
+81. https://hokai.io/hub/tools/malecns-connectome
+82. https://github.com/obrainarc/obrain/blob/main/README.md
+83. https://theconsciousness.ai/posts/malecns-flywire-sexual-dimorphism-consciousness/
+84. https://www.exepert.com/blog/neural-canvas-fruit-fly-connectome-browser
+85. https://ai.thesatyajit.com/articles/fly-connectome-computing.md
+86. https://github.com/alexbuildstech/fly-connectome-lm/blob/main/experiment.md
+87. https://ai.thesatyajit.com/articles/fly-connectome-computing
+88. https://nashaniva.com/en/404828
+89. https://www.rootdata.com/projects/detail/flybrain?k=MjU4MDg=
+90. https://fly-lingo.vercel.app/
+<PARSED TEXT FOR PAGE: 45 / 48>
+ 91. https://www.epfl.ch/labs/ramdya-lab/wp-content/uploads/2024/08/NMF2_postprint.pdf
+ 92. https://medicalxpress.com/news/2024-09-combining-power-ai-connectome-brain.pdf
+ 93. https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1911198/full
+ 94. https://www.genengnews.com/topics/artificial-intelligence/neuronal-activity-in-living-brain-predicted-with-ai-connect
+     ome-method/
+ 95. https://orcid.org/0000-0002-0547-7401
+ 96. https://pubmed.ncbi.nlm.nih.gov/38854115/
+ 97. https://www.semanticscholar.org/paper/Connectome-constrained-Latent-Variable-Model-of-Mi-Xu/18ab60e2cd524d4d
+     8eca056dad5a279a9697246c
+ 98. https://www.linkedin.com/in/naibaf7
+ 99. https://eon.systems/updates
+100. https://eon.systems/updates/first-multi-behavior-brain-upload
+101. https://read.qxmd.com/read/40766407/distributed-control-circuits-across-a-brain-and-cord-connectome
+102. https://www.limes-institut-bonn.de/en/public-relations/news/articles/news/auf-der-suche-nach-neuen-perspektiven-
+     kopie-1/
+103. https://elifesciences.org/articles/102684
+104. https://blog.flywire.ai/author/amy/
+105. https://github.com/tel-0s/flyverse-core
+106. https://www.limes-institut-bonn.de/forschung/arbeitsgruppen/unit-1/abteilung-pankratz/publikationen/
+107. https://github.com/Ovaday/doomfly
+108. https://github.com/nftechie/doomfly/blob/main/doom-ui/public/learning-iterations.json
+109. https://github.com/nftechie/doomfly/blob/main/doom/README.md
+110. https://github.com/nftechie/doomfly/tree/main/doom
+111. https://github.com/Apolotary/fly-lab/blob/main/docs/INSPIRATION.md
+112. https://github.com/Apolotary/fly-lab/blob/main/LICENSE
+113. https://github.com/Apolotary/fly-lab/actions
+114. https://github.com/Apolotary/fly-lab
+115. https://github.com/Apolotary
+116. https://github.com/vaibhavkedarisetti/fruit-fly-lab/blob/main/web/data/meta.json
+117. https://github.com/jtc268/fruit-fly-fashion/actions
+118. https://github.com/jtc268/fruit-fly-fashion/blob/main/vercel.json
+119. https://github.com/MarkUnthank/flyhard/blob/main/LICENSE
+120. https://github.com/MarkUnthank/flyhard/blob/main/THIRD_PARTY.md
+121. https://github.com/MarkUnthank/flyhard/security
+122. https://github.com/MarkUnthank/flyhard/blob/main/README.md
+123. https://github.com/MarkUnthank/flyhard/blob/main/.gitignore
+124. https://github.com/MarkUnthank/flyhard/actions
+125. https://github.com/MarkUnthank/flyhard/activity
+<PARSED TEXT FOR PAGE: 46 / 48>
+126. https://github.com/MarkUnthank/flyhard/blob/main/AGENTS.md
+127. https://github.com/MarkUnthank/flyhard/pulls
+128. https://shaduf.ai/p/digital-fly-catalog/projects/shiu-drosophila-brain-model/
+129. https://huggingface.co/datasets/svgmediabills/malecns-connectome
+130. https://shaduf.ai/p/digital-fly-catalog/how-it-works/
+131. https://fly-brain-hub.vercel.app/projects/flywire-fafb
+132. https://tools.cooconsbit.com/en/articles/fruit-fly-brain-community-projects-en
+133. https://www.aixploria.com/en/malecns-connectome-google-janelia/
+134. https://github.com/Owen-Silva/fly-brain
+135. https://github.com/lm203688/flybrain-connectome
+136. https://github.com/erankopel/maleCNS-depth
+137. https://github.com/watthem/awesome-fruit-fly-connectome
+138. https://tools.cooconsbit.com/en/fruit-fly
+139. https://github.com/akashacorporation/flybrain
+140. https://supertruth.ai/research/connectome
+141. https://github.com/vaibhavkedarisetti/fruit-fly-lab
+142. https://tools.cooconsbit.com/en/hands-on/fruit-fly-brain-download-run-locally-en
+143. https://natverse.org/malecns/authors.html
+144. https://pubmed.ncbi.nlm.nih.gov/32822613/
+145. https://crossmark.crossref.org/dialog/?doi=10.1038/s41586-026-10735-w
+146. https://phys.org/news/2026-06-publish-connectome-fruit-fly-brain.html
+147. https://findanexpert.unimelb.edu.au/scholarlywork/2325006-neuronal-wiring-diagram-of-an-adult-brain
+148. https://ora.ox.ac.uk/objects/uuid:df8b9c06-87f4-4ab8-bee8-105579816b14
+149. https://orcid.org/0000-0002-1195-0445
+150. https://researchportal.northumbria.ac.uk/en/publications/neuronal-wiring-diagram-of-an-adult-brain/
+151. https://www.debivortlab.org/publications
+152. https://academic.oup.com/ae/article-abstract/70/4/4/7934269
+153. https://explore.openaire.eu/search/publication?pid=10.1038/s41586-024-07558-y
+154. https://crossmark.crossref.org/dialog/?doi=10.1038/s41586-024-07558-y
+155. https://murthylab.princeton.edu/publications
+156. https://pubmed.ncbi.nlm.nih.gov/?cmd=search&term=L+Chiappe&dispmax=50
+157. https://www.nature.com/articles/s41586-026-10735-w
+158. https://huggingface.co/api/resolve-cache/datasets/ThomasHeisig/MHRN-Research-Data/2b5c5441502f529f112f32a6cf
+     224847e86efd1e/research%2Fpublications%2F2026-09-09_connectome-embodiment_supplement%2Freferences.bib?
+     download=true&etag="6c36fb0797e997eac90032051222c0d43c189f0f"
+159. https://research.google/blog/rss/
+160. https://github.com/annel0/flybrain/blob/master/docs/targets/prior-validation.md
+<PARSED TEXT FOR PAGE: 47 / 48>
+161. https://research.google/blog/2026/09/
+162. https://sites.research.google/gr/neural-mapping/
+163. https://x.com/neuromechfly/status/1856314357795237944
+164. https://x.com/neuromechfly
+165. https://www.nature.com/articles/s41592-022-01466-7
+166. https://www.nature.com/articles/s41467-026-69333-z
+167. https://www.nature.com/articles/s41592-024-02497-y
+168. https://www.nature.com/articles/s41467-026-72152-x
+169. https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/
+170. https://blog.google/innovation-and-ai/technology/research/male-fruit-fly-brain-map/
+171. https://www.nature.com/subjects/machine-learning/nmeth?searchType=journalSearch&sort=PubDate&page=4
+172. https://heatdrop.ai/repo/cobanov/awesome-fly
+173. https://github.com/cobanov/awesome-fly/issues
+174. https://github.com/cobanov/awesome-fly/activity
+175. https://github.com/cobanov/awesome-fly/pulls
+176. https://toshareproject.it/artmakerblog/awesome-fly-a-collection-of-fruit-fly-brain-hacks/
+177. https://www.neurotrailblazers.org/datasets/catalog/banc/
+178. https://github.com/cobanov/awesome-fly
+179. https://www.parapathology.com/clippings/awesome-fly-curated-fruit-fly-connectome-projects
+180. https://www.parapathology.com/appendix/clippings/awesome-fly-curated-fruit-fly-connectome-projects
+181. https://www.limes-institut-bonn.de/oeffentlichkeitsarbeit/aktuelles/artikel/news/auf-der-suche-nach-neuen-perspekti
+     ven-kopie-1/
+182. https://github.com/cobanov/cobanov/blob/master/README.md
+183. https://www.sciencedaily.com/releases/2026/06/260610003047.htm
+184. https://github.com/cobanov
+185. https://pmc.ncbi.nlm.nih.gov/articles/PMC11446842/
+186. https://ouci.dntb.gov.ua/en/works/9JyzRJAl/
+187. https://ideas.repec.org/a/nat/nature/v634y2024i8032d10.1038_s41586-024-07558-y.html
+188. https://www.repository.cam.ac.uk/items/ad6e71ad-8ec6-4262-ad9b-68c377c36ae2
+189. https://www.princeton.edu/news/2024/10/02/mapping-entire-fly-brain-step-toward-understanding-diseases-human-b
+     rain
+190. https://flybase.org/reports/FBrf0260546
+191. https://www.sciencenews.org/article/fruit-fly-brain-connections-traced
+192. https://neuro.hms.harvard.edu/node/27204
+193. https://pubmed.ncbi.nlm.nih.gov/42259917/
+194. https://www.drugowitschlab.org/news/202606-banc_paper/
+195. https://wilson.hms.harvard.edu/publications
+<PARSED TEXT FOR PAGE: 48 / 48>
+196. https://collaborate.princeton.edu/en/publications/neuronal-wiring-diagram-of-an-adult-brain
+197. https://pubmed.ncbi.nlm.nih.gov/42691995/
+198. https://github.com/philshiu/Drosophila_brain_model/blob/main/Readme.md
+199. https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7/example.ipynb
+200. https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7/Readme.md?plain=1
+201. https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7/figures.ipynb
+202. https://github.com/philshiu/

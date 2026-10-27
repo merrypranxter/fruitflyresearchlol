@@ -1,0 +1,1205 @@
+# R01 — SEARCHABLE TEXT TRANSCRIPTION
+
+Original: Connectome Artificial Life Exploration.pdf (26 pages)
+Source: user-provided research report, October 27, 2026.
+NOTE: Automated PDF text extraction; table layout, equations and embedded graphics may not be faithfully reproduced. Verify against the PDF. This is research-source material, not independently fact-checked.
+
+---
+
+<PARSED TEXT FOR PAGE: 1 / 26>
+The Unlimited Body: Navigating the Full
+Design Space of Connectome-Driven
+Artificial Organisms
+1. Executive Scientific Reality Check: The Anatomy of
+a Simulated Fly Brain
+As of late 2026, the term "simulated fly brain" encompasses several distinct tiers of
+neurobiological data, mathematical approximation, and computational abstraction. It is critical to
+precisely delineate these tiers, as conflating a static wiring diagram with an independently
+learning artificial agent leads to profound engineering and epistemological errors. The
+foundational anatomical basis of these simulations rests on dense electron-microscopy
+reconstructions of Drosophila melanogaster.
+The primary structural datasets currently driving the field include the FlyWire (FAFB)
+connectome, finalized and published in Nature in October 2024, which mapped the complete
+adult female brain, encompassing approximately 139,255 neurons and tens of millions of
+synapses. However, FlyWire lacks the ventral nerve cord (the fly analog to a spinal cord),
+leaving a gap in direct motor actuation. This limitation was resolved by the MaleCNS dataset,
+released by HHMI Janelia, Cambridge, and Google Research (v1.0 in June 2026, published in
+Cell in September 2026), which contains over 166,000 neurons and roughly 125 million
+synapses, crucially encompassing both the complete brain and the ventral nerve cord. This
+allows for seamless brain-to-leg and brain-to-wing motor pathway tracing without forcing
+researchers to guess how descending neurons (DNs) innervate motor centers. Concurrently, the
+BANC (Brain and Nerve Cord) project provided a whole-CNS connectome for the adult female.
+Platforms like FlyWire Codex, neuPrint, and neuprint-python provide programmatic access to
+these massive graphs, allowing researchers to query specific cell types, fetch adjacency
+matrices, and trace multi-hop pathways.
+However, a connectome is fundamentally a static wiring diagram—a list of nodes and weighted
+directed edges. To transition from a structural graph to a functional organism, significant
+engineering assumptions are required. Eckstein et al. (2024) bridged a major gap by utilizing
+machine learning to classify neurotransmitter identities from electron microscopy images,
+predicting whether a synapse is excitatory (e.g., cholinergic) or inhibitory (e.g., GABAergic or
+glutamatergic). Building upon this, Shiu et al. (2024) pioneered a whole-brain leaky
+integrate-and-fire (LIF) model constrained by the FlyWire connectome. In this framework,
+neurons are simulated as mathematical capacitors that accumulate voltage from incoming
+spikes and discharge when a threshold is crossed. Shiu demonstrated that activating specific
+gustatory receptor neurons (GRNs) in the simulated graph accurately predicted the activation of
+motor neuron MN9, which governs proboscis extension in the biological fly.
+The distinction between differing simulation paradigms is stark and dictates what is genuinely
+possible. A static wiring diagram merely shows potential routing. A mathematically simulated
+spiking network passes electrical signals based on fixed rules but lacks long-term learning. A
+connectome-informed behavioral controller extracts a functional subcircuit (like the E-PG ring
+<PARSED TEXT FOR PAGE: 2 / 26>
+attractor for heading) and uses it as a topological prior for a trained neural network. A complete
+embodied sensorimotor loop, such as Eon Systems' virtual fruit fly or NeuroMechFly, links these
+simulated spikes to a biomechanical physics engine (like MuJoCo), where simulated
+environments drive sensory neurons, which propagate spikes to motor neurons, actuating
+physical joints that subsequently alter the sensory input. Advanced models integrate synaptic
+plasticity, implementing dopamine-gated weight updates in the mushroom body (MB) to allow
+continuous learning.
+Current simulations still lack massive amounts of biological reality. They generally omit gap
+junctions (electrical synapses), complex multi-compartment dendritic computation, diverse
+ion-channel dynamics, volumetric neuromodulation (hormonal baths), glial cell interactions, and
+intrinsic spontaneous firing mechanics. An LIF simulation does not spontaneously generate
+directed behavior without external sensory stimulation; it requires an engineered environment to
+close the loop. Speculative claims regarding whole-brain emulation or computational
+consciousness remain unsupported, whereas functional sensorimotor
+transformations—mapping defined inputs to ecologically valid outputs—are robustly
+demonstrated.
+
+2. State-of-the-Art Survey: Connecting Brains to
+External Systems
+A comprehensive survey of projects, repositories, and literature up to October 2026 reveals
+extensive efforts to detach the simulated fly brain from its biological morphology, mapping it to
+highly unorthodox digital bodies, games, and physics engines.
+Project Name &       Connectome /       Dynamic              Inputs & Outputs Control Strategy &
+Source               Subset             Simulation?                             Validation
+Fruit Fly Brain      FlyWire (134,209 No (Static             In: 64 board       Open-loop.
+Chess (OpsMavix, neurons)               Reservoir)           squares. Out:      Operates as a
+cesp99)                                                      Linear motor       fixed recurrent
+                                                             readout.           reservoir. A trained
+                                                                                artificial linear
+                                                                                readout dictates
+                                                                                moves. Validated
+                                                                                via ELO ratings,
+                                                                                but biological
+                                                                                topology is
+                                                                                functionally
+                                                                                arbitrary.
+FlyDoom (Utku) FlyWire visual           Yes (Rate model) In: Raycasted          Genuinely
+                     pathway                                 pixels. Out:       closed-loop,
+                                                             Descending         utilizing the optic
+                                                             neurons to         lobe's retinotopic
+                                                             keyboard.          mapping to extract
+                                                                                visual features,
+                                                                                coupled with
+                                                                                engineered
+                                                                                thresholds for
+<PARSED TEXT FOR PAGE: 3 / 26>
+Project Name &    Connectome /     Dynamic           Inputs & Outputs   Control Strategy &
+Source            Subset           Simulation?                          Validation
+                                                                        movement.
+FlyBrain          MaleCNS v1.0     Yes (LIF model)   In: Looming        Closed-loop
+Minecraft         (176k neurons)                     threats, pixels.   running in a Fabric
+(blendi-remade)                                      Out: DNg100        mod. Uses known
+                                                     (walk), DNa02      biological
+                                                     (steer).           pathways
+                                                                        (LC4/LPLC2 to
+                                                                        Giant Fiber) to
+                                                                        trigger evasion.
+                                                                        Quantitatively
+                                                                        validated against
+                                                                        Shiu et al.
+                                                                        benchmarks.
+Maxwell-Demon FlyWire (106,765 Yes (Spiking)         In: Chamber        Closed-loop
+(ResearchGate) neurons)                              temperatures. Out: thermodynamic
+                                                     Gate control.      simulation.
+                                                                        Implements online
+                                                                        reward-modulated
+                                                                        plasticity
+                                                                        (dopamine-gated).
+                                                                        The connectome
+                                                                        successfully sorts
+                                                                        gas particles better
+                                                                        than disconnected
+                                                                        controls.
+FlyPong Duo        MaleCNS v1.0    Yes (Spiking)     In: Ball           Closed-loop
+(Zentrix/Spike 1%)                                   coordinates. Out: self-play. Two
+                                                     Thoracic motor     identical networks
+                                                     neurons.           with separate
+                                                                        spiking states
+                                                                        compete. High
+                                                                        degree of
+                                                                        engineered input
+                                                                        mapping; learning
+                                                                        occurs via external
+                                                                        weight-shaping
+                                                                        algorithms.
+Ableton Live      FlyWire (Full)   Yes (Spiking)     In: Frequency      Open-loop audio
+Audio Routing                                        bands. Out: Giant reactive art. Runs
+                                                     Fiber (DNp01).     in
+                                                                        WebAssembly/C+
+                                                                        +. Frequency
+                                                                        peaks map to
+                                                                        looming detectors,
+                                                                        triggering
+<PARSED TEXT FOR PAGE: 4 / 26>
+Project Name &      Connectome /        Dynamic             Inputs & Outputs     Control Strategy &
+Source              Subset              Simulation?                              Validation
+                                                                                 escape-reflex
+                                                                                 spikes that actuate
+                                                                                 digital audio
+                                                                                 effects.
+Flytris               MaleCNS             Yes (Spiking)      In: Tetromino       Closed-loop.
+(rothilion26)         Mushroom Body                          shapes. Out:        Learns to play
+                                                             MBONs               Tetris using a
+                                                             (Rotation/Shift).   biologically
+                                                                                 modeled
+                                                                                 dopamine-gated
+                                                                                 plasticity rule on
+                                                                                 Kenyon cells,
+                                                                                 rather than
+                                                                                 traditional
+                                                                                 backpropagation.
+Drone Swarm           MaleCNS v1.0        Yes (Spiking)      In: Camera feeds. Closed-loop
+Control                                                      Out: MAVLink        hardware. Three
+                                                             velocities.         distinct drone
+                                                                                 bodies controlled
+                                                                                 by identical brain
+                                                                                 instances.
+                                                                                 Primarily relies on
+                                                                                 the visual
+                                                                                 processing prior;
+                                                                                 motor output
+                                                                                 requires a heavy
+                                                                                 engineered
+                                                                                 decoder.
+Analysis of Failures and Assumptions: Many high-profile demonstrations (e.g., chess
+applications) utilize the connectome merely as a static, randomized reservoir. If a randomly
+shuffled control network performs equally well, the biological topology is not contributing to the
+intelligence; the system is merely exploiting high-dimensional random projections. The most
+robust and scientifically legitimate demonstrations—such as Shiu et al.'s feeding circuit and the
+c3s-reflex-circuits (giant fiber escape)—prove that specific, evolutionarily conserved subgraphs
+(like LC4 and LPLC2 inputs converging on the DNp01 giant fiber) reliably execute complex
+logical computations (e.g., differentiating looming velocity from absolute size). For these circuits,
+the specific biological wiring is irreplaceable.
+
+3. Anatomical Freedom: The Body Problem and the
+Neural Octopus
+The central inquiry is whether a biological nervous system can meaningfully control an actuator
+system with completely divergent anatomy. Biological brains exhibit immense morphological
+abstraction. Central pattern generators (CPGs) in the ventral nerve cord abstract high-level
+<PARSED TEXT FOR PAGE: 5 / 26>
+descending signals from the brain into complex, multi-joint rhythmic actuations.
+A simulated fly brain outputs behavior via a narrow informational bottleneck: roughly 1,300
+Descending Neurons (DNs) traversing the neck connective. If we discard the fly's native
+biomechanics, these DNs become abstract, low-dimensional control channels. Known functional
+mappings include:
+   ●​ DNg100 / DNp09: Command forward walking.
+   ●​ DNa02 / DNg13: Govern yaw and steering by differentially acting on left/right motor
+       circuits.
+   ●​ DNp01 (Giant Fiber) / DNp04: Trigger rapid, ballistic escape mechanisms.
+Experiment A: The Neural Octopus Architecture To control an eight-armed, soft-bodied
+octopus, the system cannot map a fly's alternating-tripod gait directly to tentacles. It
+necessitates a hierarchical, reinforcement-trained intermediary controller.
+   1.​ Sensory Remapping: The octopus's optical input is encoded onto the fly's retinotopic
+       optic lobes. Eight continuous tactile arrays from the tentacles are dimensionally reduced
+       and mapped to the fly's mechanosensory bristles (e.g., Johnston's organ or leg
+       proprioceptors).
+   2.​ Action Decoding: The fly brain processes these inputs and issues commands via DNs. A
+       looming visual threat triggers DNp01. A lateral target triggers DNa02 (steering).
+   3.​ Engineered Intermediary Controllers: These low-dimensional DN spikes are fed into an
+       artificial Recurrent Neural Network (RNN) acting as a synthetic CPG. This decoder
+       interprets DNg100 (forward speed) and expands it into the thousands of inverse-kinematic
+       motor commands required to undulate eight soft tentacles.
+   4.​ Local Subcontrollers (Morphological Computation): Octopuses possess highly
+       distributed nervous systems. The artificial body must contain local reflex loops. If the fly
+       brain issues a "steer left" command via DNa02, the left arms autonomously execute
+       grasping physics, while the right arms push, handled entirely by the local physics
+       simulation.
+   5.​ Learning: True biological synaptic plasticity (e.g., Mushroom Body DAN-gating) allows
+       the fly to associate a specific visual pattern with a target. The artificial decoder utilizes
+       standard neuroevolution to learn how to translate DN activity into efficient tentacle
+       movement over thousands of generations.
+The resulting organism possesses the intent, valence, and reflex latencies of an insect, but the
+physical execution of a cephalopod.
+
+4. Abstract Embodiment: When the Body is a
+Mathematical Universe
+If motor outputs need not control anatomical muscles, they can serve as continuous forcing
+functions within abstract dynamical systems. The nervous system transitions from a
+biomechanical driver to a parameter-space navigator.
+Examples of Abstract Bodies:
+   ●​ Mathematical Bodies: Spiking outputs directly manipulate variables in non-linear partial
+       differential equations. For instance, right-hemisphere DNg13 activity increases the
+       diffusion coefficient in a Reaction-Diffusion system, while left-hemisphere DNa02 alters
+       the feed rate, generating shifting Turing patterns as a form of "movement."
+   ●​ Particle Bodies: Utilizing the Material Point Method (MPM), an organism can exist as a
+       fluid swarm of 100,000 particles. The fly's motor outputs exert directional force fields.
+<PARSED TEXT FOR PAGE: 6 / 26>
+       Forward walking (DNg100) causes the particles to flow as a cohesive liquid. An escape
+       reflex (DNp01) triggers a phase-change, exploding the body into a diffuse gas.
+  ●​ Temporal Bodies: Neural activity modulates the simulation's chronological tick rate or
+       alters the decay rate of historical rendering trails, allowing the organism to navigate
+       temporal accumulation rather than spatial geometry.
+To distinguish a mathematically legitimate neural-to-world interface from a superficial visualizer,
+the system must be strictly closed-loop: the mathematical output must deterministically generate
+the subsequent sensory input. A genuine interface requires the mathematical environment to
+possess chaotic or complex non-linear dynamics (e.g., Navier-Stokes flow), ensuring the brain's
+actions produce unpredictable environmental states that the brain must actively continuously
+rectify.
+
+5. Engineering the Impossible Alien Organism
+(Experiment B)
+The user proposed an organism that eats pixels, digests colors, excretes glitter, and explodes
+into geometry. This is fundamentally engineering-feasible when modeled as a multi-modal
+finite-state machine guided by the connectome's latent behaviors.
+The Glitter-Eating Alien Architecture:
+   1.​ Eating Pixels (Sensory to Internal State): The organism roams a 2D canvas, rendered
+        via WebGPU. The fly's visual system processes the pixels. When the fly navigates toward
+        a dense pixel cluster, its gustatory receptor neurons (GRNs) are artificially stimulated.
+   2.​ Digesting Colors (LIF Accumulation): GRN spikes propagate to the feeding circuit (e.g.,
+        Rattle, Zorro neurons). We engineer a synthetic "metabolic stomach" variable. As feeding
+        motor neuron MN9 spikes, pixels are deleted from the canvas, and their RGB data is
+        accumulated in the artificial stomach matrix.
+   3.​ Excreting Glitter (Motor Output to MPM Physics): When the stomach variable crosses
+        a threshold, or when grooming behavior is triggered (aDN1 activity), the organism expels
+        the stored color data as a burst of MPM-simulated particles (glitter). Libraries like Taichi.js
+        compute the rigid-body collisions of the crystalline glitter falling onto the canvas.
+   4.​ Exploding into Geometry: If the visual system detects a rapidly expanding mathematical
+        structure, LC4 and LPLC2 neurons trigger the Giant Fiber (DNp01). Instead of a physical
+        jump, this DNp01 spike triggers a mathematical singularity—spawning a branching fractal
+        and instantly displacing the organism's coordinate location.
+
+6. Synthetic Sensory Modalities and Perception
+Biological brains map physical phenomena (photons, pressure, airborne molecules) to spike
+trains. An artificial encoder can theoretically map arbitrary mathematical geometries to those
+exact same spike trains.
+Mapping the Impossible:
+   ●​ Mathematical Curvature: The local Gaussian curvature of a 3D generative dataset can
+       be mapped to the fly's mechanosensory bristle neurons. A highly wrinkled topology
+       physically "feels" rough to the connectome.
+   ●​ Entropy and Novelty: A continuous measure of environmental compressibility (Shannon
+       entropy) can be fed into the dopaminergic system (PPL1 or PAM neurons), simulating
+<PARSED TEXT FOR PAGE: 7 / 26>
+        intrinsic curiosity or pain based on data novelty relative to previous states.
+    ●​ Organism Proximity: Mapping the Euclidean distance of other synthetic creatures
+        directly to olfactory projection neurons (PNs), translating spatial metrics into a gradient of
+        scent.
+A brain could theoretically interpret arbitrary mappings if it possesses sufficient plasticity.
+However, the static fly connectome expects specific spatial topologies. Feeding non-spatial data
+(like raw audio frequencies) directly into the retinotopic optic lobe will produce predictable but
+biologically nonsensical neural cascades. To engineer true perception of novel stimuli, one must
+interface with the Mushroom Body (MB). Here, Kenyon Cells (KCs) naturally perform
+high-dimensional, randomized feature expansion, making the architecture highly suited for
+learning arbitrary, non-biological associations.
+
+7. Desire, Motivation, and Evolving Aesthetic
+Appetites
+To prevent the organism from being permanently forced to reproduce human-authored aesthetic
+preferences (e.g., violently vivid neon colors, Fordite strata, structured sparkles), the system
+must leverage the insect's intrinsic learning and motivation centers to evolve its own tastes.
+Biological Grounding: In Drosophila, valence (good/bad associations) and memory are
+encoded in the Mushroom Body. Sensory inputs activate sparse ensembles of Kenyon Cells.
+These KCs synapse onto Mushroom Body Output Neurons (MBONs), which dictate approach or
+avoidance behaviors. The synaptic weights between KCs and MBONs are dynamically modified
+by Dopaminergic Neurons (DANs) representing reward or punishment. Furthermore, models of
+Active Inference demonstrate that biological networks strive to minimize variational free energy
+(predictive error).
+Engineering Evolving Aesthetics:
+   1.​ Initial Artificial Drives (The Baseline): We engineer a software-based "aesthetic sensor"
+       that evaluates the canvas for the user's initial preferences (e.g., fractal dimension,
+       reaction-diffusion contrast). High scores artificially stimulate PAM DANs (reward); low
+       scores stimulate PPL1 DANs (punishment).
+   2.​ Associative Learning: As the organism interacts with the environment, the KC-to-MBON
+       weights undergo Spike-Timing-Dependent Plasticity (STDP). The organism learns which
+       specific motor sequences (e.g., steering into dense phase-separation zones) reliably
+       produce the "rewarding" neon colors.
+   3.​ Active Inference and Boredom: By dynamically shifting the reward signal from absolute
+       aesthetic value to predictive error (rewarding the organism when the environment
+       behaves unexpectedly), the organism develops intrinsic motivation. It will initially seek
+       sparkles, master how to create them, experience a drop in predictive error ("boredom"),
+       and subsequently alter its behavior to explore new topological geometries.
+   4.​ Divergent Personalities: Two identical connectomes placed in slightly different
+       mathematical environments will develop completely different KC-MBON weight
+       distributions through experience, resulting in divergent, persistent aesthetic "tastes."
+
+8. Plurality: Multiple Nervous Systems and Shared
+Ecologies
+<PARSED TEXT FOR PAGE: 8 / 26>
+Connecting multiple nervous systems unlocks the domain of synthetic ecology and collective
+intelligence.
+   ●​ One Brain, Multiple Bodies (Swarm Intelligence): A single connectome driving a
+        swarm. The DN outputs are broadcast to 1,000 independent particles using a Boids
+        algorithm. The biological intent guides the macro-structure of the swarm, functioning as a
+        hive-mind.
+   ●​ Multiple Brains, One Body (Distributed Cognition): Two distinct connectomes patched
+        into a single soft-body physics engine. Brain A controls the left-hemisphere actuators;
+        Brain B controls the right. Without hardcoded synchronization, they will initially act
+        adversarially. However, through MB plasticity and shared sensory feedback
+        (proprioceptive awareness of the physical tug-of-war), they can learn to cooperate or
+        exhibit emergent specialization (e.g., Brain A handles locomotion, Brain B handles precise
+        manipulation).
+   ●​ Shared Mathematical Canvas: Ten independent simulated flies existing in a continuous
+        cellular automata grid. Fly A leaves a trail of chemical attractant (altered pixels). Fly B's
+        synthetic gustatory sensors detect it. A spontaneous predator-prey or symbiotic ecological
+        relationship emerges entirely from the interaction of biological reflexes and artificial
+        physics, generating visually complex, overlapping territorial artwork.
+
+9. Morphological Freedom: Altering the Biological
+Connectome
+Maintaining strict biological fidelity restricts the organism to insectoid reflexes. Significant
+engineering freedom is achieved by altering the graph structure itself.
+  ●​ Unmodified Connectome (Demonstrated): Running the MaleCNS as-is, using only
+      environmental interaction for feedback, which ensures maximum biological validity.
+  ●​ Targeted Silencing and Rewiring (Research Frontier): We can selectively ablate the
+      LPLC2 neurons to make the organism "blind" to certain geometric expansions, or
+      artificially multiply the synaptic weights of the steering neurons (DNa02) to induce
+      hyper-sensitivity to directional shifts.
+  ●​ Hybridization (Speculative but Feasible): Splicing the output of the biological FlyWire
+      central complex directly into a PyTorch-based Deep Reinforcement Learning module. The
+      biological tissue provides an incredibly efficient heading-direction compass (the E-PG ring
+      attractor), while the artificial neural network learns to use this biological primitive to
+      navigate high-dimensional manifolds.
+  ●​ Validation: To prove the biological wiring actively contributes to the emergent art, every
+      experiment must be evaluated against a control model where the synaptic matrix is
+      degree-preserved but randomly shuffled. If the shuffled brain creates identical art, the
+      biological topology is functioning merely as a complex random number generator.
+
+10. Mathematical Habitats and Dynamical
+Environments
+Instead of a physical terrarium, the organism navigates and modifies environments governed by
+continuous mathematical laws. Interactions between systems provide the friction necessary for
+complex emergence.
+<PARSED TEXT FOR PAGE: 9 / 26>
+  ●​ Reaction-Diffusion (Turing) Chemistry: The organism's traversal deposits "activator"
+     chemicals into a Gray-Scott simulation. Its presence disrupts the equilibrium, causing
+     moving contour bands and labyrinthine patterns to self-organize around its trajectory.
+  ●​ Cahn-Hilliard Phase Separation: The environment naturally separates into two distinct
+     material phases (e.g., mimicking Fordite strata). The organism injects localized thermal
+     noise via its motor outputs, forcing the materials to mix or crystalize, fighting the
+     mathematical tendency to separate.
+  ●​ Navier-Stokes Fluid Dynamics: The organism acts as a moving singularity in a fluid
+     field. Fast escape jumps (Giant Fiber) create massive vorticity and turbulent wakes, which
+     are visually rendered as shimmering optical caustics.
+  ●​ Diffusion-Limited Aggregation (DLA): The organism acts as a mobile seed in a field of
+     wandering particles. As it navigates, it accumulates crystalline growth, eventually
+     becoming bogged down by the fractal structures it has cultivated.
+
+11. The Full Input/Output Feasibility Matrix
+The following matrix cross-references unconventional sensory inputs with biological circuits and
+abstract outputs, identifying the technical feasibility of each combination.
+Input Modality Neural              Abstract Output Feedback Loop Feasibility        Technical
+                Subcircuit                                                          Obstacle
+Pixel           LC4 / LPLC2 Giant Fiber             Jump alters       Demonstrated Proper latency
+Luminance       (Vision)           (DNp01)          pixel render                    matching with
+Delta                                               position                        rendering
+                                                                                    engine
+Fluid Vorticity Johnston's         DNg13            Navier-Stokes Engineering-F Mapping 2D
+                Organ              (Steering)       directional       easible       continuous
+                (Hearing)                           force injection                 vector fields to
+                                                                                    1D antennae
+                                                                                    inputs
+Color           GRNs (Taste) MN9 (Feeding) Deleting/absorb Demonstrated Real-time pixel
+Gradients                                           ing color pixels                sampling and
+                                                                                    buffer
+                                                                                    manipulation in
+                                                                                    GPU shaders
+Fractal         Projection         MBONs            Modulating        Research      Defining
+Complexity      Neurons            (Valence)        fractal iteration Frontier      "complexity"
+                (Olfactory)                         depth                           algorithmically
+                                                                                    at 60FPS
+4D Hypercube E-PG Compass PFL3                      Rotating a        Engineering-F Normalizing
+Rotation        Ring               (Heading)        tesseract         easible       compass
+                                                    projection                      "bump" activity
+                                                    matrix                          to 4D radians
+Data            Kenyon Cells Synthetic              Depositing        Research      Tuning DAN
+Compression (MB)                   Particle         physical          Frontier      plasticity rates
+Ratio                              Excretion        markers                         without causing
+                                   (MPM)                                            catastrophic
+                                                                                    forgetting
+<PARSED TEXT FOR PAGE: 10 / 26>
+Input Modality Neural        Abstract Output Feedback Loop Feasibility               Technical
+               Subcircuit                                                            Obstacle
+Other Agents' Direct Synapse Entire          Synaptic      Highly                    Requires
+Spikes         Injection     MaleCNS         communication Speculative               dynamically
+                                             across brains                           merging and
+                                                                                     resolving two
+                                                                                     distinct CSR
+                                                                                     matrices
+12. Computational Feasibility (Neural Art Lab Context)
+The current neural_art_lab successfully utilizes a 6,203-neuron subcircuit running LIF in
+standard JavaScript. However, to scale to the full MaleCNS (166,000 neurons, 125M synapses)
+alongside complex mathematical physics (MPM, fluids), the architecture must fundamentally
+evolve.
+   ●​ Mobile Browsers (WebGPU): A modern mobile device with WebGPU can comfortably
+      run tens of thousands of LIF neurons via compute shaders. The primary bottleneck is
+      memory bandwidth—transferring 125M synaptic weights to the GPU VRAM per frame is
+      impossible. The matrix must be persistently stored in a sparse CSR (Compressed Sparse
+      Row) format in VRAM.
+   ●​ Physics/Neural Decoupling: The system must utilize disparate timescales. The LIF
+      neural simulation requires 0.1ms to 1ms internal timesteps to maintain mathematical
+      stability for spike integration. The visual physics (MPM, Reaction-Diffusion) can run at a
+      standard 16ms (60 FPS) rendering loop.
+   ●​ Taichi.js and MPM: For rendering particles, crystalline growth, and soft bodies directly in
+      the browser, Taichi.js allows Python-like syntax to be compiled into high-performance
+      WebAssembly or WebGPU compute shaders. This is ideal for the Neural Art Lab,
+      enabling millions of particles to interact with the neural network locally without server
+      costs.
+   ●​ Desktop/Native Environments: Full whole-brain LIF coupled with multi-million particle
+      MPM currently strains mobile thermals but is easily handled by desktop Apple Silicon (via
+      Metal) or discrete RTX GPUs (via CUDA or WebGPU backends like Nexus).
+
+13. The Strangest Legitimate Possibilities
+Moving into the theoretical domains of Artificial Life (ALife) and extended cognition reveals
+radical possibilities for connectome deployment.
+  ●​ Self-Modifying Morphology: If the connectome controls a modular robotic swarm, the
+      organism can physically reassemble its anatomy based on failure states. A "walking"
+      circuit might fail, causing the organism to rearrange its particles into a continuous tread,
+      utilizing the same neural rhythmic pulses to roll rather than walk.
+  ●​ Niche Construction and Extended Cognition: The organism secretes mathematical
+      boundaries (e.g., drawing lines in a physics engine). It builds a structure that funnels
+      interesting visual stimuli toward its sensors. The organism's cognition is now extended
+      into the environment; it relies on the physical structure to filter its sensory input, reducing
+      computational load.
+  ●​ Programmable Matter (Neural Cellular Automata): The brain acts as a central hub, but
+      every pixel of the "body" is an independent cellular automaton. The brain sends a single
+<PARSED TEXT FOR PAGE: 11 / 26>
+     command spike, and the matter independently ripples, crystalizes, or computes a
+     distributed algorithm to execute the action.
+  ●​ Metabolic Simulation: The organism requires a synthetic metabolism. Running the LIF
+     simulation depletes a global "energy" variable. To survive, the organism must navigate a
+     nutrient gradient (color fields) to recharge its computational capacity. Failure results in
+     localized synaptic dropout (simulated cell death), fundamentally altering its artistic output
+     as it starves.
+
+14. The Invention Atlas: 100 Novel Concept
+Architectures
+This atlas outlines 100 distinct, mechanically concrete applications for connectome-driven
+systems, categorized by their core interaction paradigm.
+
+Category 1: Impossible Bodies
+Name         Concept        Neural      Engineered Sci-Confiden Prototype            First
+                            Interface   Components ce                                Experiment
+1. The       Viscous fluid DNg100       Navier-Stoke Feasible    Medium              Map walking
+Amorphous entity without mapped to s 2D solver                                       rate to fluid
+Ooze         permanent internal fluid                                                expansion
+             structure      pressure
+2. Fractal   Limbs that Escape          L-System     Feasible    Low                 Panic causes
+Shedder      branch         circuit     generator                                    a 2D fractal
+             infinitely     (DNp01)                                                  bloom
+             upon rapid triggers
+             movement fractal
+                            recursion
+3. Orbiting 1,000           DNp09 sets Boids         Feasible    Low                 Navigate a
+Swarm        disconnected swarm         algorithm                                    boid swarm
+             spheres        attractor                                                via visual
+             acting as a points                                                      cues
+             single entity
+4. Elastic   A 1D line      DNa02       Soft-body    Feasible    Medium              Generate
+Ribbon       traversing a controls      spline                                       persistent
+             3D space,      ribbon      physics                                      ribbon art
+             leaving trails curvature
+                            and torsion
+5. Quantum Organism         E-PG ring   Quantum      Speculative High                Superpositio
+Superpositio exists in      maps to     state vector                                 n resolves
+n            multiple       probability math                                         only upon
+             probabilistic amplitudes                                                feeding
+             states
+6. Recursive Body           MBONs       Recursive    Feasible    Medium              Fly
+Matryoshka contains         trigger     rendering                                    reproduces
+             infinitely     spawning of pipeline                                     upon
+<PARSED TEXT FOR PAGE: 12 / 26>
+Name         Concept         Neural        Engineered Sci-Confiden Prototype   First
+                             Interface     Components ce                       Experiment
+              smaller        nested                                            aesthetic
+              clones         bodies                                            reward
+7. Tensegrity Floating       Motor         Rigid body Research     High        Insect
+Construct     struts held by neurons map joint physics Frontier                walking
+              invisible      to specific                                       applied to
+              cables         cable                                             tensegrity
+                             tensions
+8. Hypercube 4D body         Central       4D to 3D      Feasible  Medium      Navigate a
+Crawler       projected into Complex       matrix math                         tesseract
+              a 3D           handles 4D                                        maze
+              environment rotation
+                             matrices
+9. Temporal Body spans Spikes delay Timeline             Feasible  Low         Slit-scan
+Smear         past and       frame refresh buffer                              visual effects
+              present        in specific                                       based on
+              simultaneous zones                                               speed
+              ly
+10. Voronoi Body             Giant fiber Delaunay        Feasible  Medium      Jump reflex
+Shatterer     fractures      seeds         triangulation                       shatters the
+              continuously Voronoi                                             organism's
+              during         cellular                                          shell
+              movement breakdown
+Category 2: Alien Senses
+Name         Concept        Neural       Engineered Sci-Confiden Prototype     First
+                            Interface    Components ce                         Experiment
+11.           Sees the      Lamina maps Shader         Feasible    Low         Fly learns to
+Chrono-rece chronological to pixel-age tracking                                avoid "old"
+ptor          age of        delta        time-since-dr                         pixels
+              rendered                   awn
+              objects
+12. Entropy Perceives       LC4 maps to Deflate/Gzip Research      High        Fly flees from
+Retina        order vs      local frame on frame       Frontier                visual
+              chaos rather compression buffer                                  static/noise
+              than light    ratio
+13.           Feels the     Bristles map Knot          Speculative High        Navigate a
+Topo-Sensilla topological to knot        polynomial                            maze of
+              complexity of invariants   calculator                            braided
+              knots         (e.g., Jones                                       geometries
+                            polynomial)
+14.           Visually      Optic lobe   Magnetic      Feasible    Medium      Follow
+Magneto-Opt perceives       processes    field                                 magnetic flux
+ics           electromagn 2D vector      simulation                            lines to
+              etic fields   fields                                             targets
+15.           Colors shift Photorecepto Optic flow     Feasible    Low         High-speed
+<PARSED TEXT FOR PAGE: 13 / 26>
+Name         Concept        Neural        Engineered Sci-Confiden Prototype     First
+                            Interface     Components ce                         Experiment
+Chroma-Dop based on         rs map to     calculator                            objects
+pler          relative      HSV velocity                                        appear neon
+              velocity      shift
+16. Density Smells local Olfactory        Blur/Mipmap Feasible      Low         Follow
+Olfaction     pixel density PNs map to processing                               pigment trails
+              in a sparse alpha                                                 like
+              canvas        channel                                             pheromones
+                            averages
+17.           Perceives     LC4 mapped FFT audio        Demonstrate Low         Fly escapes
+Audio-Loomi approaching to volume         processor     d                       from sudden
+ng            objects via delta                                                 bass drops
+              audio
+              amplitude
+18.           Senses the GRNs map WASM                  Research    High        Fly "tastes"
+Code-Reader background to RAM             memory        Frontier                memory
+              execution of memory         observer                              leaks
+              browser code pointers
+19.           Perceives its Visual cortex Dimensionalit Speculative High        Organism
+Self-Referent own real-time fed back      y reduction                           watches itself
+ial Lens      neural        PCA of LIF                                          think
+              activity      state
+20.           Tastes        Taste         N-body        Feasible    Low         Eats dense
+Gravity-Taste localized     receptors     simulation                            planetary
+              gravitational map to                                              attractors
+              wells         simulated
+                            physics mass
+Category 3: Mathematical Environments
+Name         Concept        Neural          Engineered Sci-Confiden Prototype   First
+                            Interface       Components ce                       Experiment
+21.           World         DNs             Gray-Scott Feasible     Low         Movement
+Reaction-Diff governed by modulate          simulation                          leaves
+usion Sea     Turing        local feed/kill                                     organic stripe
+              pattern       rates                                               trails
+              chemistry
+22.           Fluid         Locomotion Cahn-Hilliard Feasible       Medium      Agitation
+Cahn-Hilliard separating injects            solver                              mixes
+Strata        into distinct localized                                           Fordite-like
+              material      thermal noise                                       patterns
+              phases
+23. Game of Canvas is a Spikes toggle WebGPU           Feasible     Low         Organism
+Life Matrix cellular        local CA grid Conway                                dodges CA
+              automata      states          shader                              gliders
+              grid
+24. Strange Environment Steering            ODE        Feasible     Medium      Navigate
+<PARSED TEXT FOR PAGE: 14 / 26>
+Name         Concept         Neural       Engineered Sci-Confiden Prototype   First
+                             Interface    Components ce                       Experiment
+Attractor     defined by alters global numerical                              sweeping
+Core          Lorenz/Roes chaotic         integrator                          chaotic orbits
+              sler topology parameters
+25.           Zooming        Movement Fractal           Feasible  Low         Fly seeks
+Mandelbrot fractal           dictates     rendering                           infinite
+Depths        universe       camera       shader                              complexity
+                             pan/zoom
+26.           Space is       Compass      Poincare disk Research  High        Walk through
+Non-Euclidea hyperbolic; tracks           projection    Frontier              mind-bendin
+n Maze        straight lines hyperbolic                                       g grids
+              curve          angle
+27. Cymatic World of         Outputs      Chladni plate Feasible  Medium      Create
+Plate         acoustic       modulate     math                                structured
+              standing       global                                           sand art
+              waves          frequency
+28. Diffusion Crystal        Body acts as DLA particle Feasible   Low         Grow
+Limited Agg. growth          a mobile     system                              branching
+              environment seed                                                fractal
+                                                                              lightning
+29. Penrose Aperiodic       Footsteps flip Substitution Feasible   Medium     Disrupt
+Tiling      geometric       tiles based tiling logic                          mathematical
+            floor           on                                                order
+                            substitution
+                            rules
+30.          Turbulent      Body creates Fluid          Feasible   Medium     Blow pigment
+Navier-Stoke continuous     fluid vorticity simulation                        around like
+s Wind       vector field                                                     smoke
+Category 4: Art-Producing Anatomy
+Name         Concept    Neural      Engineered Sci-Confiden Prototype         First
+                        Interface   Components ce                             Experiment
+31. Pigment Excretes    MN9 maps to Framebuffer Feasible    Low               Action
+Extruder    saturated   RGB         drawing                                   painting
+            neon colors deposition                                            based on
+                                                                              feeding
+                                                                              behavior
+32.          Spits 3D     Escape         Three.js      Feasible    Low        Panic
+Geometry     polygons     circuit        instancing                           creates 3D
+Vomiter      under stress triggers                                            visual clutter
+                          mesh
+                          spawning
+33.          Corrupts     Walking        Shader       Feasible     Low        Organism
+Glitch-weave data streams alters UV      displacement                         rips the
+r            via          mapping                                             digital
+             movement coordinates                                             canvas
+<PARSED TEXT FOR PAGE: 15 / 26>
+Name          Concept        Neural        Engineered Sci-Confiden Prototype   First
+                             Interface     Components ce                       Experiment
+34. Sparkle   Sheds          Grooming      Bloom/glow Feasible     Low         Leave
+Gland         luminous       circuit       post-processi                       fairy-dust
+              particles      (aDN1)        ng                                  trails while
+              during idle spawns                                               resting
+              behavior       particles
+35. Contour   Draws          Steering      Marching      Feasible  Medium      Map its own
+Bander        topographic leaves           squares                             journey
+              lines defining persistent    algorithm                           topologically
+              its path       vectors
+36.           Body shifts E-PG             Thin-film     Feasible  Low         Pearlescent
+Iridescence   color based compass          interference                        shifting
+Scale         on viewing maps to base shader                                   based on
+              angle          hue                                               heading
+37.           Multi-pendulu Walking DNs Inverse          Feasible  Medium      Harmonogra
+Spirograph    m joints       drive         kinematics                          ph
+Limbs         replacing      pendulums                                         generative
+              legs                                                             line art
+38.           Dissolves the Taste maps Subtractive Feasible        Low         Carve paths
+Acid-Etcher   environment to               blending                            through solid
+                             alpha-reducti                                     visual blocks
+                             on
+39. Crystal   Spawns         Touch         Raymarched Feasible     High        Build a
+Sculptor      faceted        receptors     SDFs                                crystalline
+              blocks upon dictate block                                        fortress
+              contact        scale
+40. Shadow    Organism is Body position 2D shadow Feasible         Medium      Film-noir
+Caster        an invisible tracks 2D       casting                             generative
+              light source shadows                                             installations
+Category 5: Synthetic Ecologies
+Name          Concept      Neural        Engineered Sci-Confiden Prototype     First
+                           Interface     Components ce                         Experiment
+41. Symbiotic Two brains Mutual          Network      Feasible    Medium       Multi-agent
+Painters      controlling  sensory input socket                                collaborative
+              complementa bridging                                             canvas
+              ry colors
+42.           Fly hunts    Vision tracks Bounding     Feasible    Medium       Generates
+Predator-Pre cellular      CA density box logic                                pursuit trails
+y Pixels      automata
+              clusters
+43. Parasitic Organism     Senses        DOM          Feasible    Low          Interactive
+UI            lives inside cursor,       manipulation                          web-art
+              an HTML      deletes DOM                                         prank
+              DOM          nodes
+44. Cannibal Brains eat    Feeding       Dynamic      Speculative Extreme      Survival of
+<PARSED TEXT FOR PAGE: 16 / 26>
+Name         Concept    Neural       Engineered Sci-Confiden Prototype      First
+                        Interface    Components ce                          Experiment
+Connectome each other's reduces      synapse                                the fittest
+s          synaptic     opponent's scaling                                  evolving
+           weights      LIF voltages                                        networks
+45.        100 brains Averaged       Vector math Feasible    Medium         Smoothing
+Hive-Mind  control one motor output                                         via
+Brush      cursor                                                           consensus
+                                                                            drawing
+46. Fossilizer Dead          Lifespan       Static      Feasible   Low      Graveyard
+
+               organisms variable           collision                       generative
+               become        triggers rigor baking                          art
+               permanent mortis
+               obstacles
+47.            Organisms Metabolism Multi-phase         Research   High     Complex
+Food-Chain alter fluid       maps to        fluid       Frontier            stratified fluid
+Fluids         density/visco viscosity      dynamics                        art
+               sity
+48. Resource Steals pixels Navigation + Inventory       Feasible   Medium   Ant-like
+Hoarder        and hoards carrying state variable                           sorting and
+               them in a                                                    organization
+               corner
+49. Territory Repels         Odor           Distance    Feasible   Low      Stained-glas
+Marker         others with mapped to fields                                 s Voronoi
+               colored scent color                                          territories
+               marks         proximity
+50. Evolution Connectome Genetic            Weight      Speculative High    Breed
+Garden         s mutate      algorithm on mutation                          connectomes
+               slightly      synapses       logic                           for artistic
+               between                                                      output
+               generations
+Category 6: Sound & Music
+Name         Concept      Neural       Engineered Sci-Confiden Prototype    First
+                          Interface    Components ce                        Experiment
+51.          Leg          Walking      Web Audio Demonstrate Low            Generative
+Polyphonic movements pattern           API / MIDI   d                       insect rhythm
+Walker       trigger MIDI mapped to
+             notes        arpeggios
+52. FM Synth Spikes       Global spike Tone.js      Feasible   Low          Brainwave
+Modulator    control      rate maps to synthesizers                         drone music
+             oscillator   FM index
+             frequencies
+53. Granular Excretes     Grooming     Granular     Feasible   Medium       Textural
+Gland        audio grains spawns       synthesis                            ambient
+             instead of   audio grains engine                               soundscapes
+             pixels
+<PARSED TEXT FOR PAGE: 17 / 26>
+Name         Concept        Neural        Engineered Sci-Confiden Prototype   First
+                            Interface     Components ce                       Experiment
+54.          Pitch bends DNg100           Doppler     Feasible    Low         Alien
+Doppler-Voc based on        maps to       effect math                         creature
+alizer       simulation     playback                                          sound design
+             speed          speed
+55.          Organism is Reward           Pitch       Research    Medium      Interactive
+Chord-Seeke rewarded by system fed detection / Frontier                       algorithmic
+r            harmonic       by chords     theory                              composition
+             consonance
+56.          Jumping        Giant Fiber Sample        Demonstrate Low         Erratic
+Rhythm-Esca triggers        (DNp01)       playback    d                       breakbeats
+pe           heavy          triggers kick
+             percussion drum
+57. Drone    Compass        E-PG ring     Wavetable Feasible      Low         Slowly
+Resonance dictates root maps to           synth                               shifting
+             musical note fundamental                                         meditative
+                            freq                                              audio
+58. Noise    Morphologica Morphologica Filter cutoff Feasible     Medium      Sculptural
+Filter       l shape alters l state maps calculation                          physical
+             EQ             to Biquad                                         sound
+59.          Raw voltages V_m buffer PCM audio Feasible           Low         Harsh
+Spike-Train piped directly sent to        buffer                              glitch/data
+Audio        as             speaker                                           music
+             waveforms
+60.          Perceives      Sonar ping Audio          Research    High        Sensory
+Echo-Locator space          delay         raycasting  Frontier                substitution
+             entirely via mapped to                                           navigation
+             audio          vision
+             feedback
+Category 7: Material Manipulation
+Name         Concept      Neural        Engineered Sci-Confiden Prototype     First
+                          Interface     Components ce                         Experiment
+61. Fabric Jumps rip a Escape           Verlet      Feasible    Medium        Digital
+Tearer     physical cloth jumps apply integration                             destruction of
+           simulation     shear forces cloth                                  a canvas
+62. Weaver Movement Movement Spline                 Feasible    High          Generates
+           trails         history forms sweeping                              digital
+           intertwine     knots                                               textiles/macr
+           into thread                                                        ame
+63. Glass  Inflates       Feeding       Smooth      Feasible    Low           3D bulbous
+Blower     geometries scales 3D         subdivision                           glass art
+           when feeding meshes
+64. Metal  Organism       Proximity     Phase-chang Feasible    Medium        Melting
+Melter     acts as a      reduces fluid e physics                             metallic
+           moving heat viscosity                                              surfaces
+<PARSED TEXT FOR PAGE: 18 / 26>
+Name         Concept       Neural          Engineered Sci-Confiden Prototype    First
+                           Interface       Components ce                        Experiment
+               source
+65. Origami Walking folds Turning          Crease       Research    High        Geometric
+Folder         a 2D plane alters fold      pattern math Frontier                folding
+                              angle                                             aesthetics
+66. Clay       Deforms a Touching          Marching      Feasible   Medium      Digital
+Sculptor       voxel grid     alters SDF   cubes                                pottery by
+               upon touch volume                                                collision
+67. Neon       Body is a      Bounding     Glow          Feasible   Low         Living
+Gas Tube       constrained, box physics    shaders                              cyberpunk
+               flexible light                                                   signage
+               tube
+68. Ferrofluid Acts as a      Magnetic     Spiky fluid   Feasible   Medium      Dark,
+Controller     moving         force        rendering                            venom-like
+               magnetic       mapped to                                         aesthetics
+               pole           spikes
+69. Sand       Pushes         Legs push    Particle      Feasible   Medium      Zen,
+Mandala        particles into sand         collision                            structured
+               temporary      particles                                         temporary art
+               patterns
+70.            Pixel-sorts Walking         Sorting       Feasible   Low         Datamoshing
+Glitch-Sorter the             reorders     algorithm                            the
+               background pixels           shader                               environment
+               dynamically
+Category 8: Morphological Transformations
+Name         Concept          Neural        Engineered Sci-Confiden Prototype   First
+                              Interface     Components ce                       Experiment
+71. Limb       Grows limbs Energy           Dynamic     Research    High        Eldritch body
+Spawner        dynamically variable adds skeletal       Frontier                horror
+               when fed       IK chain      rigging                             aesthetics
+72.            Freezes into Escape          Rigid body Feasible     Low         Stop-motion
+Liquid-to-Soli a solid statue triggers      toggling                            art
+d              when scared friction
+                              maximization
+73. Fractal Sheds parts Damage              Recursive   Feasible    Medium      Exponential
+Dismemberm that become triggers             agent spawn                         swarm chaos
+ent            independent instancing
+               flies
+74.            Size tied to Global LIF Matrix           Feasible    Low         Pulsing,
+Scale-Shifter internal        voltage maps scaling                              breathing
+               voltage        to scale                                          body art
+75.            Leaves         Grooming      Mesh        Feasible    Low         Ghostly
+Geometric polygonal           spawns static instancing                          time-lapse
+Molter         shells behind mesh                                               trails
+<PARSED TEXT FOR PAGE: 19 / 26>
+Name        Concept        Neural      Engineered Sci-Confiden Prototype    First
+                           Interface   Components ce                        Experiment
+76. Topology Turns inside Jump         Mesh normal Feasible    Low          Surrealist
+Inverter     out on        triggers    manipulation                         transitions
+             command       normal flip
+77. Particle Body blows Death breaks Constrained Feasible      Medium       Dramatic,
+Dispersal    away in the physical      particle                             Thanos-snap
+             wind upon     constraints physics                              exits
+             death
+78.          Merges with Collision     Bone         Research   High         Katamari
+Amalgamator other          joins       parenting    Frontier                Damacy style
+             organisms skeletons                                            growth
+             upon
+             collision
+79.          Switches      Z-axis      Orthographic Feasible   Low          Optical
+Dimension from 2D to flattened to 0 to                                      flatland
+Hopper       3D                        Perspective                          illusions
+             representatio
+             n
+80.          Randomizes Synapse        Wave         Research   High         Unpredictabl
+Procedural body plan       noise seeds Function     Frontier                e spore-like
+Mutator      constantly    morphology Collapse                              creatures
+Category 9: Collective Organisms
+Name        Concept       Neural        Engineered Sci-Confiden Prototype   First
+                          Interface     Components ce                       Experiment
+81. Neural Distributed Synapses act Physarum        Feasible    Medium      Networked
+Slime Mold nodes          as mycelial simulation                            fungal growth
+             seeking food network
+82.          1,000 flies  Average       Boids +     Feasible    Low         Emergent
+Swarm-Paint holding one location is     drawing                             algorithmic
+er           virtual pen brush tip                                          sketching
+83. Ant-Mill Organisms Vision tracks Circular math Feasible     Low         Hypnotic
+Spiral       follow each nearest                                            dark patterns
+             other        neighbor
+             endlessly
+84.          Spikes sync Fluid waves Coupled        Feasible    High        Generative
+Synchronize via shared trigger          oscillators                         ballet
+d Swimmers fluid waves sensors
+85. Cannibal Small flies  Size          State       Feasible    Low         Brutal
+Horde        combine into determines management                             ecology
+             big flies    predator/prey                                     simulation
+86.          Moves only Voting logic Threshold      Feasible    Low         Hesitant,
+Consensus when 51% of on motor          math                                bursty
+Builder      network      output                                            democratic
+             agrees                                                         movement
+87.          10 bodies, CSR matrix IPC /            Research    High        Clumsy,
+<PARSED TEXT FOR PAGE: 20 / 26>
+Name          Concept      Neural        Engineered Sci-Confiden Prototype     First
+                           Interface     Components ce                         Experiment
+Distributed    each has    partitioned   WebSockets Frontier                   highly reliant
+Brain          1/10th of a                                                     agents
+               brain
+88.            Leaves trails Spikes draw Decay        Feasible       Medium    Emergent
+Pheromone for others to to hidden        shaders                               glowing
+Network        follow        canvas                                            highways
+89. Structural Bodies stack Collision    Rigid body   Feasible       High      Organic
+Colony         to reach      enables     stacking                              termite-moun
+               goals         climbing                                          d
+                                                                               architecture
+90.        Mexican         Looming        Distance     Feasible      Low       Crowd
+Wave-Propa wave of         triggers chain calculations                         dynamics
+gator      escaping        reaction                                            modeling
+           flies
+Category 10: Exotic Robotics & Rule-Benders
+Name          Concept      Neural         Engineered Sci-Confiden Prototype    First
+                           Interface      Components ce                        Experiment
+91.          Brain         Motor output Physics       Feasible    Low          Organism
+Rule-Editor  rewrites      alters gravity engine vars                          breaks its
+             physics                                                           own world
+             configuration
+92.          Moves         Spikes map DOM API          Feasible      Low       Haunted web
+UI-Manipulat browser       to                                                  browser
+or           elements      window.scroll                                       prank
+                           To
+93.          Spikes        Markov chain Runtime        Speculative   Extreme   Code-genera
+Shader-Com generate        on text       shader                                ting biology
+piler        GLSL code                   compile
+94.          Walks         Synapse       Graph         Feasible      Medium    Navigates its
+Memory-Pala through its map              visualization                         own mind
+ce           own neural rendered in
+             weights       3D
+95.          Walking       State history Video         Feasible      Medium    Tenet-style
+Timeline-Scr rewinds the array           scrubbing                             time
+ubber        simulation                                                        manipulation
+96.          Lenses        Nodes map Raytracing Research             High      Looking
+Connectome- shaped by to refraction shader             Frontier                through a
+Camera       brain graph index                                                 brain
+                                                                               optically
+97.          Body made Render to      ASCII           Feasible       Low       Matrix
+ASCII-Organi entirely of   terminal   mapping                                  retro-computi
+sm           text                                                              ng aesthetic
+             characters
+98.          Deletes local Spikes map File system     Feasible       Low       Malware-insp
+<PARSED TEXT FOR PAGE: 21 / 26>
+Name          Concept       Neural        Engineered Sci-Confiden Prototype         First
+                            Interface     Components ce                             Experiment
+File-System files in a      to Node.js    API                                       ired art
+Eater        sandbox        fs.unlink
+99.          Spikes         Motor to text LLM API     Feasible    Low               Schizophreni
+Prompt-Engi trigger LLM     tokens        integration                               c text
+neer         prompts                                                                generation
+100.         Freezes     Mouse-hover Event              Feasible      Low           Shy,
+Observer-Eff when looked triggers stop listeners                                    interactive
+ect          at by user                                                             installations
+15. Assumption Destruction: Expanding the Ontology
+of the Organism
+To discover fundamentally new design spaces, we must systematically destroy the
+anthropomorphic and biological assumptions embedded in classical neuroscience:
+  ●​ Assumption: A brain must have one body.
+        ○​ Destruction: The connectome is a mathematical matrix. We can duplicate the motor
+            output vector and pipe it into a swarm of 1,000 particles simultaneously. The
+            organism is no longer an entity; it is a distributed field of action.
+  ●​ Assumption: Bodies must have permanent anatomy.
+        ○​ Destruction: Allow the organism to dynamically allocate limbs based on sensory
+            input. If the visual field requires more manipulation, the motor signals instantiate
+            new inverse-kinematic chains on the fly. The body becomes a temporary expression
+            of computational need.
+  ●​ Assumption: Limbs must exert physical forces.
+        ○​ Destruction: Motor outputs modulate the rules of the simulation, not physical objects
+            within it. A spike from DNg13 doesn't turn a body; it rotates the gravity vector of the
+            entire universe. The organism remains perfectly stationary while the mathematical
+            world revolves around it.
+  ●​ Assumption: Memory must exist exclusively inside biological synapses.
+        ○​ Destruction: The organism can use the environment as an external hard drive
+            (Extended Cognition). It carves topographic trails into the digital canvas. When it
+            crosses the trail later, the curvature stimulates its mechanoreceptors. It
+            "remembers" by reading its own scars on the world, reducing the need for internal
+            plasticity.
+  ●​ Assumption: An agent must have a recognizable head or central core.
+        ○​ Destruction: Consider a topological organism that is an infinite 1D string stretching
+            across a 3D environment. The "brain" exists nowhere physically; the string simply
+            contracts, knots, and vibrates based on the LIF matrix evaluation occurring
+            off-screen.
+
+16. Technical Architectures for Three Experimental
+Systems
+<PARSED TEXT FOR PAGE: 22 / 26>
+Experiment A: THE NEURAL OCTOPUS
+ ●​ Concept: A biological fly brain governing an 8-tentacled soft-body.
+ ●​ Sensory Remapping: 8 tentacles contain continuous touch sensors. These 8 channels
+    are mapped via a synthetic expansive layer to the fly's mechanosensory bristle networks
+    (e.g., Johnston's organ or leg proprioceptors).
+ ●​ Decoder Strategy: The fly's descending neurons (DNg100 for speed, DNa02/DNg13 for
+    yaw, DNp01 for escape) provide low-dimensional "intent." This intent feeds into an
+    artificial Recurrent Neural Network (RNN) Central Pattern Generator (CPG). The RNN is
+    pre-trained via reinforcement learning to actuate 8 soft-body spline curves to achieve the
+    target velocities commanded by the fly.
+ ●​ Body Physics: Implemented using a differentiable physics engine (like MuJoCo or
+    Taichi.js) capable of simulating elastic soft-body dynamics.
+ ●​ Failure Modes: The fly brain might issue rapid, insectoid commands that the soft-body
+    RNN cannot translate smoothly, leading to tentacle spasms. The mapping of 8 continuous
+    touch sensors to 6 discrete leg representations may create perceptual aliasing, confusing
+    the biological navigation loops.
+
+Experiment B: THE GLITTER-EATING ALIEN
+ ●​ Concept: A digital metabolic organism that eats pixels, digests geometric data, and
+    excretes structured mathematical particles.
+ ●​ Metabolism & Internal State: The canvas is an array of RGB values. When the fly's optic
+    lobes detect specific colors, it approaches. Proximity triggers the Gustatory Receptor
+    Neurons (GRNs).
+ ●​ Neural Interface: Feeding motor neuron MN9 firing extracts the RGB values from the
+    canvas and adds them to a synthetic "Stomach Array."
+ ●​ Excretion Mechanics: When the Stomach Array reaches a critical capacity, it forces a
+    simulated spike in the grooming circuit (e.g., aDN1). This triggers a WebGPU compute
+    shader that expels the stored RGB values as thousands of rigid-body crystalline particles
+    (glitter) using the Material Point Method (MPM).
+ ●​ Evolving Desire: Dopaminergic Neurons (DANs) monitor the "crystal density" of the
+    environment. High density modulates the Mushroom Body (KC-MBON synapses), making
+    the organism learn to prefer colors that yield the most structurally sound glitter over its
+    lifetime.
+
+Experiment C: THE AUTONOMOUS MATHEMATICAL GOD GARDEN
+ ●​ Concept: A persistent mathematical universe (Reaction-Diffusion + Fluid Dynamics)
+    shaped by a neural organism with evolving aesthetic tastes.
+ ●​ World Mechanics: A WebGPU-accelerated Cahn-Hilliard (phase separation) simulation.
+    Two neon pigments continuously attempt to separate.
+ ●​ Intervention: The organism possesses no physical body. Its "limbs" are localized
+    heat-injections into the fluid field. DNa02 and DNg13 dictate the X/Y coordinates of the
+    heat injection. DNp09 controls the heat intensity.
+ ●​ Sensory Input: The resulting mathematical curvature and phase-boundaries are
+    analyzed by a Sobel-filter shader, mapping edge-density to the fly's visual projection
+<PARSED TEXT FOR PAGE: 23 / 26>
+     neurons (LC4).
+  ●​ Evolving Preferences: An engineered "Intrinsic Curiosity Module" calculates the
+     algorithmic unpredictability of the canvas. If the canvas is boring (static), dopamine drops,
+     driving the fly to thrash and inject heat. If the canvas is highly complex, dopamine spikes,
+     reinforcing the specific neural pathways that led to that pattern. Over days, the organism
+     autonomously cultivates strange attractors and ribbons of color.
+
+17. Development Roadmap for Neural Art Lab
+The current Neural Art Lab (https://github.com/merrypranxter/neural_art_lab) successfully
+utilizes a 6,203-neuron subcircuit running LIF in standard JavaScript. To scale this while
+preserving stability, the following staged roadmap is recommended:
+Phase 1: WebGPU Translation (Near-Term, Low Risk)
+   ●​ Action: Port the existing 6,203-neuron LIF simulation from CPU JavaScript to a WebGPU
+       compute shader. Keep the exact same sensory inputs (looming left/right) and outputs.
+   ●​ Why: This eliminates the CPU bottleneck, allowing the simulation to scale to 166,000
+       neurons without freezing the UI thread.
+   ●​ Hardware: Compatible with current iPhone browsers and desktop.
+Phase 2: Full Connectome Integration (Medium-Term)
+   ●​ Action: Replace the 6,203-neuron subset with the neuPrint MaleCNS v1.0 dataset.
+   ●​ Engineered Component: Implement sparse matrix multiplication (CSR format) in WebGPU
+       to handle the 125M synapses efficiently.
+   ●​ Result: The organism gains access to the full sensory suite (vision, olfactory, taste) and
+       the complete Mushroom Body learning centers for true biological plasticity.
+Phase 3: Native MPM Physics (Long-Term)
+   ●​ Action: Integrate Taichi.js or a custom WebGPU MPM (Material Point Method) pipeline.
+   ●​ Why: To replace the current 2D canvas effects with genuine, computationally accurate
+       fluid, particle, and soft-body dynamics, enabling the "Glitter-Eating Alien" and "Octopus"
+       architectures natively in the browser without relying on superficial particle libraries.
+
+18. The 20 Most Interesting Things Nobody Appears to
+Have Tried
+  1.​ Dopamine-Modulated Shader Parameters: Using DAN activity to dynamically alter the
+      global rendering pipeline (e.g., high dopamine increases bloom and saturation; low
+      dopamine introduces chromatic aberration and pixel-sorting).
+  2.​ Connectome-Driven Cellular Automata: Mapping motor outputs to the ruleset (not the
+      cells) of Conway's Game of Life, allowing the fly to continuously change the physics of the
+      grid it inhabits.
+  3.​ Topological Senses: Feeding the Euler characteristic or Betti numbers of a 3D
+      generative mesh into the fly's olfactory system, allowing it to "smell" geometry.
+  4.​ Inverse-Kinematic Soundscapes: Mapping tentacle/limb joint angles to FM synthesis
+      operators, creating music that accurately reflects the physical stress of the organism's
+      movement.
+  5.​ Multi-Connectome Fluid Ecosystems: Running 5 independent MaleCNS models in a
+      shared Navier-Stokes field, where their combined wakes create chaotic attractors that
+<PARSED TEXT FOR PAGE: 24 / 26>
+      none could produce alone.
+  6.​ Synaptic Degeneration Art: Slowly deleting synapses from the connectome over a
+      30-day installation, visualizing the decay of the generative art output as the brain
+      fragments.
+  7.​ Time-Dilation Locomotion: The fly's speed determines the tick-rate of the universe; if it
+      stops, the mathematical world freezes entirely.
+  8.​ Non-Euclidean Navigation: Forcing the E-PG compass ring to navigate a hyperbolic
+      (Poincaré disk) space, mapping biological heading to curved geometries.
+  9.​ Connectome as a Lens: Using the structural density of the 3D connectome graph as a
+      physical refraction index for a raytraced camera.
+  10.​Aesthetic Evolution via Mushroom Bodies: Genuinely tying visual complexity
+      algorithms to the KC-MBON plasticity loops, allowing the fly to develop unique artistic
+      tastes through STDP.
+  11.​Metabolic Pigment Consumption: The organism must "eat" the color red to maintain
+      membrane resting potentials; removing red kills the simulation.
+  12.​Morphological Sculpting: The fly's motor outputs carve away at a 3D voxel block (SDF
+      volume) like a sculptor, with its escape jumps leaving massive craters.
+  13.​Quantum State Driving: Mapping neural outputs to the rotation gates of a simulated
+      quantum circuit, visualizing the probability amplitudes as generative art.
+  14.​Parasitic Art-Intervention: The fly lives as an overlay on a live webcam feed, "eating"
+      moving pixels (e.g., cars in traffic) and leaving generative crystal trails.
+  15.​Hormonal Bath Simulations: Engineering synthetic volumetric neuromodulators (like
+      virtual octopamine) that flood the LIF network during specific visual events, radically
+      shifting behavior states.
+  16.​Self-Replicating Connectomes: A fly that, upon reaching a specific aesthetic goal, forks
+      its synaptic weight matrix and spawns a child in the canvas.
+  17.​Cymatic (Acoustic) Embodiment: The organism exists only as resonant frequencies on
+      a simulated Chladni plate, moving sand into geometric patterns.
+  18.​Grooming-Induced Glitch: Mapping the fly's biological grooming circuits (CE to aDN1) to
+      a data-moshing algorithm that "cleans" the canvas of noise.
+  19.​Elastic-Network Bodies: The body is a graph of nodes connected by springs. The fly's
+      DNs modulate the spring constants (stiffness), causing the body to snap and contort.
+  20.​Extended Cognition Mazes: The fly must draw its own physical barriers to trap a
+      generative "prey" item, using the world as an extension of its hunting logic.
+
+19. The Five Experiments I Should Build Next
+1. The Aesthetic Mushroom Body (Learning)
+   ●​ Concept: Upgrade the current artificial taste mechanisms to utilize the biological
+      Mushroom Body.
+   ●​ Implementation: Route visual complexity metrics into DANs (Dopamine). Enable synaptic
+      plasticity equations (reward-modulated STDP) exclusively on the KC-to-MBON synapses.
+   ●​ Goal: Prove that the fly can develop a stable preference for mathematical structures
+      through repeated interaction, without hardcoded software overriding the biology.
+2. The WebGPU MPM Glitter-Eater (Physics)
+   ●​ Concept: Introduce real material physics to the Neural Art Lab.
+   ●​ Implementation: Use a basic WebGPU MPM (Material Point Method) compute shader.
+<PARSED TEXT FOR PAGE: 25 / 26>
+      Map MN9 (Feeding) to pixel deletion, and grooming (aDN1) to the explosive generation of
+      MPM rigid particles.
+   ●​ Goal: Achieve 60FPS fluid/particle dynamics controlled by spiking neural activity on a
+      mobile browser.
+3. The Fluid-Dynamics God Garden (World Mechanics)
+   ●​ Concept: Replace the 2D canvas with a 2D Navier-Stokes fluid simulation.
+   ●​ Implementation: The organism is invisible but acts as a velocity and dye emitter.
+      DNa02/DNg13 (Steering) alters the directional vectors of the fluid.
+   ●​ Goal: Create surprising emergent behavior where the organism's movement creates
+      turbulent wakes, which then stimulate its visual looming detectors, causing chaotic,
+      self-sustaining feedback loops.
+4. The Morphological Degenerator (Artistic concept)
+   ●​ Concept: A meditation on memory and form.
+   ●​ Implementation: As the fly moves, it slowly loses synapses (engineered cell death). The
+      visual output starts sharp and structured, but as the connectome fragments, the art
+      becomes increasingly erratic, abstract, and eventually fades to noise.
+   ●​ Goal: An emotional and visually striking installation proving the necessity of the biological
+      topology.
+5. The Dual-Connectome Tug-of-War (Ecological)
+   ●​ Concept: Two distinct 6,203-neuron subcircuits inhabiting the same canvas.
+   ●​ Implementation: Fly A deposits neon pigment. Fly B perceives neon pigment as a looming
+      threat (mapped to LPLC2) and attempts to erase it.
+   ●​ Goal: Generate complex, adversarial generative art driven entirely by the conflict between
+      two biological controllers, establishing the foundation for synthetic ecologies.
+
+Works cited
+
+1. Fruit Fly Brain Chess: How the Viral AI Works - OpsMavix,
+https://opsmavix.com/blog/fruit-fly-brain-chess/ 2. Awesome Fly: Curated Fruit Fly Connectome
+Projects,
+https://www.parapathology.com/clippings/awesome-fly-curated-fruit-fly-connectome-projects 3.
+Male CNS Connectome - Janelia Research Campus,
+https://www.janelia.org/project-team/flyem/male-cns-connectome 4. Male CNS Connectome -
+MaleCNS connectome, https://male-cns.janelia.org/ 5. Janelia-Google Male Fly Connectome
+Goes Viral on Minecraft Demo,
+https://aiweekly.co/alerts/janelia-google-male-fly-connectome-goes-viral-on-minecraft-demo 6.
+MaleCNS v1.0 - Fly Brain Hub, https://fly-brain-hub.vercel.app/projects/malecns 7. Synaptic
+connectome of a neurosecretory network in the Drosophila,
+https://elifesciences.org/articles/102684 8. Michael B. Reiser's research works | Howard Hughes
+Medical, https://www.researchgate.net/scientific-contributions/Michael-B-Reiser-2004338780 9.
+neuVid - connectome-neuprint - GitHub, https://github.com/connectome-neuprint/neuVid 10. Nils
+Eckstein's research works - ResearchGate,
+https://www.researchgate.net/scientific-contributions/Nils-Eckstein-2144113952 11.
+Neurotransmitter classification from electron microscopy images at,
+https://pubmed.ncbi.nlm.nih.gov/38729112/ 12. (PDF) A Drosophila computational brain model
+reveals sensorimotor,
+https://www.researchgate.net/publication/384573114_A_Drosophila_computational_brain_model
+_reveals_sensorimotor_processing 13. GitHub - Froststar16/connectome-control: Turning the
+<PARSED TEXT FOR PAGE: 26 / 26>
+fruit fly, https://github.com/Froststar16/connectome-control 14. Stress-Testing Mechanistic
+Claims in a Connectome-Constrained, https://arxiv.org/html/2610.13018v1 15. Flexible circuits
+for visually guided flight control in Drosophila,
+https://pure.mpg.de/rest/items/item_3688458_4/component/file_3691839/content 16. GitHub -
+cobanov/awesome-fly: A curated list of fruit fly connectome,
+https://github.com/cobanov/awesome-fly 17. First Full Brain Emulation: Eon Systems Simulates
+Fruit Fly in Virtual, https://mindtransfer.me/blog/eon-systems-fruit-fly-brain-simulation/ 18.
+Models of heterogeneous dopamine signaling in an insect learning,
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8354444/ 19. Abstract - arXiv,
+https://arxiv.org/html/2610.33881v1 20. The Whole Fly, Part 2: What Happens When We Poke It
+- Medium,
+https://medium.com/@gregrobison/the-whole-fly-part-2-what-happens-when-we-poke-it-75e54a
+ebbdb4 21. By Niccolò Zanichelli, Maximilian Schons, Isaak Freeman, Philip,
+https://brainemulation.mxschons.com/assets/State-of-Brain-Emulation-Report-2025.pdf 22.
+GitHub - BruceLanLan/c3s-reflex-circuits, https://github.com/BruceLanLan/c3s-reflex-circuits 23.
+Connectome simulations identify a central pattern generator circuit,
+https://faculty.washington.edu/tuthill/docs/Pugliese_cpg_2025.pdf 24.
+fly-brain-minecraft/docs/REFERENCE.md at main - GitHub,
+https://github.com/blendi-remade/fly-brain-minecraft/blob/main/docs/REFERENCE.md 25.
+dotFly - a fruit fly's brain, simulated in C# | Konrad 'Dev Nerd' Kokosa,
+https://kokosa.dev/blog/2026/dotfly/ 26. DNa02 (Walking Steering Neuron) · Fruit Fly Neuron ·
+TheFlyBrain, https://theflybrain.com/neurons/dna02/ 27. Dimforge Q3 2026 technical report −
+Nexus multiphysics, Rapier, https://dimforge.com/blog/2026/10/25/dimforge-Q3-technical-report/
+28. (PDF) Material Point Method based Fluid Simulation on GPU using,
+https://www.researchgate.net/publication/319525082_Material_Point_Method_based_Fluid_Sim
+ulation_on_GPU_using_Compute_Shader 29. Coherent-resonant netting: disorder-enhanced
+selectivity from,
+https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.18
+13959/full 30. From molecular simulation to black hole rendering - Taichi Docs,
+https://docs.taichi-lang.org/blog/what-taichi-is-capable-of 31. Particle Network Animations in
+Javascript - portalZINE.DE, https://portalzine.de/de/particle-network-animations-in-javascript/
+32. how the mushroom body modulates behavior depending on,
+https://pdfs.semanticscholar.org/8d20/2af8c76f62415655ed3ed76f935d16b500b1.pdf 33. HitList
+- FlyBase, https://flybase.org/hitlist/FBtp0099521/to/FBrf 34. The secret life of predictive brains:
+what's spontaneous activity for?, https://pmc.ncbi.nlm.nih.gov/articles/PMC8363551/ 35.
+Connectome-constrained Drosophila neural control and reward,
+https://www.researchgate.net/publication/416440813_Connectome-constrained_Drosophila_neu
+ral_control_and_reward-modulated_plasticity_in_a_simulated_Maxwell-demon_particle_system
+36. A connectome of the Drosophila central complex reveals network,
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9477501/ 37. GitHub - annel0/flybrain: A fast GPU
+simulator for connectome, https://github.com/annel0/flybrain 38. Experimental modules |
+luma.gl, https://luma.gl/docs/api-reference/experimental 39. The Best of WebGPU in May 2025,
+https://www.webgpuexperts.com/best-webgpu-updates-may-2025

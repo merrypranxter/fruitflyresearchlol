@@ -1,0 +1,1893 @@
+# R02 — SEARCHABLE TEXT TRANSCRIPTION
+
+Original: The Unlimited Body_ Everything a Simulated Fly Brain Could Possibly Control.pdf (30 pages)
+Source: user-provided research report, research cutoff October 27, 2026.
+NOTE: Automated PDF text extraction; table layout, equations, citation formatting and embedded graphics may not be faithfully reproduced. Verify against the PDF. This is source text, not independent scientific verification.
+
+---
+
+<PARSED TEXT FOR PAGE: 1 / 30>
+The Unlimited Body: Everything a Simulated Fly
+Brain Could Possibly Control
+Research cutoff: October 27, 2026
+
+
+The central answer is gloriously weird but technically straightforward:
+
+
+A connectome-derived nervous system does not mathematically require the body evolution gave it.
+Once neural state is represented digitally, it can be coupled to any computable dynamical system: six legs,
+eight tentacles, a humanoid, a drone, a colony, a reaction–diffusion field, a cloud of particles, a topology-
+changing mesh, a musical instrument, a game, a living painting, a mathematical ecosystem, or a creature
+that eats magenta pixels and shits crystalline glitter.
+
+
+But there is a gigantic scientific trap hiding inside that freedom. The easier it becomes to make the
+transplanted nervous system control an arbitrary world, the harder it becomes to prove the nervous
+system is actually responsible for the interesting behavior. The most important paper for this entire
+question may therefore be one that intentionally built a biological abomination: Brunton and colleagues
+connected the 302-neuron C. elegans connectome to a simulated fruit-fly body and trained an artificial
+decoder until the chimera walked like a fly. It worked. And that was the point: realistic behavior can emerge
+from a biologically nonsensical brain–body pairing if the interface is powerful enough. 1
+
+
+That result radically reframes the problem. The frontier is no longer merely, “Can a fly connectome control
+X?” In an engineering sense, the answer is almost always yes.
+
+
+The deeper question is:
+
+
+       How alien can X become while the biological wiring still makes a measurable,
+       nontrivial, causally necessary contribution to what the resulting organism does?
+
+
+What a simulated fly brain actually is
+The phrase “simulated fly brain” currently refers to several profoundly different objects. Confusing them
+produces most of the hype and a lot of the bullshit.
+
+
+FlyWire / FAFB is fundamentally an anatomical dataset. The adult female FlyWire connectome published in
+2024 contains 139,255 proofread neurons and roughly 54.5 million chemical-synapse contacts. It
+includes neuronal morphology, synaptic locations, extensive cell-type annotations and synapse-level
+neurotransmitter predictions. The publication explicitly states that the main connectome contains chemical
+rather than electrical synapses; reliable identification of gap junctions awaits appropriate data. A single
+directed connection between two neurons can contain many synaptic contacts, so Codex “connection”
+counts must not be confused with raw synapse counts. 2
+
+
+
+
+                                                      1
+<PARSED TEXT FOR PAGE: 2 / 30>
+BANC — Brain And Nerve Cord — is a different beast. Bates and colleagues’ 2026 Nature paper
+reconstructs a unified adult female brain, neck connective and ventral nerve cord. The biological
+architecture it reveals is extraordinarily relevant here: roughly 140,000 brain neurons and 20,000 VNC
+neurons communicate through about 1,300 descending and 1,800 ascending neurons, while local sensor–
+effector loops perform a large fraction of body-specific control. Higher learning/navigation regions appear
+more supervisory than equivalent to a centralized executive issuing every muscle command. That is
+precisely the sort of hierarchical organization that makes body transplantation plausible. 3
+
+
+BANC is still not a scan of every piece of the organism. The published volume lacks the lamina and ocellar
+ganglion; the authors estimate that around 9,390 R1–R6 photoreceptors and Lai cells associated with the
+lamina are consequently absent. Sensory neurons entering the CNS are represented extensively, but
+complete peripheral sensory endings, muscle physiology and every neuromuscular interaction are not
+magically supplied by having a complete central connectome. 3
+
+
+MaleCNS is the corresponding landmark male dataset. Janelia’s project released v1.0 on June 8, 2026, with
+the associated Cell publication appearing on September 3, 2026. Official descriptions put it at
+approximately 166,700 neurons and 125 million synaptic contacts, spanning the adult male brain and
+ventral nerve cord through an intact neck connective. Its great advantage for synthetic embodiment is that
+sensory-to-brain-to-VNC-to-motor routes can be investigated in one specimen rather than splicing separate
+brain and cord connectomes together. 4
+
+
+As of October 2026, FlyWire Codex is an analysis/access layer for several of these datasets, not a neural
+simulator. Its current dataset pages distinguish FAFB/FlyWire, BANC and MaleCNS and expose annotations,
+connectivity, morphology and transmitter information; downloadable/static data are preferable for large
+programmatic analyses. neuPrint likewise provides graph-oriented storage, querying and visualization for
+connectomic datasets. Neither causes neurons to spike merely because you loaded a graph. 5
+
+
+The distinction between raw anatomy and executable nervous systems looks like this:
+
+
+ Thing people call a “fly
+                                  What it actually contains                  What it does not establish
+ brain”
+
+                                  neurons, morphology, synapses,             voltage, spikes, behavior,
+ Static connectome
+                                  partners, cell/type annotations            learning
+
+                                  differential equations or update rules
+ Dynamical simulation                                                        correct biological dynamics
+                                  applied to connectome nodes
+
+                                                                             that neuron states
+ Connectome-constrained           biological topology used as a machine-
+                                                                             correspond to real fly
+ artificial network               learning architecture
+                                                                             physiology
+
+                                                                             that actions use natural
+ Behavioral controller            outputs converted into actions
+                                                                             motor semantics
+
+                                  actions alter world; world alters later    plasticity, biological
+ Closed embodied loop
+                                  sensory input                              motivation or autonomy
+
+
+
+
+                                                      2
+<PARSED TEXT FOR PAGE: 3 / 30>
+ Thing people call a “fly
+                                  What it actually contains                   What it does not establish
+ brain”
+
+                                                                              that the learning rule is
+ Plastic system                   parameters change with experience
+                                                                              biological
+
+ Independently learning                                                       that the fly rather than an
+                                  reward/objective drives optimization
+ agent                                                                        adapter is learning
+
+                                  a claim about preserving the
+ Whole-brain emulation /                                                      not established by present
+                                  organism’s functional or experiential
+ consciousness claim                                                          fly models
+                                  organization
+
+Shiu et al. is the key bridge between anatomy and dynamics. Their 2024 work placed essentially the
+adult FlyWire brain into a leaky integrate-and-fire model informed by connectivity and transmitter
+identity. Researchers can activate defined neurons at controlled rates, silence populations, and record
+propagated spikes throughout the network. They showed that stimulation of taste-related neurons
+predicted downstream feeding-related activity and used the model to generate experimentally testable
+feeding and grooming predictions. The public repository exposes the actual simulation machinery. 6
+
+
+But Shiu’s model is deliberately simplified. The paper explicitly notes that it ignores morphology-dependent
+neural dynamics and receptor dynamics, among other limitations. The code converts anatomical
+information into simplified point-neuron dynamics; it does not reconstruct every channel, dendrite, synaptic
+receptor or physiological state of the original animal. 7
+
+
+flyvis / Lappalainen et al. takes almost the opposite strategy. Rather than simply running generic
+dynamics across the whole brain, it constructs a connectome-constrained model of the visual system and
+trains parameters against visual computation. That can produce greater functional fidelity in one subsystem
+while covering much less of the nervous system. A whole-brain model is therefore not automatically “more
+biological” than a carefully constrained subcircuit model. 8
+
+
+NeuroMechFly v2 / FlyGym supplies the body side. It is a detailed physics-based adult fly platform with
+articulated anatomy, sensory interfaces and MuJoCo-based embodiment. NeuroMechFly is not itself FlyWire
+running inside a fly; it is a body/environment into which many kinds of controllers can be inserted. 9
+
+
+Eon Systems’ March 2026 experiment combined those worlds. Eon integrated a Shiu-derived whole-brain
+LIF model, a connectome-constrained visual system and the NeuroMechFly body. Their technical description
+says the neural and body systems exchange information at roughly 15-ms intervals. Taste-like signals and
+fictive dust stimulate identified sensory pathways; selected descending/motor-related outputs are
+interpreted as behavioral commands; lower-level NeuroMechFly controllers generate detailed body
+movement; and movement alters subsequent sensory input. The demonstration includes approach toward
+food, grooming and feeding. 10
+
+
+The crucial caveat is that Eon did not wire every biological motor neuron directly to an individually modeled
+muscle and simply watch a fly awaken. Its bridge is deliberately low dimensional. Selected pathways such as
+steering/forward-related descending neurons feed existing lower-level controllers; much of the complex
+joint-level movement is therefore contributed by those engineered controllers and the simulated body. Eon
+
+
+
+
+                                                     3
+<PARSED TEXT FOR PAGE: 4 / 30>
+also explicitly identifies missing internal state, plasticity, learning, hormonal modulation, diverse cell
+biophysics and other biological dynamics. 11
+
+
+That is still a real milestone. It is a closed connectome-informed sensorimotor loop. It just is not the same
+thing as demonstrating that connectome topology plus generic neuronal equations is sufficient to
+reconstruct an autonomous animal.
+
+
+Two 2026 projects push the concept even farther from natural fly behavior.
+
+
+FlyGM instantiates the fly connectome as a graph-structured artificial controller and trains it with deep
+reinforcement learning to operate a biomechanical fly. It reports walking, turning, gait initiation and flight,
+and importantly compares the biological graph with degree-preserving rewires, random graphs and
+conventional MLPs. The biological topology exhibits better sample efficiency and performance in the
+reported experiments. That is evidence for useful structural inductive bias—not evidence that the trained
+edge computations are the original fly’s physiology. 12
+
+
+And on October 7, 2026, Cho, Kang and Kim posted an even stranger result: they use MaleCNS v1.0 as a
+fixed recurrent topology, learn a scalar on each anatomical edge, and train separate networks on
+bounded arithmetic and a controlled grounded relational-language task. The MaleCNS topology reached
+92.77% held-out bounded-addition accuracy versus 67.93% for degree-preserving rewired controls, and
+61.59% on their strict language endpoint versus 44.17% for matched rewires. Their limitations section is
+admirably explicit: the model omits transmitter signs, delays, realistic neuronal dynamics and biological
+plasticity. In other words, this is emphatically not a fly discovering arithmetic. It is evidence that a
+biological connectome can be an unexpectedly reusable computational architecture. 13
+
+
+What the anatomy still does not tell us. Even the spectacular 2026 datasets do not specify all per-cell
+membrane conductances, voltage-gated channel densities, cable properties, release probabilities, short-
+term synaptic dynamics, complete postsynaptic receptor identities, electrical connections, conduction
+delays, neuropeptide and volume-transmission dynamics, glial regulation, hormonal state, metabolic state,
+developmental history, learned synaptic state, sensory-receptor transduction functions, muscle force curves
+or every peripheral connection. Neurotransmitter identity alone does not determine the exact postsynaptic
+response, because receptor identity and cellular context matter. FlyWire’s own publication explicitly excludes
+electrical synapses from the main reconstructed graph. 14
+
+
+So: can a connectome simulation spontaneously generate behavior? It can generate recurrent activity
+under suitable dynamics, but the published Shiu framework demonstrates behaviorally relevant processing
+primarily by stimulating or perturbing selected populations. Eon’s embodiment is closed-loop but cue
+driven. FlyGM becomes competent through reinforcement learning. No current result demonstrates that a
+static adult connectome plus generic LIF parameters, started up like a laptop, spontaneously reconstructs
+the whole natural behavioral organization of a living fly. 15
+
+
+What people have already connected these nervous systems to
+September and October 2026 have been a fucking carnival.
+
+
+
+
+                                                        4
+<PARSED TEXT FOR PAGE: 5 / 30>
+The public release of MaleCNS triggered a wave of game controllers, artistic experiments, simulations and
+connectome-as-computer projects. A useful current catalogue is Mert Cobanov’s Awesome Fly, which
+explicitly describes itself as a reviewed source list rather than independent reproduction. That distinction
+matters because many projects report their own performance without peer review. 16
+
+
+The strongest research-grade examples are:
+
+
+                     Biological             What actually controls
+ Project                                                                   Learning and validation
+                     substrate              what
+
+                                            experimentally chosen
+                                                                           no autonomous body;
+                                            input neurons → LIF
+ Shiu brain          FlyWire adult                                         biological feeding/grooming
+                                            propagation →
+ model               female brain                                          predictions tested
+                                            downstream neural
+                                                                           experimentally. 6
+                                            responses
+
+                                            rendered visual stimuli →
+                     fly visual             trained connectome-            trained/predictive subcircuit
+ flyvis
+                     connectome             constrained visual             model. 8
+                                            network
+
+                                            sensory events → neural
+                     Shiu whole-brain       simulation → selected DN       real closed loop; little/no
+ Eon embodied
+                     dynamics + visual      outputs → existing low-        biological learning; interface
+ fly
+                     model                  level NeuroMechFly             partly hand engineered. 11
+                                            controllers
+
+                                            projected body
+                     adult fly
+                                            observation → graph            deep RL; rewired/random/MLP
+ FlyGM               connectome
+                                            policy → motor decoder         baselines. 12
+                     topology
+                                            → MuJoCo fly
+
+                                            arbitrary symbolic/
+ Whole-                                                                    learned edge scalars; degree-
+                                            sensory channels →
+ connectome          MaleCNS topology                                      preserving rewire and sensory-
+                                            trained graph → task
+ cognition                                                                 shuffle controls. 13
+                                            output
+
+                                                                           realistic walking produced
+                                            fly proprioception →
+                     C. elegans,                                           despite absurd biological
+ Digital Sphinx                             worm network → learned
+                     deliberately not fly                                  mismatch; a deliberate warning
+                                            decoder → fly legs
+                                                                           against overinterpretation. 1
+
+                     3,609 continuous       body/command inputs →          61/63 tested conditions
+                     states derived         recurrent core → 135           succeeded; interventions show
+ Fly-inspired
+                     from MaleCNS-          motor-labelled states →        carried motor state/direct body
+ humanoid
+                     labeled                15 simulated Unitree G1        inputs dominate tested control.
+                     populations            targets                         17
+
+
+
+The community layer is much larger.
+
+
+
+
+                                                      5
+<PARSED TEXT FOR PAGE: 6 / 30>
+DOOMFLY, by nftechie, feeds Doom frames into engineered sensory populations of a MaleCNS v1.0
+simulation and maps neural activity to movement, turning and firing. An experimental dopamine-gated
+memory rule changes a limited subset of connections. This is genuinely dynamic and closed-loop, but
+thousands of game rounds had not produced convincing evidence of competent autonomous Doom
+learning in contemporary reporting. 18
+
+
+FlyDoom goes farther scientifically by comparing MaleCNS-constrained recurrent controllers with rewired
+graphs and ordinary neural networks on simplified VizDoom tasks. That is the correct direction because it
+asks whether the connectome itself matters rather than merely demonstrating that something connected
+to Doom moves. 16
+
+
+Fly64, by ornata, connects a MaleCNS-derived system to Super Mario 64. It is a genuine controller
+experiment with a dashboard and local setup, but the game/sensory semantics still have to be engineered.
+ 19
+
+
+
+
+The viral Beat Saber experiment is particularly instructive. The original September 9 post by @lyraaaa is
+real, but the author clarified that the system was overfit to one track and used replay/external song
+information; it was not simply watching incoming blocks through fly eyes and spontaneously mastering
+rhythm combat. The author explicitly described further work as reducing reliance on those external signals.
+So this is a fascinating trained interface—not evidence of a natural fly brain understanding Beat Saber. 20
+
+
+Fly Brain Minecraft runs filtered MaleCNS graphs for fly mobs and supplies explicit synthetic signals for
+environmental events such as food, threats and weather, with motor readouts and neural HUDs. It is closer
+to an artificial ecology than a neuroscience experiment. 16
+
+
+fly-flappy reportedly runs the retained MaleCNS graph at 50 Hz, feeds it engineered visual input and either
+reads DNp01 directly or trains a logistic action decoder to flap. This is an excellent example of why “full
+connectome” is not synonymous with “fully biological”—the graph may be biological while the interface
+remains an engineered prosthesis. 16
+
+
+FlyPong, by Jonatas Peraza, deserves special attention because it reports a failure. It uses a MaleCNS
+subgraph, feeds ball information into the neural system and tests dopamine-inspired plasticity. The
+attempted learning rule did not produce convincing learning. Negative results like this are
+disproportionately valuable because they puncture the assumption that sprinkling “dopamine” onto a
+connectome automatically produces an adaptive animal. 21
+
+
+Fly Dino uses only an approximately 80-neuron MaleCNS circuit, simplified leaky-tanh dynamics and a
+trainable 243-parameter action readout. It reports held-out tests and circuit-silencing experiments. That
+small, explicit interface is in some ways scientifically cleaner than running 166,000 neurons and then
+allowing a gigantic decoder to do whatever the hell it wants. 16
+
+
+Fly Self Driving reportedly retains about 165,000 MaleCNS neurons and learns connection gains/leak
+parameters to steer from a low-resolution windscreen. Its authors report comparisons with a rewired
+connectome, linear controller and MLP, which makes it much more informative than an isolated steering
+video. At the same time, learning a huge number of gains means the resulting computation should be
+described as connectome-constrained machine learning, not an untouched male fly driving a car. 16
+
+
+
+
+                                                      6
+<PARSED TEXT FOR PAGE: 7 / 30>
+fly-cartpole uses a 5,459-neuron flight-stabilization-related subset, tunes only a handful of sensory gains,
+and reports large improvement over random perturbation controls. This is exactly the sort of
+transplantation experiment worth pursuing: take a circuit whose evolutionary job is stabilization and ask
+whether its control geometry transfers to a new stabilization problem. 16
+
+
+Doodle Fly runs a Shiu-style whole-FlyWire LIF simulation, artificially stimulates LC10a according to target-
+platform location and reads several descending-neuron classes to press left/right controls. Nothing is
+trained, and its author reports eye-swap and blind controls. That makes it a particularly nice demonstration
+of fixed biological network + artificial sensor + artificial motor prosthesis. 16
+
+
+20fly8 uses a mushroom-body-derived FlyWire circuit rather than the whole brain. Board state is encoded
+through projection-neuron channels, measured PN→Kenyon-cell and Kenyon-cell→MBON connectivity
+forms the substrate, and a project-defined dopamine/TD rule modifies the effective KC→MBON pathway.
+The author reports random, rewired and shuffled controls. Conceptually, this is much closer to the
+aesthetic-preference experiments you are imagining than Doom is. 16
+
+
+Banana Quest uses the full FlyWire graph, converts an odor-like gradient into antennal receptor activity
+and derives turn/feed/startle behavior from descending/SEZ-related populations. Its documentation
+explicitly distinguishes measured wiring from artificial sensory and readout mappings—good scientific
+hygiene. 16
+
+
+FLYT3 runs a retained MaleCNS LIF graph with a trained descending/VNC readout. Its reported wildfire-
+classification experiment is an unusually useful embarrassment: the connectome system scores about
+60.8%, while a pooled-pixel MLP reaches about 85.7% on the same five-class task. Biological wiring is
+therefore not some magical universal computer that automatically beats ordinary ML. 16
+
+
+fly-swing uses the MaleCNS giant-fiber escape circuit—LC4/LPLC2→DNp01—as the biologically grounded
+event that initiates evasive behavior, while an external k-nearest-neighbor threat memory helps determine
+web-swinging behavior. It is a wonderful example of mixed authorship: the connectome contributes a real
+escape-like signal, but “Spider-Man fly” is largely an engineered downstream organism. 16
+
+
+Fly-NAF places an entire FlyWire-based LIF simulation inside Five Nights at Freddy’s, but augments it with
+hand-built screen mappings, memory and starvation timers. That is a real hybrid artificial organism—not a
+clean test that the fly itself learned FNAF. 16
+
+
+Katamari Connectome maps a large FlyWire-derived neural subset into Katamari Damacy controls with no
+RL training, but its reported evidence is a single session with no matched baseline. Fun as hell; scientifically
+thin. 16
+
+
+Then there are systems that escape videogames entirely.
+
+
+Infinite Sugar is explicitly an artwork in which continuous sweet-like input enters a FlyWire-derived
+simulation and neural activity alters visible movement while some other movement remains supplied by
+authored patterns. It is a neural art interface, not behavioral validation. 16
+
+
+
+
+                                                        7
+<PARSED TEXT FOR PAGE: 8 / 30>
+Fly brews matcha is even more valuable as a cautionary artwork: full-MaleCNS LIF activity is replayed while
+the visible body is scripted; motor-neuron spikes do not actually animate the body. Its author’s
+preregistered sugar→MN9 test reportedly failed. It is nearly a perfect demonstration of how easily a brain
+visualization can look causal when the body animation is somewhere else entirely. 16
+
+
+FlyScroll sends video-related signals through a MaleCNS-derived model and lets modeled visual/
+mushroom-body novelty activity influence scrolling. It is an early prototype of something much more
+interesting than game playing: a nervous system regulating what sensory experience it exposes itself
+to next. 22
+
+
+FLM connects MaleCNS activity to a pretrained language model through an adapter. The crucial
+interpretation is obvious: the linguistic competence resides mainly in the pretrained language model. The
+connectome is influencing a linguistic machine; it has not thereby become linguistic itself. 16
+
+
+WIRED’s PitchFly experiment likewise encoded headline/story information into a fly-connectome-derived
+system to produce new story pitches. The output can be legitimately called a connectome-influenced
+creative system, but there is no basis for saying the neural substrate understands English headlines in the
+manner of a writer. 23
+
+
+Other community projects currently map connectome activity into Ableton/music, generative fashion
+layouts, financial-market actions, reservoir-computing decisions, environmental data and desktop pets. The
+recurring pattern is the same: you can attach the graph to nearly anything, but the scientific meaning
+depends almost entirely on the sensory encoder, trainable parameters, action decoder, feedback loop
+and null controls. 16
+
+
+The failures are especially informative:
+
+
+  Negative or ambiguous result                         What it teaches
+
+  FlyPong’s dopamine-inspired rule did not             “dopamine-like” is not enough; biologically useful
+  produce demonstrated learning. 21                    credit assignment is hard.
+
+  DOOMFLY remained poor after thousands of             retained topology plus crude reinforcement does
+  rounds in contemporary reporting. 24                 not automatically yield game competence.
+
+  Beat Saber relied on track/replay information.       spectacular movement can be mostly an interface/
+   25                                                  training achievement.
+
+  FLYT3’s conventional MLP beat its connectome
+                                                       fly topology is not universally advantageous.
+  classifier. 16
+
+  Fly Matcha’s preregistered feeding-related test      a full graph running in the background does not
+  failed. 16                                           guarantee expected biological propagation.
+
+  Digital Sphinx makes realistic fly walking using a   behavioral fidelity alone proves almost nothing
+  worm network. 1                                      about biological fidelity.
+
+That last result is the monster hiding under everybody’s bed.
+
+
+
+
+                                                       8
+<PARSED TEXT FOR PAGE: 9 / 30>
+The body is an interface, not a destiny
+The strongest biological argument that a fly-derived nervous system could inhabit something radically non-
+fly-shaped comes from the fly itself.
+
+
+BANC shows that motor organization is distributed: local sensory information strongly influences nearby
+effectors, while ascending and descending neurons coordinate those modules across the animal. One
+descending neuron can influence multiple body parts or physiological systems rather than encoding one
+literal muscle contraction. 3
+
+
+That means there is no requirement that an artificial transplant preserve a one-neuron→one-muscle
+correspondence.
+
+
+A useful abstraction is:
+
+
+           world → E(sense) → Nconnectome → zintent → Dmotor → Clocal → Pbody → world
+
+where:
+
+
+E is a synthetic sensory organ,
+N is the connectome-derived nervous system,
+z is a deliberately low-dimensional neural bottleneck,
+D translates that bottleneck into body-level goals,
+C contains local reflex/CPG/limb controllers, and
+P is the body/world physics.
+
+
+The architecture can range from biologically conservative to hilariously alien.
+
+
+A direct mapping might connect left-turn-related descending neurons to a robot’s left/right steering
+differential.
+
+
+A motor-synergy mapping could interpret dozens of neural outputs as a handful of latent variables:
+forward drive, turn bias, approach, retreat, flight/escape intensity, feeding, grasping, phase, stiffness.
+
+
+A hierarchical decoder can expand those variables into hundreds or thousands of joint, muscle or material
+commands.
+
+
+A reservoir-style interface can read a large fraction of whole-connectome activity and train an arbitrary
+downstream policy.
+
+
+A co-adaptive system can allow the decoder, body and eventually selected neural weights to adapt
+simultaneously.
+
+
+Capability generally increases as you move downward. Biological interpretability generally decreases.
+
+
+
+
+                                                         9
+<PARSED TEXT FOR PAGE: 10 / 30>
+The importance of this distinction is beautifully demonstrated by the Digital Sphinx. Brunton and
+colleagues took a C. elegans network of only 302 neurons, supplied fly-body proprioception to its sensory
+neurons through a random projection, and trained a variational encoder/decoder with a 16-dimensional
+latent space to convert worm motor activity into commands for 42 fly leg actuators. The resulting animal
+produced realistic coordinated fly walking. The authors explicitly argue that this does not illuminate worm
+or fly motor biology; an expressive downstream policy can make a biologically meaningless intermediate
+network look astonishingly competent. 1
+
+
+So yes: a fly brain can technically control a spider, snake, fish, bird, quadruped, humanoid, drone, soft
+robot, amorphous blob, particle swarm or hundreds of limbs.
+
+
+What changes is the interface.
+
+
+Snake: fly output controls wave phase, curvature amplitude and propagation direction of a body CPG.
+
+
+Fish: neural outputs specify tail-beat frequency/asymmetry, pectoral-fin bias and depth goal.
+
+
+Bird: outputs control wingbeat amplitude/frequency, left–right asymmetry and tail attitude.
+
+
+Drone: outputs become thrust, yaw, pitch and altitude goals while a conventional flight controller solves
+millisecond stabilization.
+
+
+Quadruped: fly outputs set gait, velocity and turning commands while local leg policies solve foot
+placement.
+
+
+Humanoid: the September 2026 preprint already demonstrates this category using a 3,609-state fly-
+inspired recurrent controller connected to a simulated Unitree G1. It completes 61 of 63 evaluated
+conditions, although intervention analysis shows that its effective locomotor pathway relies heavily on
+body/command input and persistent motor state rather than demonstrating a rich biological sensory
+hierarchy. 17
+
+
+Soft blob: outputs control pressure gradients, stiffness fields, contraction waves or material-growth fronts
+rather than joints.
+
+
+Hundreds of appendages: outputs need not address appendages individually. A few scalars can
+parameterize a distributed field or identical local limb controllers.
+
+
+Several bodies simultaneously: the nervous system can broadcast a common behavioral state to multiple
+bodies while receiving aggregated sensory feedback. The resulting entity is mathematically no stranger
+than a colonial organism with distributed effectors.
+
+
+The octopus architecture
+
+The most credible fly-brain octopus should not ask a fly connectome to directly discover thousands of
+artificial muscle commands. That would mostly become a reinforcement-learning stunt.
+
+
+
+
+                                                     10
+<PARSED TEXT FOR PAGE: 11 / 30>
+Instead:
+
+
+Neural substrate. Use MaleCNS or BANC because both contain brain↔cord circuitry rather than only a
+brain. Initially freeze all biological effective weights.
+
+
+Synthetic perception. Preserve natural correspondence wherever possible. Motion and looming can enter
+visual pathways; contact/strain can enter proprioceptive or mechanosensory populations; odor-like
+resource fields can enter olfactory pathways; contact nutrient signals can enter gustatory pathways. Any
+truly octopus-specific variable should be labeled as an artificial sensory mapping rather than given fake
+biological semantics.
+
+
+Intent layer. Read perhaps 16–64 dimensions from descending/VNC/motor-associated neural populations.
+Candidate dimensions could include locomotor drive, lateral bias, approach/avoidance, escape intensity,
+feeding/contact state, exploration, action phase and several learned latent variables. The exact
+dimensionality is an experimental knob, not a biological fact.
+
+
+Eight local arms. Each arm gets its own lower controller for bending, torsion, extension, shortening,
+stiffness and contact reflexes. Octopus arms are an especially good model because real octopus control is
+itself unusually distributed, and recent octopus-inspired robotics uses peripheral sensing/control to handle
+high-dimensional flexible limbs. 26
+
+
+Shared fly influence. The neural bottleneck modulates arm goals. For instance:
+
+
+
+                                            ai = Ci (D(zt , si , gt ))
+
+where zt is fly neural state, si is local arm sensory state and gt is global body state.
+
+
+The eight arms can share one permutation-equivariant local policy. Consequently, the body can lose an arm,
+grow a ninth, or temporarily split one arm into five branches without rewriting the fly brain.
+
+
+Local reflexes. Contact should produce immediate arm-level withdrawal or stiffening before waiting for the
+entire brain loop. A compressed report of that event then returns through synthetic ascending channels.
+
+
+That is not cheating. Biological animals already distribute control across peripheral/spinal/VNC circuitry.
+BANC specifically supports a view in which local sensory–effector modules are coordinated rather than
+micromanaged by the brain. 3
+
+
+Training. Freeze the fly network first. Train only the motor adapter and arm controllers using imitation
+learning, reinforcement learning, model-predictive control or differentiable simulation.
+
+
+Then freeze those too and ask the scientifically meaningful questions:
+
+
+Does silencing particular fly populations predictably alter which arm reaches?
+
+
+Does replacing the intact connectome with a degree-preserving rewire degrade behavior?
+
+
+
+
+                                                        11
+<PARSED TEXT FOR PAGE: 12 / 30>
+Does replaying the same neural trajectory reproduce the same high-level strategy?
+
+
+Does replacing zt with noise leave performance unchanged?
+
+
+How much mutual information remains between fly state and future arm trajectories after conditioning on
+current body state?
+
+
+Does the same decoder generalize to a ninth arm?
+
+
+Those tests tell you whether the fly is directing the octopus or merely riding inside a robot that already
+knows what to do.
+
+
+Could the neural network itself eventually learn its new body? Not under a static Shiu-like model. A
+frozen network can generate different activity because its sensory loop changed, but its synapses do not
+magically recalibrate. A trainable artificial decoder can learn the body while the fly remains fixed. To make
+learning happen inside the biological substrate, you must add synaptic plasticity or other adaptive neuronal
+state. The mushroom body is the obvious first place for biologically motivated reward learning; wholesale
+remapping of arbitrary octopus motor degrees of freedom would require additional plasticity assumptions
+that current whole-CNS models do not yet justify. 27
+
+
+Could it develop a recognizable individual style?
+
+
+Absolutely, operationally. Even a fixed recurrent network interacting with a nonlinear body can develop
+repeatable biases in timing, exploration and arm use. Adding history-dependent synaptic changes, internal
+drives or morphology makes persistent idiosyncrasy even more likely.
+
+
+But “individual behavioral style” is defensible.
+
+
+“This is the personality of the scanned fly” is not.
+
+
+The current connectomes are snapshots of single animals, but the models omit enormous amounts of
+individual physiological state.
+
+
+When the body is not a body
+Here is where the design space goes absolutely feral.
+
+
+There is no mathematical rule saying neural output must become torque.
+
+
+An actuator is simply a variable that changes the state-transition equation of a world.
+
+
+So a neural spike can cause:
+
+
+                                                   Δjoint angle
+
+or just as legitimately:
+
+
+
+
+                                                       12
+<PARSED TEXT FOR PAGE: 13 / 30>
+                                            Δfractal dimension
+
+                                               Δreaction rate
+
+                                               Δsurface genus
+
+                                             Δrefractive index
+
+                                             Δparticle cohesion
+
+                                          Δbranching probability
+
+                                             Δlocal time scale.
+
+The distinction between a robot and a living painting is therefore not mathematical. It is semantic and
+causal.
+
+
+A mathematical body could consist entirely of parameters controlling strange attractors, iterated-function
+systems, cellular automata, signed-distance fields, level sets, L-systems, wave equations or graph
+grammars. The nervous system might alter coefficients that determine whether the entity folds, branches,
+curls, bifurcates or becomes chaotic.
+
+
+A particle body can contain millions of elements even if the brain exports only twenty signals. Those twenty
+values can control force-field centers, attraction/repulsion strengths, cohesion, vortex intensity, split/merge
+thresholds and material state. A million particles then collectively enact the neural decision.
+
+
+A chemical body can use reaction–diffusion equations. Neural variables can modulate feed rates, catalyst
+concentration, diffusion constants or reaction thresholds. Sensor channels report gradients and reaction
+fronts back to the network.
+
+
+A light body can consist of refractive-index fields, procedural interference, simulated diffraction, emissive
+surfaces, anisotropic sparkle and caustics. Neural outputs need not “move” anything; action becomes
+optical transformation.
+
+
+A topological body can change connectivity. It can punch tunnels through itself, merge components,
+detach pieces, braid filaments, form knots or change genus. A neural command might mean “permit a
+topology-changing surgery in the maximally activated local region,” while lower physics decides the
+geometry.
+
+
+An ecological body can be a population. One nervous system could modulate the birth rates, movement
+biases, nutrient allocation and aggression of hundreds of smaller organisms. The “body” then behaves
+more like an ant colony, slime mold or artificial biome than an individual.
+
+
+A temporal body can manipulate durable traces rather than instantaneous motion: sediment, paint, scars,
+crystal layers, fossils, seeds, architectural debris. Its actions alter what its future self will encounter.
+
+
+That last possibility is particularly delicious because it creates a new kind of embodiment:
+
+
+       The organism’s past actions literally become part of its future sensory organ.
+
+
+
+
+                                                      13
+<PARSED TEXT FOR PAGE: 14 / 30>
+Imagine an agent whose world slowly fills with the ribbons, crystals and pigment strata it has produced. It
+begins revisiting them. Its own art becomes habitat, memory cue, obstruction, food source and social signal
+simultaneously.
+
+
+That is not a metaphor. It is an implementable closed feedback loop.
+
+
+The critical test for all these systems is whether the neural activity is doing anything more than driving a
+screensaver.
+
+
+A useful hierarchy is:
+
+
+        Level                        What is happening
+
+        Visualization                spikes change pixels, but those changes never affect the brain
+
+        Open-loop actuation          spikes alter the world, but consequences do not return
+
+        Closed-loop control          actions alter the next sensory input
+
+        Stateful embodiment          energy, damage, history, material stores or needs persist
+
+        Adaptive interface           neural-to-world mapping learns
+
+        Plastic nervous system       effective neural connections change
+
+        Co-adaptive organism         nervous system, body, sensors and morphology all evolve/adapt
+
+A living abstract artwork should probably reach at least the closed-loop + persistent internal-state level
+before calling it an organism rather than neural visualization.
+
+
+And a robust experiment should survive the asshole tests:
+
+
+Replace neural spikes with matched noise.
+
+
+Shuffle timing.
+
+
+Degree-preserving-rewire the connectome.
+
+
+Destroy transmitter sign information.
+
+
+Replay a previously recorded spike train.
+
+
+Clamp the internal drive.
+
+
+Break the sensory feedback.
+
+
+Run the same body using a tiny conventional controller.
+
+
+
+
+                                                      14
+<PARSED TEXT FOR PAGE: 15 / 30>
+If the artwork behaves the same, the giant connectome is decorative plumbing.
+
+
+If those interventions produce specific, reproducible changes in what the entity seeks, creates and avoids,
+now something interesting is happening.
+
+
+An impossible alien organism that is actually buildable
+Let’s build the bastard.
+
+
+Call it CHROMAVORE.
+
+
+CHROMAVORE lives inside an evolving two- or three-dimensional pigment universe. It has no fixed anatomy.
+It eats image material, chemically metabolizes color, grows soft tentacles, excretes structured glitter,
+explodes into geometry, reproduces patterns, changes material phase, scars its environment and develops
+persistent aesthetic preferences.
+
+
+The architecture can remain scientifically clean.
+
+
+The world contains several coupled layers:
+
+
+                                       Wt = {P , M , B, T , Q, H}
+
+where:
+
+
+P = pigment/color field
+M = nutrient/metabolite/reaction field
+B = central implicit body field
+T = tentacle/filament graph
+Q = particle/crystal objects
+H = durable environmental history.
+
+The nervous system should not calculate millions of pixel updates. It chooses high-level actions.
+
+
+Eating pixels
+
+When a mouth or tentacle overlaps a region of the pigment field, an ingest action removes bounded
+pigment mass:
+
+
+                                         Pt+1 (x) = Pt (x) − ΔP (x)
+
+and transfers it into an internal metabolite vector:
+
+
+                                              qt+1 = qt + AΔP .
+
+Energy yield can depend on pigment composition and current physiological state:
+
+
+
+
+                                                       15
+<PARSED TEXT FOR PAGE: 16 / 30>
+                                            ΔE = f (q, ΔP , h).
+
+So eating bright acid green might produce a different energy/metabolite profile from consuming violet or
+black.
+
+
+The brain decides where to go, whether to eat and when to stop.
+
+
+The body engine handles pixel removal and conservation.
+
+
+That separation prevents the brain from becoming a glorified graphics API.
+
+
+Digesting colors
+
+Do not treat color as a label such as "pink" .
+
+
+Use a perceptual/material vector—perhaps OKLab/OKLCH coordinates plus independent pigment species—
+and feed consumed material into a small reaction network:
+
+                                              dq
+                                                 = R(q, e, E).
+                                              dt
+Different colors can therefore become chemically meaningful.
+
+
+Violet could become high-energy magenta metabolite.
+
+
+Electric lime could produce a catalyst for filament growth.
+
+
+Low-chroma brown could provide bulk mass but poor reward.
+
+
+Repeatedly eating the same hue could produce temporary satiety.
+
+
+Now color has consequences, not merely visual decoration.
+
+
+Excreting glitter
+
+Glitter should cost stored matter.
+
+
+A neural action selects perhaps:
+
+
+     • emission amount;
+     • direction;
+     • particle scale;
+     • faceting;
+     • angular coherence;
+     • clustering;
+     • reflectance spectrum.
+
+
+
+
+                                                      16
+<PARSED TEXT FOR PAGE: 17 / 30>
+The particle simulator generates thousands of actual objects.
+
+
+And “structured sparkle” need not mean random glitter spam. Define it mathematically: blue-noise spacing,
+multiple cluster scales, directional orientation coherence and constrained spectral peaks.
+
+
+Then the creature can actually learn that certain ways of secreting sparkle subsequently produce more
+rewarding visual scenes.
+
+
+Vomiting fractals and exploding geometry
+
+At the instant of a geometry-release action, sample a neural-state vector:
+
+
+                                                  zt = N (t).
+
+Map it into a deterministic grammar:
+
+
+                                               θ = g(zt , qt , ht )
+
+where θ contains recursion depth, branch ratio, angle, chirality, phase, anisotropy, scale and termination
+probability.
+
+
+Feed those parameters into an L-system, iterated-function system, Voronoi fracture, diffusion-limited
+aggregation process, reaction front or interference generator.
+
+
+This matters because the brain is not merely saying “play fractal animation #7.”
+
+
+Its continuous internal state parameterizes the entire morphology of the eruption.
+
+
+Replaying the same state and random seed should reconstruct the same explosion.
+
+
+That makes neural causality testable.
+
+
+Growing tentacles
+
+Tentacles can be extensible splines or Cosserat-style soft rods.
+
+
+Growth consumes energy.
+
+
+New segments inherit a local controller.
+
+
+The brain supplies only things like:
+
+
+                       [target direction, reach, curl, grasp, stir, stiffness, retract]
+
+while the local arm controller converts them into segment-level forces.
+
+
+
+
+                                                       17
+<PARSED TEXT FOR PAGE: 18 / 30>
+Because every tentacle can use the same local policy, CHROMAVORE can have four arms today and 137
+tomorrow.
+
+
+This is exactly how to build the “continuously grows and sheds limbs” creature without requiring 137 new
+motor-neuron populations.
+
+
+Pattern reproduction
+
+A pattern-spore can inherit a compact genome containing:
+
+
+palette coefficients,
+reaction rates,
+contour frequencies,
+fractal grammar,
+glitter statistics,
+material transitions,
+growth bias,
+mutation rates.
+
+
+The fly-derived nervous system decides when, where and whether to reproduce.
+
+
+The pattern’s local genome determines its development.
+
+
+Some offspring could remain brainless automata.
+
+
+Others could instantiate another connectome simulation.
+
+
+Now you have artificial ecology.
+
+
+Regeneration
+
+Damage removes body field or tentacle material.
+
+
+A local repair system rebuilds toward a target field while consuming energy.
+
+
+The nervous system can modulate repair urgency, target region and resource allocation, while cellular/
+phase-field rules handle microscopic reconstruction.
+
+
+The organism can therefore choose between eating, making art, reproducing and fixing its own mangled
+geometry.
+
+
+Now you have competing drives.
+
+
+Material metamorphosis
+
+Every body element carries a material phase variable:
+
+
+
+
+                                                    18
+<PARSED TEXT FOR PAGE: 19 / 30>
+                 m ∈ {line, membrane, gel, liquid, pigment, crystal, particle, filament}.
+
+Neural output changes phase thresholds.
+
+
+A tentacle can soften, liquefy, flow through a crack, crystallize on the far side and regrow.
+
+
+Again, neural output should select phase-transition intention, while the material simulator supplies
+physical detail.
+
+
+What belongs to the brain and what belongs to the body
+
+The connectome should own:
+
+
+selection, timing, direction, target, expenditure and persistence.
+
+
+Examples:
+
+
+eat / do not eat
+approach / avoid
+which object
+which tentacle
+grow / shed
+repair / ignore
+emit / retain
+reproduce / conserve
+explore / return
+create / destroy.
+
+
+The body owns:
+
+
+particle trajectories,
+soft-body collision resolution,
+crystallization microstructure,
+reaction integration,
+fluid dynamics,
+individual tentacle segment forces,
+fractal expansion detail.
+
+
+Internal artificial physiology owns:
+
+
+energy,
+satiety,
+damage,
+pigment inventory,
+novelty drive,
+reproductive readiness,
+material stores.
+
+
+
+
+                                                       19
+<PARSED TEXT FOR PAGE: 20 / 30>
+Plasticity owns:
+
+
+what becomes valuable through experience.
+
+
+That division is the difference between an artificial organism and an enormous random-effects button.
+
+
+New senses, desire, memory and artificial appetites
+This part is technically easier than it initially sounds.
+
+
+A synthetic sensory organ is just a function:
+
+
+                                                    st = E(Wt )
+
+followed by a neural encoder:
+
+
+                                                   Ii (t) = fi (st ).
+
+The quantity being measured can be literally anything computable.
+
+
+So yes, a fly-derived nervous system can receive sensory channels representing:
+
+
+color,
+chroma,
+optical flow,
+curvature,
+local symmetry,
+depth,
+surface density,
+sparkle,
+audio spectrum,
+harmonic tension,
+magnetic field strength,
+chemical gradients,
+entropy,
+compressibility,
+fractal dimension,
+topological genus,
+persistent-homology features,
+novelty,
+time elapsed,
+distance from an earlier creation,
+another organism’s activity,
+another connectome’s neural state.
+
+
+Nothing requires a natural receptor organ to exist.
+
+
+
+
+                                                            20
+<PARSED TEXT FOR PAGE: 21 / 30>
+But the semantics must be stated honestly.
+
+
+An LPLC2-like looming pathway can legitimately receive an artificial looming signal.
+
+
+It does not “naturally perceive neon.”
+
+
+A projection neuron receiving a curvature scalar is a prosthetically repurposed neural channel.
+
+
+It does not prove flies naturally encode mathematical curvature.
+
+
+That distinction should be visible in every methods diagram.
+
+
+The most biologically conservative synthetic senses would preserve native modality:
+
+
+visual motion → visual motion circuits;
+looming → LC4/LPLC2-like pathways;
+odor-like scalar fields → olfactory receptor/projection-neuron populations;
+contact nutrients → gustatory neurons;
+strain/touch → mechanosensory and proprioceptive afferents.
+
+
+Everything else becomes an experimental prosthetic input.
+
+
+Can it learn what an invented sense means?
+
+A fixed LIF model cannot invent semantic meaning merely because you pump “curvature” into it.
+
+
+It can transform curvature signals.
+
+
+
+It can produce recurrent responses.
+
+
+A downstream decoder can learn to exploit those responses.
+
+
+But for the nervous system itself to acquire a durable association, something must change.
+
+
+The most defensible starting point is the mushroom body, where real Drosophila dopamine neurons
+participate in reward/punishment learning and modulate plasticity involving Kenyon-cell and mushroom-
+body-output pathways. Recent primary work continues to show reward-related dopaminergic modulation
+and state-dependent memory processes. 28
+
+
+That gives you an elegant way to create artificial appetites without hard-coding artistic actions.
+
+
+Do not tell the organism:
+
+
+       make neon bands.
+
+
+
+
+                                                     21
+<PARSED TEXT FOR PAGE: 22 / 30>
+Instead give it sensory features and reward.
+
+
+For your specific aesthetic, define something like:
+
+
+                        Ft = [Sneon , Cclash , Bnested , Ffordite , Rribbon , Gsparkle , Nnovelty ].
+
+Where:
+
+
+Neon saturation Sneon . Measure high chroma in OKLCH rather than raw RGB saturation, preventing
+clipping artifacts from becoming the entire objective.
+
+
+Beautiful clash Cclash . Reward strong hue separation while imposing constraints on luminance structure,
+edge organization and spatial balance. Otherwise it will discover that maximum random rainbow noise
+technically “clashes.”
+
+
+Nested contour banding Bnested . Use distance transforms, level-set nesting, contour persistence and edge
+crispness.
+
+
+Fordite strata Ffordite . Detect multiscale layered orientation coherence with varying band thickness, local
+curvature and repeating-but-not-identical strata.
+
+
+Pinched ribbons Rribbon . Score centerline curvature, width gradients, periodic constrictions and temporal
+deformation coherence.
+
+
+Structured sparkle Gsparkle . Measure sparse high-intensity highlights combined with controlled spatial
+statistics and angular coherence rather than just maximizing bright pixels.
+
+
+Novelty Nnovelty . Compare current sensory feature vectors with an exponentially decaying memory bank of
+previous experiences.
+
+
+Then reward could be:
+
+
+                 rt = w⊤ Ft + ηNt − λ repetition − μ energy expenditure − ν damage.
+
+The important trick is this:
+
+
+reward changes learning; it does not directly invoke the graphics effect.
+
+
+Then the organism has to discover actions that produce desired sensory consequences.
+
+
+That is radically more interesting.
+
+
+Suppose the creature discovers by accident that scraping a cyan membrane across a magenta reaction field
+produces razor-sharp nested orange bands.
+
+
+Those bands generate reward.
+
+
+
+
+                                                            22
+<PARSED TEXT FOR PAGE: 23 / 30>
+The resulting plasticity changes the probability that similar sensory/body states lead to scraping again.
+
+
+Eventually it begins actively seeking cyan membranes near magenta fields.
+
+
+Later it learns that depositing glitter before scraping creates better highlights.
+
+
+Now it deliberately prepares environments for future aesthetic reward.
+
+
+That is already much closer to creative behavior than mapping dopamine activity directly to
+ draw_fractal() .
+
+
+How to establish persistent preference
+
+Do not call it desire because it made one gorgeous thing.
+
+
+Make the bastard prove it.
+
+
+Give it repeated binary choices.
+
+
+Then novel examples.
+
+
+Then delay.
+
+
+Then extinction.
+
+
+Then reversal.
+
+
+Then satiety.
+
+
+Then lesion the candidate plasticity pathway.
+
+
+Then randomize the visual features while preserving average luminance.
+
+
+Then replay identical stimuli without allowing action.
+
+
+A defensible preference should:
+
+
+persist across repeated trials;
+generalize to new exemplars;
+survive superficial visual changes;
+decline when the corresponding drive is satiated;
+reverse after counter-conditioning;
+depend on the relevant plasticity pathway;
+alter behavior even when obtaining the preferred stimulus carries a measurable cost.
+
+
+That would justify saying:
+
+
+
+                                                         23
+<PARSED TEXT FOR PAGE: 24 / 30>
+“This artificial organism acquired a persistent functional preference for this class of visual
+experiences.”
+
+
+It would not justify:
+
+
+“The fly feels beauty.”
+
+
+Those are very different claims.
+
+
+Artificial drives can become much stranger than hunger
+
+You are not limited to food reward.
+
+
+Give the organism a homeostatic variable hi for each synthetic appetite.
+
+
+It might become:
+
+
+chromatically hungry after spending too long in low-chroma environments.
+
+
+topologically restless if its environment has remained the same genus too long.
+
+
+sparkle-deprived after prolonged absence of specular events.
+
+
+socially hungry for patterns produced by another connectome.
+
+
+nostalgic, operationally, by rewarding proximity to its own old creations after a long delay.
+
+
+neophobic or neophilic depending on slowly changing novelty-state variables.
+
+
+territorial about structures it generated.
+
+
+compulsively destructive toward repetitive geometry.
+
+
+collector-like, preferring rare pigment combinations.
+
+
+ritualistic, rewarding recurring temporal sequences rather than static images.
+
+
+That last one gets especially weird.
+
+
+Its preferred sensory object does not have to be an image.
+
+
+It could prefer:
+
+
+a particular rhythm of curvature changes,
+a color transition that takes exactly thirty seconds,
+
+
+
+
+                                                        24
+<PARSED TEXT FOR PAGE: 25 / 30>
+a spiral that only becomes visible after repeated visits,
+an interference pattern produced jointly by another organism,
+or an event whose value depends on having encountered its precursor hours earlier.
+
+
+The “sensory world” can include history.
+
+
+Multiple nervous systems in one universe
+
+Two fly-derived networks can share the same body.
+
+
+One can control tentacles while another controls pigment metabolism.
+
+
+Or both can receive the same sensory stream and compete for an arbitration variable.
+
+
+Or each can control alternating time windows.
+
+
+Or each can control one half of a body while ascending synthetic channels transmit the other half’s activity.
+
+
+More interestingly, give them separate bodies but shared ecology.
+
+
+Agent A excretes crystals that agent B can digest.
+
+
+Agent B’s preferred pigment poisons A.
+
+
+A learns to seek B’s ribbons.
+
+
+B learns to destroy A’s glitter.
+
+
+Their persistent environmental traces become communication.
+
+
+Eventually you can ask:
+
+
+Does one nervous system develop a sensory preference for patterns created by a particular other nervous
+system?
+
+
+Does it distinguish self-generated from other-generated art?
+
+
+Can one nervous system condition another by controlling its rewards?
+
+
+Can two networks collaboratively create structures neither reliably produces alone?
+
+
+That is a research program, not merely a visual gimmick.
+
+
+
+
+                                                     25
+<PARSED TEXT FOR PAGE: 26 / 30>
+Experimental roadmap, scientific boundaries and deliverables
+The most scientifically powerful version of this project would proceed in an almost perversely conservative
+order while the body becomes increasingly insane.
+
+
+Freeze the biological substrate first. Pick an exact MaleCNS, BANC or FlyWire release. Record neuron
+filters, connection thresholds, transmitter/sign rules and simulator parameters. Do not quietly retrain
+millions of internal weights and then announce that the original fly figured something out.
+
+
+Introduce one artificial sense at a time. Begin with visual motion, looming, odor-like gradients and touch
+because those have defensible mappings. Then introduce curvature. Then color/chroma. Then novelty. Each
+new modality gets sensory-shuffle controls.
+
+
+Expose an explicit neural bottleneck. The downstream body controller should receive a logged vector
+from identifiable neural populations. A hidden 100-million-parameter network reading the entire
+connectome is scientifically useless for attribution even if the resulting creature is magnificent.
+
+
+Train the body interface while the brain is frozen. This isolates body calibration from neural learning.
+
+
+Then freeze the body interface. Run matched intact, rewired, shuffled and random controllers.
+
+
+Only then add plasticity. Start with mushroom-body-like reward learning rather than allowing arbitrary
+backpropagation across the entire connectome.
+
+
+Only after that evolve morphology. Let an evolutionary optimizer change tentacle number, stiffness,
+sensor placement, growth cost, particle cohesion or material phase transitions while the nervous system
+remains constrained.
+
+
+This creates one of the weirdest and most interesting experiments available:
+
+
+       Instead of asking whether a fly nervous system can adapt to an alien body, let alien
+       bodies evolve around the fly nervous system.
+
+
+FlyGM and the 2026 whole-connectome cognition results already suggest that natural connectome
+topology can provide nontrivial inductive bias outside the exact task on which evolution originally shaped it,
+although both results rely on substantial artificial learning machinery. 29
+
+
+The minimum benchmark suite should contain:
+
+
+intact connectome; degree-preserving rewire; shuffled edge weights/signs; matched random
+recurrent network; decoder-only controller with the neural bottleneck replaced by noise or a
+constant; and targeted biological-pathway ablations.
+
+
+And every experiment should report trainable parameter counts separately for:
+
+
+
+
+                                                      26
+<PARSED TEXT FOR PAGE: 27 / 30>
+sensory encoder,
+connectome core,
+motor decoder,
+local body controllers.
+
+
+Otherwise a “fly-brain organism” can secretly be 0.5% fly and 99.5% gigantic artificial adapter.
+
+
+The single most important outcome is not game score or prettiness.
+
+
+It is something like:
+
+                                                              Jintact − Jdestroyed topology
+                        Biological Causal Contribution =
+                                                                        Jintact
+under matched interface capacity and training budget.
+
+
+That is not a universal formal metric yet; it is the experimental principle that follows from the Digital Sphinx
+warning. A body can look perfect while its nominal biological controller is computationally incidental. 1
+
+
+What neuroscience actually supports as of October 27, 2026: adult fly brains and whole central nervous
+systems have been reconstructed at synaptic resolution; simplified whole-brain dynamics can make
+experimentally useful sensorimotor predictions; connectome-constrained visual models can predict visual-
+system responses; graph architectures copied from connectomes can help trained embodied policies;
+connectome-derived systems can be closed around physics worlds; and biological topology can sometimes
+confer measurable advantages over controlled rewires on tasks very unlike natural fly behavior. 30
+
+
+What is experimentally plausible but not yet demonstrated as a mature biological model: a fly-derived
+CNS controlling an eight-arm soft body through hierarchical adapters; morphologically changing
+organisms; abstract field/particle/chemical bodies; persistent learned aesthetic appetites; multiple
+connectomes sharing bodies or ecosystems; co-evolution of body morphology around a fixed biological
+graph; and autonomous connectome-driven generative art in which aesthetic consequences feed back into
+future learned action.
+
+
+What is not established: that current connectome simulations preserve the scanned fly’s identity; that
+generic LIF dynamics reconstruct its complete mental state; that arbitrary game success means the fly
+network understands the game; that a connectome-driven artwork experiences aesthetic pleasure; or that
+present projects demonstrate consciousness or literal whole-brain emulation. Current anatomical
+connectomes omit too much physiological, molecular and learned state for those conclusions, and the
+Digital Sphinx shows that behavioral appearance alone is an extremely weak test of biological fidelity. 31
+
+
+The profound result is therefore not:
+
+
+         “A fly brain can run an octopus.”
+
+
+It is:
+
+
+
+
+                                                       27
+<PARSED TEXT FOR PAGE: 28 / 30>
+       Once a nervous system becomes software, anatomy stops being destiny. The body
+       becomes an experimental variable.
+
+
+You can give it eight tentacles.
+
+
+Or eight hundred.
+
+
+You can remove limbs entirely and let it steer reaction chemistry.
+
+
+You can let its “muscles” be topology.
+
+
+Its “blood” can be pigment.
+
+
+Its “food” can be color.
+
+
+Its “waste” can be glitter.
+
+
+Its “footprints” can be fossils.
+
+
+Its “offspring” can be mathematical patterns.
+
+
+Its “sense of touch” can be curvature.
+
+
+Its “hunger” can be for neon.
+
+
+Its environment can be the accumulated remains of everything it has ever created.
+
+
+And multiple nervous systems can crawl around inside that same mathematical universe, learning each
+other as part of their sensory ecology.
+
+
+But the more outrageous the organism becomes, the more disciplined the experiment must become.
+
+
+Because making a fly connectome cause spectacular shit is increasingly easy.
+
+
+Proving that the biological wiring mattered is the hard part.
+
+
+Research files. I created a complete repository-ready Markdown report, formatted PDF and upload bundle:
+
+
+Download the full PDF
+
+
+Download the repository-ready Markdown
+
+
+Download the complete GitHub-ready bundle
+
+
+
+
+                                                     28
+<PARSED TEXT FOR PAGE: 29 / 30>
+I verified that merrypranxter/fruitflyresearchlol exists and that the connected account has
+repository access, but the GitHub integration exposed in this session provides read/search/fetch operations
+and no create/update-file or commit action. I therefore did not pretend the files had been pushed; the
+bundle contains README.md , the full research document, the PDF and a manifest ready for that repository.
+
+
+
+ 1   The digital sphinx: Can a worm brain control a fly body?
+https://elifesciences.org/reviewed-preprints/111516
+
+ 2   14   30   Neuronal wiring diagram of an adult brain | Nature
+https://www.nature.com/articles/s41586-024-07558-y
+
+ 3   Distributed control circuits across a brain-and-cord connectome | Nature
+https://www.nature.com/articles/s41586-026-10735-w
+
+ 4   Male CNS Connectome - Janelia Research Campus
+https://www.janelia.org/project-team/flyem/male-cns-connectome
+
+ 5   FlyWire Codex | Connectome Data Explorer
+https://codex.flywire.ai/
+
+ 6    7   31   A Drosophila computational brain model reveals ...
+https://www.nature.com/articles/s41586-024-07763-9
+
+ 8   Connectome-constrained networks predict neural activity ...
+https://www.nature.com/articles/s41586-024-07939-3
+
+ 9   NeuroMechFly v2: simulating embodied sensorimotor ...
+https://www.nature.com/
+
+10   11   How the Eon Team Produced a Virtual Embodied Fly · Eon
+https://eon.systems/updates/embodied-brain-emulation
+
+12   29   Whole-Brain Connectomic Graph Model Enables Whole-Body Locomotion Control in Fruit Fly
+https://arxiv.org/html/2602.17997v3
+
+13   A Drosophila Whole-Connectome Network Can Learn Human-Designed Cognitive Tasks
+https://arxiv.org/html/2610.10014v1
+
+15   philshiu/Drosophila_brain_model: A leaky integrate-and ...
+https://github.com/philshiu/Drosophila_brain_model
+
+16   19   cobanov/awesome-fly: A curated list of fruit fly connectome ...
+https://github.com/cobanov/awesome-fly
+
+17   Humanoid Locomotion with aFly-Inspired Recurrent Controller
+https://arxiv.org/html/2609.27001v1
+
+18   nftechie/doomfly: Fly-connectome simulation controlling a ...
+https://github.com/nftechie/doomfly
+
+20   lyra bubbles ‫ على‬X: "the fly brain can play beat saber" / X
+https://x.com/_lyraaaa_/status/2097527368919470162?lang=ar
+
+21   I Made a Real Fly Brain Play Pong. It Didn't Learn - Medium
+https://jonatasperaza.medium.com/i-made-a-real-fly-brain-play-pong-it-didnt-learn-and-that-s-the-interesting-part-80b8560695fe
+
+
+
+
+                                                             29
+<PARSED TEXT FOR PAGE: 30 / 30>
+22   ranagwho/Fruitfly-Doomscroller
+https://github.com/ranagwho/Fruitfly-Doomscroller
+
+23   I Trained a Fly's Brain to Generate WIRED Story Ideas
+https://www.wired.com/story/i-trained-a-fly-on-wired-story-ideas
+
+24 After Google mapped an adult male fruit fly's brain, software engineers made it play Doom, Mario64,
+and Beat Saber
+https://www.pcgamer.com/hardware/after-google-mapped-an-adult-male-fruit-flys-brain-software-engineers-made-it-play-doom-
+mario64-and-beat-saber/
+
+25   the fly brain can play beat saber
+https://x.com/_lyraaaa_/status/2097527368919470162
+
+26   Octopus arms exhibit exceptional flexibility
+https://www.nature.com/articles/s41598-020-77873-7
+
+27   28   Dual roles of Drosophila reward-encoding dopamine neurons ...
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12661156/
+
+
+
+
+                                                              30
